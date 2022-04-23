@@ -1,0 +1,396 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>session-5 - python_2022</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Python勉強会2022</li><li class="chapter-item expanded "><a href="session-1.html"><strong aria-hidden="true">1.</strong> session-1</a></li><li class="chapter-item expanded "><a href="session-2.html"><strong aria-hidden="true">2.</strong> session-2</a></li><li class="chapter-item expanded "><a href="session-3.html"><strong aria-hidden="true">3.</strong> session-3</a></li><li class="chapter-item expanded "><a href="session-4.html"><strong aria-hidden="true">4.</strong> session-4</a></li><li class="chapter-item expanded "><a href="session-5.html" class="active"><strong aria-hidden="true">5.</strong> session-5</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">python_2022</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第-5-回-python-勉強会-2022--有名データ構造クラス計算オーダー"><a class="header" href="#第-5-回-python-勉強会-2022--有名データ構造クラス計算オーダー">第 5 回 Python 勉強会 2022 | 有名データ構造、クラス、計算オーダー</a></h1>
+<h1 id="1-有名データ構造-set-deque-heapq-をさらっと紹介"><a class="header" href="#1-有名データ構造-set-deque-heapq-をさらっと紹介">1. 有名データ構造 set, deque, heapq をさらっと紹介</a></h1>
+<ol>
+<li>set 集合型</li>
+</ol>
+<ul>
+<li>(7) set <a href="https://atcoder.jp/contests/abs/tasks/abc085_b">ABC085B - Kagami Mochi</a></li>
+</ul>
+<pre><code class="language-py">n = int(input())
+st = set()
+for _ in range(n):
+    x = int(input())
+    st.add(x)
+print(len(st))
+</code></pre>
+<ol start="2">
+<li>deque 両端キュー
+機能としては list とほぼ同じ。内部実装の違いから、諸操作の計算量が異なります。</li>
+</ol>
+<table><thead><tr><th>メソッド名</th><th>collections.deque</th></tr></thead><tbody>
+<tr><td>append(x)</td><td>末尾に x を追加</td></tr>
+<tr><td>pop(i=-1)</td><td>i 番目の要素を削除</td></tr>
+<tr><td>count(x)</td><td>出現数を数える</td></tr>
+<tr><td>sort()</td><td>ソートする</td></tr>
+<tr><td>reverse()</td><td>逆順にする</td></tr>
+</tbody></table>
+<ul>
+<li>参考資料 <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a></li>
+</ul>
+<ol start="3">
+<li>heapq 優先度キュー</li>
+</ol>
+<ul>
+<li>参考資料 <a href="https://qiita.com/ell/items/fe52a9eb9499b7060ed6">【Python】優先度付きキューの使い方【heapq】【ABC141 D】</a></li>
+</ul>
+<p>(heapq に関する説明をここに)</p>
+<h1 id="2-クラス-class"><a class="header" href="#2-クラス-class">2. クラス (Class)</a></h1>
+<p>クラスを自分で書く必要に迫られることはほとんどないと思います。
+しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。
+理解できなくても全く問題ないのでお気軽に～。</p>
+<h2 id="2-1-クラスを作ってみよう"><a class="header" href="#2-1-クラスを作ってみよう">2-1. クラスを作ってみよう</a></h2>
+<pre><code class="language-py">TODO: クラスに慣れるため、calc_rect_area の Class ver. を書く予定。
+</code></pre>
+<h2 id="2-2-発展-complex-クラスを作ってみよう"><a class="header" href="#2-2-発展-complex-クラスを作ってみよう">2-2. (発展) Complex クラスを作ってみよう</a></h2>
+<pre><code class="language-py">class Complex:
+    # class の中の関数をメソッドと呼びます。
+    # メソッド名が __xxx__ の形のメソッドは、特別な働きをします。
+    def __init__(self, re=0, im=0):
+        self.re = re
+        self.im = im
+
+    def __add__(self, c):
+        return Complex(self.re + c.re, self.im + c.im)
+
+    def __mul__(self, c):
+        return Complex(self.re * c.re - self.im * c.im, self.re * c.im + self.im * c.re)
+
+    def __iadd__(self, c):
+        self.re += c.re
+        self.im += c.im
+        return self
+
+    def __imul__(self, c):
+        re2 = self.re * c.re - self.im * c.im
+        im2 = self.re * c.im + self.im * c.re
+        self.re, self.im = re2, im2
+        # 上 3 行と等価
+        # self.re, self.im = self.re * c.re - self.im * c.im, self.re * c.im + self.im * c.re
+        return self
+
+    def __repr__(self):
+        return f&quot;{self.re} + {self.im}i&quot;
+
+    # 自由に命名できます
+    def debug_print(self):
+        print(f&quot;self.re: {self.re}, self.im: {self.im}&quot;)
+
+a = Complex(0, 1)
+b = Complex(1, 0)
+a.debug_print()  # self.re: 0, self.im: 1
+b.debug_print()  # self.re: 1, self.im: 0
+print(a)  # 0 + 1i
+print(b)  # 1 + 0i
+print(a + b)  # 1 + 1i
+print(a * a)  # -1 + 0i
+print(a * b)  # 0 + 1i
+
+b += a
+print(b)  # 1 + 1i
+b *= a
+print(b)  # -1 + 1i
+</code></pre>
+<h1 id="3-計算オーダーを考えよう"><a class="header" href="#3-計算オーダーを考えよう">3. 計算オーダーを考えよう</a></h1>
+<ul>
+<li>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a>
+3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。</li>
+</ul>
+<pre><code class="language-py">n, y = map(int, input().split())
+for i in range(n + 1):
+    for j in range(n + 1):
+        k = n - i - j
+        if k &lt; 0:
+            continue
+        if i * 10000 + j * 5000 + k * 1000 == y:
+            print(i, j, k)
+            exit()
+print(&quot;-1 -1 -1&quot;)
+</code></pre>
+<h1 id="4-競プロ-er-必携の-online-judge-tools-を使ってみよう"><a class="header" href="#4-競プロ-er-必携の-online-judge-tools-を使ってみよう">4. 競プロ er 必携の <code>online-judge-tools</code> を使ってみよう</a></h1>
+<h2 id="4-1-online-judge-tools-をインストール"><a class="header" href="#4-1-online-judge-tools-をインストール">4-1. <code>online-judge-tools</code> をインストール</a></h2>
+<p>(工事中)</p>
+<h2 id="4-2-oj-t-を使ってみよう"><a class="header" href="#4-2-oj-t-を使ってみよう">4-2. <code>oj t</code> を使ってみよう</a></h2>
+<p>(工事中)</p>
+<h2 id="4-3-oj-s-を使ってみよう"><a class="header" href="#4-3-oj-s-を使ってみよう">4-3. <code>oj s</code> を使ってみよう</a></h2>
+<p>(工事中)</p>
+<h1 id="5-online-judge-verify-helper-を用いて-github-上にライブラリを公開してみよう"><a class="header" href="#5-online-judge-verify-helper-を用いて-github-上にライブラリを公開してみよう">5. <code>online-judge-verify-helper</code> を用いて GitHub 上にライブラリを公開してみよう</a></h1>
+<h2 id="5-1-準備"><a class="header" href="#5-1-準備">5-1. 準備</a></h2>
+<h3 id="5-1-1-github-のアカウントを作る"><a class="header" href="#5-1-1-github-のアカウントを作る">5-1-1. GitHub のアカウントを作る。</a></h3>
+<h3 id="5-1-2-github-desktop-をインストール"><a class="header" href="#5-1-2-github-desktop-をインストール">5-1-2. GitHub Desktop をインストール。</a></h3>
+<h3 id="5-1-3-github-の各種設定"><a class="header" href="#5-1-3-github-の各種設定">5-1-3. GitHub の各種設定</a></h3>
+<p>GitHub に SSH 接続するなど。ライブラリ整備 (GitHub Pages) をしましょう。(GitHub の練習として)<br />
+(工事中)</p>
+<h2 id="5-3-ライブラリを公開"><a class="header" href="#5-3-ライブラリを公開">5-3. ライブラリを公開</a></h2>
+<p><a href="https://github.com/cheran-senthil/PyRival">cheran-senthil/PyRival</a> を参考に、ライブラリを公開してみましょう。<br />
+(GitHub Desktop の使い方)<br />
+(とりあえず Complex のみでよい)</p>
+<h1 id="6-web-制作にご興味が"><a class="header" href="#6-web-制作にご興味が">6. ？？？「Web 制作にご興味が？」</a></h1>
+<img src="https://i.imgur.com/OCMiU8x.png" width="480">
+<p>今回、GitHub Pages でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
+ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、是非お気軽にご参加ください。
+<a href="https://rvw2022s.herokuapp.com">RVW 2022 Spring</a> 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。</p>
+<h1 id="7-合作をしよう"><a class="header" href="#7-合作をしよう">7. 合作をしよう</a></h1>
+<p>公立大の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期に hackathon を行っています。
+合作に参加すると、他人のコードを読めて、知識が深まります。
+プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。</p>
+<ul>
+<li>参考: Hackathon2022Spring
+テーマ「ジャンプ」(テーマは各 hackathon ごとに異なる) に沿ったゲームを作り合う対抗戦。
+<ul>
+<li>Computer House Random の作ったゲーム <a href="https://github.com/Nisk36/Hackathon">Nisk36/Hackathon</a></li>
+<li>App Navi の作ったゲーム <a href="https://blog.opuappnavi.com/post/games-in-2021/#jumpin">JumPin</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="8-競プロをしよう"><a class="header" href="#8-競プロをしよう">8. 競プロをしよう</a></h1>
+<h2 id="8-1-バチャに参加しよう"><a class="header" href="#8-1-バチャに参加しよう">8-1. バチャに参加しよう</a></h2>
+<p>毎週月・木の 21:00-22:00 にバチャをしています。<br />
+この勉強会を通じて、競プロに興味を持った方はぜひ参加して、アルゴリズム力を高めましょう。</p>
+<h2 id="8-2-競プロの大会に出場しよう"><a class="header" href="#8-2-競プロの大会に出場しよう">8-2. 競プロの大会に出場しよう</a></h2>
+<p>Computer House Random では <a href="https://icpc.iisf.or.jp/blog/2022/03/29/icpc-regional-2022/">ICPC</a> と <a href="https://products.sint.co.jp/pg_battle">PG BATTLE</a> に出場しています (任意参加)。<br />
+バチャに定期的に参加している人に声をかけるので、よろしくお願いします。</p>
+<h1 id="9-競プロだけに傾倒しないように"><a class="header" href="#9-競プロだけに傾倒しないように">9. 競プロだけに傾倒しないように</a></h1>
+<p>競プロ<strong>だけ</strong>に現を抜かし、Web 制作やゲーム制作を通じて実際にコードを書くことを疎かにしてはなりません (大会に出場しようと言っておいてあれですが)。<br />
+競プロ (AtCoder など) は飽くまでも、実際に (つまり競プロ以外で) コードを書く際に、自分の中での固まった命名規則で変数を命名したり (「camelCase, PascalCase, snake_case が混ざったコードを書かない」など)、用いるべきデータ構造を見極めたり、構築すべき構造を大局的に捉えて完成形から逆算してコードを書いたりするための基礎練習に過ぎません。何かしらのプロダクトを作ることに時間を割くべきと、よもぎは思います。</p>
+<blockquote>
+<p>我々の目的の一つは、我々が始めてしまった競技プログラミングを我々が終わらせることです。<br />
+- <a href="https://nuc.hatenadiary.org/entry/2021/03/31">Twitter で医師を拾ってきて Google のソフトウェアエンジニアにするだけの簡単なお仕事</a></p>
+</blockquote>
+<h1 id="任意課題"><a class="header" href="#任意課題">任意課題</a></h1>
+<p>難しいので (9), (10) は任意課題としたいと思います。<br />
+なお、質問は受け付けておりますので、お気軽に。</p>
+<ul>
+<li>(7) set <a href="https://atcoder.jp/contests/abs/tasks/abc085_b">ABC085B - Kagami Mochi</a></li>
+<li>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a></li>
+<li>(9) 後ろから見るテク <a href="https://atcoder.jp/contests/abs/tasks/arc065_a">ABC049C - 白昼夢</a></li>
+<li>(10) マンハッタン距離, パリティ <a href="https://atcoder.jp/contests/abs/tasks/arc089_a">ABC086C - Traveling</a>
+意欲的な方は <a href="https://kenkoooo.com/atcoder/#/training/Boot%20camp%20for%20Beginners">Boot camp for Beginners</a> も埋めておきましょう。</li>
+</ul>
+<h1 id="任意課題の解答"><a class="header" href="#任意課題の解答">任意課題の解答</a></h1>
+<ul>
+<li>
+<p>(7) 掲載済みのため略。</p>
+</li>
+<li>
+<p>(8) 掲載済みのため略。</p>
+</li>
+<li>
+<p>(9) 後ろから見るテク <a href="https://atcoder.jp/contests/abs/tasks/arc065_a">ABC049C - 白昼夢</a></p>
+</li>
+</ul>
+<pre><code class="language-py">s = input()
+ts = [&quot;dream&quot;, &quot;dreamer&quot;, &quot;erase&quot;, &quot;eraser&quot;]
+while s != &quot;&quot;:
+    for t in ts:
+        if s.endswith(t):
+            s = s[:-len(t)]
+            break
+    else:
+        print(&quot;NO&quot;)
+        exit()
+print(&quot;YES&quot;)
+</code></pre>
+<ul>
+<li>(10) マンハッタン距離, パリティ <a href="https://atcoder.jp/contests/abs/tasks/arc089_a">ABC086C - Traveling</a></li>
+</ul>
+<pre><code class="language-py">n = int(input())
+t0 = 0
+x0 = 0
+y0 = 0
+for i in range(n):
+    t, x, y = map(int, input().split())
+    # 座標 (x0, y0) と 座標 (x, y) のマンハッタン距離
+    manhattan = abs(x - x0) + abs(y - y0)
+    # 余った時間
+    rest_time = t - t0 - manhattan
+    # 余った時間が負 or 奇数なら No
+    if rest_time &lt; 0 or rest_time % 2 == 1:
+        print(&quot;No&quot;)
+        exit()
+    t0 = t
+    x0 = x
+    y0 = y
+print(&quot;Yes&quot;)
+</code></pre>
+<h1 id="おわり"><a class="header" href="#おわり">おわり</a></h1>
+<p>お疲れ様でした。強くなれましたか？</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="session-4.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="session-4.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

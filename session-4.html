@@ -1,0 +1,383 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>session-4 - python_2022</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Python勉強会2022</li><li class="chapter-item expanded "><a href="session-1.html"><strong aria-hidden="true">1.</strong> session-1</a></li><li class="chapter-item expanded "><a href="session-2.html"><strong aria-hidden="true">2.</strong> session-2</a></li><li class="chapter-item expanded "><a href="session-3.html"><strong aria-hidden="true">3.</strong> session-3</a></li><li class="chapter-item expanded "><a href="session-4.html" class="active"><strong aria-hidden="true">4.</strong> session-4</a></li><li class="chapter-item expanded "><a href="session-5.html"><strong aria-hidden="true">5.</strong> session-5</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">python_2022</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリ"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリ">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ</a></h1>
+<h1 id="1-自分で関数を作ってみよう-def"><a class="header" href="#1-自分で関数を作ってみよう-def">1. 自分で関数を作ってみよう (def)</a></h1>
+<p>下記は、長方形の面積を求めるプログラムです。</p>
+<pre><code class="language-py">def calc_rect_area(width, height):
+    return width * height
+
+print(calc_rect_area(20, 30))  # 600
+</code></pre>
+<h2 id="1-1-デフォルト引数-ひきすう-を付けてみよう"><a class="header" href="#1-1-デフォルト引数-ひきすう-を付けてみよう">1-1. デフォルト引数 (ひきすう) を付けてみよう</a></h2>
+<pre><code class="language-py">def calc_rect_area(width=50, height=70):
+    return width * height
+
+print(calc_rect_area(20, 30))  # 600
+
+# print(calc_rect_area(20, 70)) として解釈される
+print(calc_rect_area(20))  # 1400
+
+# print(calc_rect_area(50, 70)) として解釈される
+print(calc_rect_area())  # 3500
+</code></pre>
+<h2 id="1-2-発展-lambda-ラムダ-関数"><a class="header" href="#1-2-発展-lambda-ラムダ-関数">1-2. (発展) lambda (ラムダ) 関数</a></h2>
+<pre><code class="language-py">def calc_rect_area(width, height):
+    return width * height
+
+print(calc_rect_area(10, 20))  # 200
+
+# calc_rect_area と等価な関数
+calc_rect_area2 = lambda w, h: w * h
+print(calc_rect_area2(10, 20))  # 200
+</code></pre>
+<h1 id="2-発展-再帰関数"><a class="header" href="#2-発展-再帰関数">2. (発展) 再帰関数</a></h1>
+<pre><code class="language-py"># エラトステネスの篩を用いて最大公約数を求める
+def gcd(x, y):
+    if x == 0:
+        return y
+    else:
+        return gcd(y % x, x)
+
+# 三興演算子を使ってもいいですね
+# def gcd(x, y):
+#   return y if x == 0 else gcd(y % x, x)
+
+print(gcd(12, 18))  # 6
+
+
+# ちなみに、最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」で求まります
+def lcm(x, y):
+    if x == 0 and y == 0:
+        return 0
+    return x * y // gcd(x, y)
+
+print(lcm(12, 18))  # 36
+</code></pre>
+<h1 id="3-外部ライブラリ-math-を使ってみよう"><a class="header" href="#3-外部ライブラリ-math-を使ってみよう">3. 外部ライブラリ <code>math</code> を使ってみよう</a></h1>
+<pre><code class="language-py">import math
+
+print(&quot;pi = {:.4}&quot;.format(math.pi))  # 3.142
+print(math.log(32, 2))  # 5.0
+</code></pre>
+<p>外部ライブラリ <code>math</code> を使えば、円の面積を計算できます。</p>
+<pre><code class="language-py">import math
+
+
+def calc_circle_area(radius):
+    # * よりも ** の方が先に評価されます。
+    # return math.pi * (radius ** 2) のように明示的に計算順序を書くこともできます。
+    return math.pi * radius ** 2
+
+print(calc_circle_area(10))  # 314.1592653589793
+</code></pre>
+<h1 id="4-超発展-web-scraping"><a class="header" href="#4-超発展-web-scraping">4. (超発展) Web Scraping</a></h1>
+<h2 id="4-1-beautifulsoup-で-web-scraping"><a class="header" href="#4-1-beautifulsoup-で-web-scraping">4-1. <code>BeautifulSoup</code> で Web Scraping</a></h2>
+<p>Static Hosting なサイトに対しては、<code>BeautifulSoup</code> のみで Web Scraping できます。
+(なお、JavaScript Hosting なサイトに対しては、<code>selenium</code> + <code>BeautifulSoup</code> で Web Scraping できます。)</p>
+<pre><code class="language-py"># https://oxylabs.io/blog/python-web-scraping
+import requests
+import sys
+from bs4 import BeautifulSoup
+
+url = &quot;https://ch-random.net/authors/&quot;
+response = requests.get(url)
+soup = BeautifulSoup(response.text, &quot;html.parser&quot;)
+
+# https://realpython.com/beautiful-soup-web-scraper-python/
+# 以下は等価
+# - soup.find(&quot;img&quot;, class_=&quot;my-portrait&quot;)
+# - soup.select(&quot;img.my-portrait&quot;)
+
+footers = soup.select(&quot;div.projects-container&quot;)
+
+# 生成したいもの
+# const authorsDict = {
+#   yomog: {
+#     year: 2,
+#     name: &quot;よもぎ&quot;,
+#     icon: &quot;https://ch-random.net/authors/yomog/avatar_hue523f5c0a45e10cf0e33f8e085b52548_162276_250x250_fill_lanczos_center_2.png&quot;,
+#   },
+#   // ...
+# };
+print(&quot;const authorsDict = {&quot;)
+
+for (i, footer) in enumerate(footers[1:4]):
+    print(f&quot;  // {i + 2} 回生&quot;, file=sys.stderr)
+    h4s = footer.select(&quot;h4&quot;)
+    imgs = footer.select(&quot;img.my-portrait&quot;)
+    for j in range(len(h4s)):
+        # https://stackoverflow.com/questions/55385113/how-do-i-scrape-image-src-in-beautifulsoup
+        src = str(imgs[j].get(&quot;src&quot;))
+        author = src.split(&quot;/&quot;)[2]
+        print(f&quot;  {author}: {{&quot;)
+        print(f'    year: {i + 2},')
+        print(f'    name: &quot;{h4s[j].text}&quot;,')
+        print(f'    icon: &quot;https://ch-random.net{src}&quot;,')
+        print(&quot;  },&quot;)
+
+print(&quot;};&quot;)
+</code></pre>
+<h1 id="課題"><a class="header" href="#課題">課題</a></h1>
+<p>コピペ AC 可。</p>
+<ul>
+<li>(5) def <a href="https://atcoder.jp/contests/abs/tasks/abc083_b">ABC083B - Some Sums</a></li>
+<li>(6) sort <a href="https://atcoder.jp/contests/abs/tasks/abc088_b">ABC088B - Card Game for Two</a></li>
+</ul>
+<h1 id="課題の解答"><a class="header" href="#課題の解答">課題の解答</a></h1>
+<ul>
+<li>(5) def <a href="https://atcoder.jp/contests/abs/tasks/abc083_b">ABC083B - Some Sums</a></li>
+</ul>
+<ol>
+<li>関数を使わないで書いた場合。</li>
+</ol>
+<pre><code class="language-py">n, a, b = map(int, input().split())
+ans = 0
+for x in range(1, n + 1):
+    sm = 0
+    x2 = x
+    while x2 &gt; 0:
+        sm += x2 % 10
+        x2 //= 10
+    if a &lt;= sm &lt;= b:
+        ans += x
+print(ans)
+</code></pre>
+<ol start="2">
+<li>関数を define (定義) して解いた場合。見やすくなりましたね。</li>
+</ol>
+<pre><code class="language-py">def calc_sum(x):
+    res = 0
+    while x &gt; 0:
+        res += x % 10
+        x //= 10
+    return res
+
+n, a, b = map(int, input().split())
+ans = 0
+for x in range(1, n + 1):
+    sm = calc_sum(x)
+    if a &lt;= sm &lt;= b:
+        ans += x
+print(ans)
+</code></pre>
+<ul>
+<li>(6) sort <a href="https://atcoder.jp/contests/abs/tasks/abc088_b">ABC088B - Card Game for Two</a></li>
+</ul>
+<ol>
+<li>昇順ソートを用いた解法</li>
+</ol>
+<pre><code class="language-py">n = int(input())
+a = list(map(int, input().split()))
+a.sort()
+ans = 0
+for i in range(n):
+    if i % 2 == n % 2:
+        ans -= a[i]
+    else:
+        ans += a[i]
+print(ans)
+</code></pre>
+<ol start="2">
+<li>降順ソートを用いた解法</li>
+</ol>
+<pre><code class="language-py">n = int(input())
+a = list(map(int, input().split()))
+a.sort(reverse=True)
+
+ans = 0
+for i in range(n):
+    if i % 2 == 0:
+        ans += a[i]
+    else:
+        ans -= a[i]
+# 直前 6 行と等価
+# ans = sum(a[::2]) - sum(a[1::2])
+
+print(ans)
+</code></pre>
+<h1 id="次回-第-5-回-へのリンク"><a class="header" href="#次回-第-5-回-へのリンク">次回 (第 5 回) へのリンク</a></h1>
+<p>{{&lt; post 442 &gt;}}</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="session-3.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="session-5.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="session-3.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="session-5.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

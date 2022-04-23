@@ -1,0 +1,1256 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>python_2022</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Python勉強会2022</li><li class="chapter-item expanded "><a href="session-1.html"><strong aria-hidden="true">1.</strong> session-1</a></li><li class="chapter-item expanded "><a href="session-2.html"><strong aria-hidden="true">2.</strong> session-2</a></li><li class="chapter-item expanded "><a href="session-3.html"><strong aria-hidden="true">3.</strong> session-3</a></li><li class="chapter-item expanded "><a href="session-4.html"><strong aria-hidden="true">4.</strong> session-4</a></li><li class="chapter-item expanded "><a href="session-5.html"><strong aria-hidden="true">5.</strong> session-5</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">python_2022</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <ul>
+<li>オフィスアワー<br />
+随時。授業に関するあるいは関しない質問は、お気軽に discord の #新入生向け勉強会 や DM まで。</li>
+<li>授業目標<br />
+プログラミングの全貌を駆け足で見ていきます。<br />
+一度目を通すことで、将来プログラムを実装したくなった際に、<strong>適切な検索ワードで検索</strong>できるようになることが一つ目の目標です。すなわち、適した機能を選択できる・望んだコード実装できるレベルは目指していません。プログラミング能力は、プログラミングの経験年数や、合作回数と相関関係があります。すなわち、実際にコーディングしないとプログラミング能力は向上せず、かつ、合作を通じて他人のコードを読むと視野が広がります。<br />
+もう一つの目標は、ABC (AtCoder Beginner Contest) の A,B 問題を安定して解けるようになることです。</li>
+<li>要件<br />
+もし WSL を入れるなら、一定程度の PC メモリ (8 GB あれば十分のはず)。</li>
+<li>期間<br />
+予定は未定ですが、2022 年 4 月 29 日辺りから開講する予定です。1 週間に 2 日勉強会を行い、全 5 回を 2 週間と端数 1 日で終わらせます。</li>
+<li>課題<br />
+課題提出は必須です。提出場所は AtCoder です。
+提出状況は AtCoder Problems で Private バチャを建てて管理します。
+なお、解答が用意されているので、コピペ AC してもよいです。<br />
+余裕があれば、All Submisssion ページで他の人の解答も見てみてください。他人のコードを沢山見ることは、プログラミング学習に必須の要素なので。</li>
+<li>備考
+<ul>
+<li>ぺんぎん先輩作の <a href="https://ch-random.net/project/study_python/">Python 勉強会</a> から競プロ要素を除去したり追加したりし、F 文字列や Web Scraping などの実用的な要素を追加して再構成したものです。ぺんぎん先輩に感謝。</li>
+<li>サブタイトルに新入生向けとありますが、contentful に仕上がった自信があるので $n$ 回生 ($n \ge 2$) もぜひお読みください。</li>
+</ul>
+</li>
+<li>★ 改善案を募集しています！<br />
+改善案などあれば、お気軽に新 2 回生よもぎの discord/slack まで。</li>
+<li>License<br />
+ライセンスは CC0 です。すなわち、このプロジェクト内のコードや文章などは、引用元を記載せずに転載して構いません。</li>
+<li>参考文献
+<ul>
+<li><a href="https://qiita.com/drken/items/fd4e5e3630d0f5859067">AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～</a>, drken</li>
+<li><a href="https://delta114514.hatenablog.jp/entry/2018/03/15/014555">AtCoder に登録したら解くべき精選過去問 10 問 を Python で解いてみた</a>, delta114514</li>
+<li><a href="https://www.kaggle.com/learn/python">Learn Python Tutorials | Kaggle</a>, kaggle courses</li>
+<li><a href="https://qiita.com/baby-degu/items/05cf809d4d992923020d">朝飯前に学べる！便利な Python のヒント 100 選【前編】</a>, Fatos Morina 著, baby-degu 訳</li>
+<li><a href="https://qiita.com/baby-degu/items/532bea7be058c35f61a8">朝飯前に学べる！便利な Python のヒント 100 選【後編】</a>, Fatos Morina 著, baby-degu 訳</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第-1-回-python-勉強会-2022--vscode-インストールwsl-構築"><a class="header" href="#第-1-回-python-勉強会-2022--vscode-インストールwsl-構築">第 1 回 Python 勉強会 2022 | VSCode インストール、WSL 構築</a></h1>
+<h1 id="1-予習事項"><a class="header" href="#1-予習事項">1. 予習事項</a></h1>
+<p>「3. VSCode インストール」をやっておいてください。</p>
+<h1 id="2-スクショの取り方"><a class="header" href="#2-スクショの取り方">2. スクショの取り方</a></h1>
+<p>この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。</p>
+<ul>
+<li>Snipping Tool<br />
+<code>win + s</code> で検索窓を出して snipping tool と入力すれば見つかるはずです。
+スクショを .png 形式で保存できます。</li>
+<li><code>win + shift + s</code><br />
+スクショ区域を指定して、スクショした画像をクリップボードに送ります。<br />
+クリップボードに送られた画像は、discord や各種お絵かきソフト (クリスタ、GIMP、イラレ) 上で <code>ctrl + v</code> を入力することで貼り付けできます。</li>
+</ul>
+<h1 id="3-vscode-インストール"><a class="header" href="#3-vscode-インストール">3. VSCode インストール</a></h1>
+<p>Windows 向けの説明しか行いません。すいませんが、Mac ユーザーの方々は各自で環境を構築してください。
+まず、<a href="https://code.visualstudio.com/download">VSCode 公式のダウンロードページ</a> から DL して、インストールしてください。
+Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。</p>
+<h1 id="4-任意-wsl-を有効化しよう"><a class="header" href="#4-任意-wsl-を有効化しよう">4. (任意) WSL を有効化しよう</a></h1>
+<p>ちなみに、WSL は Windows Subsystem for Linux の略です。</p>
+<h2 id="4-1-なぜ-wsl-が必要か"><a class="header" href="#4-1-なぜ-wsl-が必要か">4-1. なぜ WSL が必要か</a></h2>
+<ul>
+<li>Ubuntu には、非公式リポジトリ <a href="https://launchpad.net/ubuntu/+ppas">PPA</a> があり、自作 CLI ツールを PPA に登録すると、<code>add-apt-repository</code> コマンドで、そのリポジトリをマシンに登録できるので、他のユーザーが <code>apt</code> コマンドでそのプログラムを使えるようになります。</li>
+<li>対して Windows では、自作 CLI ツールを公開する仕組みがないため、技術が発展していません。</li>
+</ul>
+<p>従って、Ubuntu 上の便利な CLI ツールを使うために、WSL が必要です。</p>
+<h2 id="4-2-wsl-を入れよう"><a class="header" href="#4-2-wsl-を入れよう">4-2. WSL を入れよう</a></h2>
+<p>本勉強会では Python・C++ を WSL にインストールします。<br />
+<a href="https://qiita.com/AokabiC/items/e9312856f588dd9303ed">Visual Studio Code で競プロ環境構築(導入編)</a> をブラウザ上の別タブで開いてください。<br />
+一応、実行すべき行為を置いておきます。</p>
+<ol>
+<li>デフォルトの Windows では、スタートアップ時に WSL が起動しません。<br />
+以下の A, B いずれかを行い、WSL を有効化します。<br />
+A. (GUI で有効化) <a href="https://qiita.com/Aruneko/items/c79810b0b015bebf30bb">Windows Subsystem for Linux (WSL1) をインストールしてみよう！</a> を読んでください。<br />
+B. (CUI で有効化) Windows PowerShell にて、WSL を有効化しましょう。<br />
+この設定により NoxPlayer などのエミュレーターが動かなくなることがありますが、元の設定に戻せば、また動かせます。</li>
+</ol>
+<pre><code class="language-sh"># Windows PowerShell にて、以下を実行。ただし、先頭の $ は入力しないでください。
+# 今回の例でいえば、「Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux」のみを入力して Enter してください。
+$ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+</code></pre>
+<ol start="2">
+<li>WSL を起動させるために、PC を再起動。</li>
+<li>Microsoft Store で Ubuntu 22.04 LTS (2022-04-21 リリース) を入れる (「ubuntu」で検索すると、下の方に出てきます)。
+<ul>
+<li>LTS (Long Time Support, 長期サポート) は「安定版」の意です。</li>
+<li>Ubuntu 22.04 LTS のバージョン違いとして Ubuntu, Ubuntu 20.04 LTS がありますが、ほぼ同じように扱えますので、すでに Ubuntu を入れていた方は新規にインストールする必要はありません。</li>
+</ul>
+</li>
+<li>Ubuntu 22.04 LTS を起動し以下を実行。</li>
+</ol>
+<pre><code class="language-sh"># コマンドの先頭に sudo (スードゥー) を付けると、ルート権限でコマンドを実行できます。
+$ sudo sed -i -e 's%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g' /etc/apt/sources.list
+</code></pre>
+<pre><code class="language-sh">$ sudo apt update
+$ sudo apt -y upgrade
+</code></pre>
+<pre><code class="language-sh">$ sudo apt install -y software-properties-common
+$ sudo add-apt-repository universe
+$ sudo apt install -y build-essential gdb python3 flake8 pkg-config
+</code></pre>
+<pre><code class="language-sh">$ sudo apt update
+$ sudo apt install -y python3-pip
+# Linter の black をインストール
+$ sudo pip install autopep8
+# Formatter の black をインストール
+$ sudo pip3 install black
+
+# (参考) インストール済みパッケージのアップデートを行うには、
+# --upgrade あるいは -U を付けます。
+# $ sudo pip install --upgrade autopep8
+# $ sudo pip3 install --upgrade black
+</code></pre>
+<h1 id="5-余談-プログラミング用フォルダは--下に置くといいよという話"><a class="header" href="#5-余談-プログラミング用フォルダは--下に置くといいよという話">5. (余談) プログラミング用フォルダは <code>~</code> 下に置くといいよ、という話</a></h1>
+<p>(「(任意) WSL を有効化しよう」をやってくださった方向けです。)<br />
+WSL を入れ終わった方は、エクスプローラーを開き、パンくずリストが書かれた窓に <code>\\wsl$\Ubuntu-20.04\home</code> と打って Enter を押してください。
+<code>YOUR_NAME</code> (YOUR_NAME は自分の入力した名前) というフォルダがあるはずです。
+(以下、<code>\\wsl$\Ubuntu-20.04\home\YOUR_NAME</code> を <code>~</code> と略記します。)<br />
+実は、<code>Remote-WSL</code> (VSCode の拡張機能) を使う場合は、 <code>C:\</code> や <code>D:\</code> に作業フォルダを置くより、<code>~</code> 以下に作業フォルダを置いた方が、Windows と Ubuntu 間のシステムのやり取りがないため、ファイル読み書きの動作が速いです。<br />
+具体的に書くと、 <code>~/compro</code> というフォルダを <code>Remote-WSL</code> で開くと、比較的ファイル読み書きの動作が軽い、ということです。<br />
+ちなみに、compro というのは競プロ (Competitive Programming) の意です。</p>
+<ul>
+<li>参考資料 <a href="https://www.orzs.tech/how-to-solve-the-problem-that-file-operations-such-as-git-are-heavy-with-wsl2/">WSL2 で Git などのファイル操作が重い問題を解決した方法</a></li>
+</ul>
+<h1 id="6-cd-ls-コマンドを知っておこう"><a class="header" href="#6-cd-ls-コマンドを知っておこう">6. <code>cd</code>, <code>ls</code> コマンドを知っておこう</a></h1>
+<p>Ubuntu を使うにあたって必須のコマンドが <code>cd</code>, <code>ls</code> コマンドです。機能は下票の通りです。<br />
+(下記表で、「ディレクトリ」は「フォルダ」と同義です。)</p>
+<table><thead><tr><th>コマンド名</th><th>コマンド名の由来</th><th>機能</th><th>使い方</th></tr></thead><tbody>
+<tr><td>cd</td><td>change directory</td><td>カレントディレクトリの変更</td><td><code>cd PATH/TO/YOUR/FOLDER</code></td></tr>
+<tr><td>ls</td><td>list segments</td><td>カレントディレクトリ配下のファイル一覧を表示</td><td><code>ls</code></td></tr>
+</tbody></table>
+<ol>
+<li><code>cd</code> の引数 (ひきすう) に絶対パスを指定して移動<br />
+絶対パスとは、Windows のエクスプローラーのパンくずリストの窓をクリックした時に現れるパスです。</li>
+</ol>
+<pre><code class="language-sh"># WSL 20.04 LTS にて以下を実行。
+$ cd ~  # フォルダ ~ に移動
+# ls に対する出力と、エクスプローラーで開いた \\wsl$\Ubuntu-20.04\home\YOUR_NAME に見えているフォルダ内とを見比べて、
+# 正常に cd 出来ているかを確認してみましょう。。
+$ ls
+</code></pre>
+<pre><code class="language-sh">$ cd /mnt/c  # フォルダ /mnt/c に移動
+$ ls
+</code></pre>
+<ol start="2">
+<li><code>cd</code> の引数に相対パスを指定して移動<br />
+相対パスとは、基準となるフォルダからの差分のパスです。</li>
+</ol>
+<table><thead><tr><th>カレントディレクトリが (絶対パス) のとき (絶対パス) は</th><th>(相対パス)</th></tr></thead><tbody>
+<tr><td>カレントディレクトリが <code>~/compro</code> のとき <code>~/compro/src/test.py</code> は</td><td><code>src/test.py</code></td></tr>
+<tr><td>カレントディレクトリが <code>~</code> のとき <code>~/compro</code> は</td><td><code>compro</code></td></tr>
+<tr><td>カレントディレクトリが <code>~</code> のとき <code>~/compro/src</code> は</td><td><code>compro/src</code></td></tr>
+<tr><td>カレントディレクトリが <code>~/compro</code> のとき <code>~</code> は</td><td><code>..</code></td></tr>
+<tr><td>カレントディレクトリが <code>~/compro</code> のとき <code>~/.bashrc</code> は</td><td><code>../.bashrc</code></td></tr>
+<tr><td>カレントディレクトリが <code>~/compro/src</code> のとき <code>~</code> は</td><td><code>../..</code></td></tr>
+</tbody></table>
+<pre><code class="language-sh"># WSL 20.04 LTS にて以下を実行。
+$ cd ..  # 親フォルダへ
+$ ls
+</code></pre>
+<pre><code class="language-sh">$ cd YOUR_FOLDER  # 子フォルダ YOUR_FOLDER に移動
+$ ls
+</code></pre>
+<h1 id="7-勉強会用フォルダにて各種準備をしよう"><a class="header" href="#7-勉強会用フォルダにて各種準備をしよう">7. 勉強会用フォルダにて各種準備をしよう</a></h1>
+<h2 id="7-1-py-ファイルを準備しよう"><a class="header" href="#7-1-py-ファイルを準備しよう">7-1. py ファイルを準備しよう</a></h2>
+<ol>
+<li><code>D:\YOUR_FOLDER</code> や <code>~/YOUR_FOLDER</code> のいずれかの場所に、勉強会用フォルダを作成してください。(以下、このフォルダを <code>YOUR_FOLDER</code> として統一して言及する。)</li>
+<li>エクスプローラー上で <code>YOUR_FOLDER/main.py</code> (ファイル名 (つまり <code>main</code> の部分) は自由でいいです) を作成。</li>
+</ol>
+<h2 id="7-2-vscode-で-remote-wsl-で-your_folder-を開こう"><a class="header" href="#7-2-vscode-で-remote-wsl-で-your_folder-を開こう">7-2. VSCode で <code>Remote-WSL</code> で <code>YOUR_FOLDER</code> を開こう</a></h2>
+<ol>
+<li>VSCode を立ち上げる。</li>
+<li><code>フォルダを開く</code> を押し、フォルダ <code>YOUR_FOLDER</code> を選択して開く。</li>
+<li>VSCode の下リボンの一番左にある、ルーン文字感の漂う ${}_&gt;{}^&lt;$ マークを押し、<code>Reopen Folder in WSL</code> を選択。</li>
+</ol>
+<h1 id="8-四則演算"><a class="header" href="#8-四則演算">8. 四則演算</a></h1>
+<p>「整数・小数の四則計算 (+ - * ** / // %) (int float)」をしてみましょう。</p>
+<table><thead><tr><th>演算子</th><th>機能</th><th>実際の使い方</th></tr></thead><tbody>
+<tr><td>+</td><td>加算</td><td>print(1 + 2)</td></tr>
+<tr><td>-</td><td>減算</td><td>print(2 - 1)</td></tr>
+<tr><td>*</td><td>乗算</td><td>print(2 * 3)</td></tr>
+<tr><td>**</td><td>累乗</td><td>print(6 ** 10)</td></tr>
+<tr><td>/</td><td>除算</td><td>print(2 / 3)</td></tr>
+<tr><td>//</td><td>除算の商、切り捨て</td><td>print(31 // 7)</td></tr>
+<tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
+</tbody></table>
+<p>main.py に以下を記載。</p>
+<pre><code class="language-py">print(1 + 2)  # 3
+print(2 - 1)  # 1
+print(2 * 3)  # 6
+print(6 ** 10)  # 60466176
+print(2 / 3)  #  0.6666666666666666
+print(31 // 7)  # 4
+print(31 % 7)  # 3
+</code></pre>
+<p>下記コマンドで main.py を実行可能です。</p>
+<pre><code class="language-sh"># VSCode 付属のターミナルにて以下を実行。
+$ python3 main.py
+</code></pre>
+<h1 id="9-vscode-に拡張機能を入れよう"><a class="header" href="#9-vscode-に拡張機能を入れよう">9. VSCode に拡張機能を入れよう</a></h1>
+<ul>
+<li>LOCAL に入れるべき
+<ul>
+<li><code>Japanese Language Pack for Visual Studio Code</code></li>
+<li><code>Remote - Containers</code></li>
+</ul>
+</li>
+<li>WSL:Ubuntu-20.04 に入れるべき
+<ul>
+<li><code>Python</code><br />
+<code>Pylance</code> (Linter) が入っています。</li>
+<li><code>Python Indent</code><br />
+.py ファイルを綺麗にインデントできます。</li>
+<li><code>Highlight Trailing White Spaces</code></li>
+</ul>
+</li>
+</ul>
+<h1 id="10-atcoder-に登録してみよう"><a class="header" href="#10-atcoder-に登録してみよう">10. AtCoder に登録してみよう</a></h1>
+<p>AtCoder は毎週土曜 21:00-22:40 に競技プログラミングのコンテストを行っているサイトです。
+(競技プログラミングとは何かについて知りたい方は、<a href="https://ch-random.net/post/246/">競プロのすすめ</a> を参照してください。)</p>
+<ol>
+<li><a href="https://atcoder.jp/register">AtCoder の Register ページ</a> から新規登録してください。</li>
+<li>また、AtCoder 上の問題一覧を見れるサイト、<a href="https://kenkoooo.com/atcoder/#/table/">AtCoder Problems</a> (ちなみに fanmade のサイトです) をブックマークしておきましょう。</li>
+</ol>
+<h1 id="11-課題-0-を-ac-してみよう"><a class="header" href="#11-課題-0-を-ac-してみよう">11. 課題 0 を AC してみよう</a></h1>
+<p>コピペ AC してみましょう。</p>
+<pre><code class="language-py">a = int(input())
+b, c = map(int, input().split())
+s = input()
+print(a + b + c, s)
+</code></pre>
+<h1 id="12-各種-vscode-の機能の紹介"><a class="header" href="#12-各種-vscode-の機能の紹介">12. 各種 VSCode の機能の紹介</a></h1>
+<h2 id="12-1-設定を弄ってみよう"><a class="header" href="#12-1-設定を弄ってみよう">12-1. 設定を弄ってみよう</a></h2>
+<p>設定ファイル <code>settings.json</code> に到達する手順は以下の通りです。</p>
+<ol>
+<li><code>左リボンの一番下にある歯車アイコン</code> &gt; <code>設定</code> を押すと設定が開きます。<br />
+(ちなみに、コマンド <code>ctrl + ,</code> でも設定画面が開くことができます。)</li>
+<li>右上の小さなアイコン群のうち、ホバーで見れるテキストが <code>設定 (JSON) を開く</code> のアイコンを押すと到達できます。</li>
+</ol>
+<ul>
+<li><a href="https://gist.github.com/moyomogi/e6c7db60357652bd37ed0a5c2559a7a6">よもぎの settings.json</a><br />
+良ければコピペしてください！　元々何か書かれていた場合は、元の状態に戻したくなるかもしれないので、元データを他の場所に一時退避しておいてください。</li>
+</ul>
+<h2 id="12-2-スニペットを使ってみよう"><a class="header" href="#12-2-スニペットを使ってみよう">12-2. スニペットを使ってみよう</a></h2>
+<p>python スニペットファイル <code>python.json</code> に到達する手順は以下の通りです。</p>
+<ol>
+<li><code>左リボンの一番下にある歯車アイコン</code> &gt; <code>ユーザースニペット</code> を押すと VSCode 内部にウィンドウが開きます。</li>
+<li><code>python.json (Python)</code> を選択すると到達できます。</li>
+</ol>
+<ul>
+<li><a href="https://gist.github.com/moyomogi/1c50e1410dae91df7094a46a1cf8e961">よもぎの python.json</a><br />
+良ければコピペしてください！</li>
+</ul>
+<h2 id="12-3-発展-マルチカーソルを使ってみよう"><a class="header" href="#12-3-発展-マルチカーソルを使ってみよう">12-3. (発展) マルチカーソルを使ってみよう</a></h2>
+<p>Home/End キー (行頭/行末に移動) 程度で満足してはなりません。マルチカーソルを使うと、同時に複数個所の編集が可能です。
+詳しくは、<a href="https://qiita.com/TomK/items/3b1f5be07d708d7bd6c5">VSCode のマルチカーソル練習帳</a> が実際の編集映像付きで分かりやすいので読んでみてください。</p>
+<h1 id="15-補遺"><a class="header" href="#15-補遺">15. 補遺</a></h1>
+<ul>
+<li>大学のプログラミングの授業では C 言語が使われるはずなので、C および C++ を実行できる環境も構築しています。</li>
+<li>他人のコードを読むことがプログラミング学習に最適な手段です。すなわち、プログラミングを効率よく学ぶには、AtCoder などにて他人のコードを日常的に見ることが必要です。(再掲)</li>
+<li>なお、課題は <a href="https://qiita.com/drken/items/fd4e5e3630d0f5859067">AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～</a> を用います。(再掲)</li>
+</ul>
+<h1 id="課題"><a class="header" href="#課題">課題</a></h1>
+<ul>
+<li>(0) <a href="https://atcoder.jp/contests/abs/tasks/practice_1">PracticeA - Welcome to AtCoder</a></li>
+</ul>
+<h1 id="課題の解答"><a class="header" href="#課題の解答">課題の解答</a></h1>
+<ul>
+<li>(0) 掲載済みのため略。</li>
+</ul>
+<h1 id="次回-第-2-回-へのリンク"><a class="header" href="#次回-第-2-回-へのリンク">次回 (第 2 回) へのリンク</a></h1>
+<p>{{&lt; post 439 &gt;}}</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第-2-回-python-勉強会-2022--python-組み込み関数条件分岐print-テク"><a class="header" href="#第-2-回-python-勉強会-2022--python-組み込み関数条件分岐print-テク">第 2 回 Python 勉強会 2022 | Python 組み込み関数、条件分岐、print テク</a></h1>
+<h1 id="0-復習事項"><a class="header" href="#0-復習事項">0. 復習事項</a></h1>
+<p>整数・小数の四則計算 (+ - * ** / // %) (再掲)</p>
+<table><thead><tr><th>演算子</th><th>機能</th><th>実際の使い方</th></tr></thead><tbody>
+<tr><td>+</td><td>加算</td><td>print(1 + 2)</td></tr>
+<tr><td>-</td><td>減算</td><td>print(2 - 1)</td></tr>
+<tr><td>*</td><td>乗算</td><td>print(2 * 3)</td></tr>
+<tr><td>**</td><td>累乗</td><td>print(6 ** 10)</td></tr>
+<tr><td>/</td><td>除算</td><td>print(2 / 3)</td></tr>
+<tr><td>//</td><td>除算の商、切り捨て</td><td>print(31 // 7)</td></tr>
+<tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
+</tbody></table>
+<h1 id="1-pylance-linter-formatter-は入っていますか"><a class="header" href="#1-pylance-linter-formatter-は入っていますか">1. Pylance (Linter), Formatter は入っていますか？</a></h1>
+<p>VSCode を入れてくれた人なら、拡張機能 <code>Python</code> の中に Pylance (Linter) が入っています。Formatter は black がおすすめです。<br />
+(Linter が入っているかを確認しよう。)<br />
+(Formatter が入っているかを確認しよう。)</p>
+<h1 id="2-発展-演算子の評価順序"><a class="header" href="#2-発展-演算子の評価順序">2. (発展) 演算子の評価順序</a></h1>
+<p>ちなみに、Python では演算子の評価順序は以下の通りです。</p>
+<table><thead><tr><th>Tier</th><th>演算子</th></tr></thead><tbody>
+<tr><td>1</td><td>()</td></tr>
+<tr><td>2</td><td>**</td></tr>
+<tr><td>3</td><td>*, /, //, %</td></tr>
+<tr><td>4</td><td>+, -</td></tr>
+<tr><td>5</td><td>&lt;, &lt;=, &gt;, &gt;=, ==, !=</td></tr>
+<tr><td>6</td><td>not</td></tr>
+<tr><td>7</td><td>and</td></tr>
+<tr><td>8</td><td>or</td></tr>
+</tbody></table>
+<pre><code class="language-py"># TODO: Tier に関するコードを書く
+</code></pre>
+<h1 id="3-文字列-str"><a class="header" href="#3-文字列-str">3. 文字列 (str)</a></h1>
+<p>&quot;xxx&quot; のように、&quot; (ダブルクオーテーション) に囲まれた型を<strong>文字列</strong> (<code>str</code>) といいます。<br />
+なお、ダブルクオーテーションで囲んでも、シングルクオーテーションで囲んでも構いません。<br />
+シングルクオーテーションは両手で入力しなければならないのに対し、ダブルクオーテーションは片手で入力できるため、よもぎはダブルクオーテーションで文字列を書いています。</p>
+<pre><code class="language-py">print(&quot;羽衣ララ&quot;)  # 羽衣ララ
+
+# 同じ結果となる
+print('羽衣ララ')  # 羽衣ララ
+</code></pre>
+<h1 id="4-変数に数値を代入する"><a class="header" href="#4-変数に数値を代入する">4. 変数に数値を代入する</a></h1>
+<pre><code class="language-py">x = 346
+print(x)  # 346
+x = 283
+print(x)  # 283
+</code></pre>
+<pre><code class="language-py"># 悲しいコード
+print(&quot;1 year =&quot;, 365, &quot;days&quot;)
+print(&quot;1 year =&quot;, 365 * 24, &quot;hours&quot;)
+print(&quot;1 year =&quot;, 365 * 24 * 60, &quot;minutes&quot;)
+print(&quot;1 year =&quot;, 365 * 24 * 60 * 60, &quot;seconds&quot;)
+
+# 嬉しいコード
+days = 365
+hours = days * 24
+minutes = hours * 60
+seconds = minutes * 60
+print(&quot;1 year =&quot;, days, &quot;days&quot;)
+print(&quot;1 year =&quot;, hours, &quot;hours&quot;)
+print(&quot;1 year =&quot;, minutes, &quot;minutes&quot;)
+print(&quot;1 year =&quot;, seconds, &quot;seconds&quot;)
+</code></pre>
+<h1 id="5-組み込み関数-max-min-abs"><a class="header" href="#5-組み込み関数-max-min-abs">5. 組み込み関数 <code>max</code>, <code>min</code>, <code>abs</code></a></h1>
+<p>Python では、これまで登場した <code>print</code> 以外にも、
+<code>max</code>, <code>min</code>, <code>abs</code> という組み込み関数が存在します。
+組み込み関数とは、関数を自分で定義 (関数は第 4 回で取り扱います。) せずとも、デフォルトで使える関数です。</p>
+<table><thead><tr><th>組み込み関数の関数名</th><th>返り値</th></tr></thead><tbody>
+<tr><td>max</td><td>引数 (ひきすう) を複数取り、最大値を返す</td></tr>
+<tr><td>min</td><td>引数を複数取り、最小値を返す</td></tr>
+<tr><td>abs</td><td>引数を 1 つ取り、絶対値を返す</td></tr>
+</tbody></table>
+<pre><code class="language-py">print(min(1, 2, 3))  # 1
+print(max(1, 2, 3))  # 3
+print(abs(32))  # 32
+print(abs(-32))  # 32
+print(float(10))  # 10.0
+</code></pre>
+<h1 id="6-文字列操作"><a class="header" href="#6-文字列操作">6. 文字列操作</a></h1>
+<p>デフォルトは <code>[0:n]</code>、つまり半開区間 $[0, n)$ です。(ただし $n := len(s)$ とした。)</p>
+<pre><code class="language-py">s = &quot;DeepLearning&quot;
+print(len(s))  # 12 (文字数)
+print(s[0])  # D (index は 0-indexed で指定します)
+print(s[-1])  # g (負の数なら、末尾からの文字数と解釈される)
+print(s[0:5])  # DeepL
+print(s[:5])  # DeepL (上の行と等価)
+print(s[-3:12])  # ing
+print(s[-3:])  # ing (上の行と等価)
+
+print(s[::5])  # Den (あまり使いませんが、3 番目の引数では step を指定できます。default は 1 です。)
+print(s[::-1])  # gninraeLpeeD (負の数も指定可能)
+
+print(&quot;Spam &quot; * 4)  # Spam Spam Spam Spam
+
+# 今回は 2 行しかないので \n で書いても良いが、文が長くなったときは &quot;&quot;&quot; で囲んで書くのが楽
+print(&quot;hello\nworld&quot;)  # 下と等価
+print(&quot;&quot;&quot;hello
+world&quot;&quot;&quot;)  # &quot;&quot;&quot; で囲むと、literally に改行を書ける
+
+# 文字列 (str) のメソッドに、count(s: str) があります
+print(&quot;aaabbc&quot;.count(&quot;a&quot;))  # 3
+print(&quot;aaabbc&quot;.count(&quot;b&quot;))  # 2
+print(&quot;aaabbc&quot;.count(&quot;c&quot;))  # 1
+</code></pre>
+<h1 id="7-条件分岐-if-elif-else"><a class="header" href="#7-条件分岐-if-elif-else">7. 条件分岐 (if, elif, else)</a></h1>
+<pre><code class="language-py">x = 765
+if x % 2 == 0:
+    print(x, &quot;は偶数&quot;)
+else:
+    print(x, &quot;は奇数&quot;)  # 765 は奇数
+</code></pre>
+<pre><code class="language-py">x = 346
+if x &gt; 500:
+    print(x, &quot;は 500 より大&quot;)
+elif x == 500:
+    print(x, &quot;は 500 と等しい&quot;)
+else:
+    print(x, &quot;は 500 より小&quot;)  # 346 は 500 より小
+</code></pre>
+<h1 id="8-発展-三項演算子"><a class="header" href="#8-発展-三項演算子">8. (発展) 三項演算子</a></h1>
+<p>三項演算子は <code>(True の時の値) if (条件) else (False の時の値)</code> と書きます。</p>
+<pre><code class="language-py">x = 765
+print(x, &quot;は偶数&quot; if x % 2 == 0 else &quot;は奇数&quot;)  # 765 は奇数
+</code></pre>
+<h1 id="9-発展-print-テク"><a class="header" href="#9-発展-print-テク">9. (発展) print テク</a></h1>
+<h2 id="9-1-f-文字列-f-strings"><a class="header" href="#9-1-f-文字列-f-strings">9-1. F 文字列 (F-Strings)</a></h2>
+<p>好みの問題ですが、コンマを使う代わりに F 文字列を用いて <code>print</code> することもできます。</p>
+<pre><code class="language-py">print(&quot;2 * 3:&quot;, 2 * 3)  # 2 * 3: 6
+print(f&quot;2 * 3: {2 * 3}&quot;)  # 2 * 3: 6
+
+# Python 3.6 以前では、str.format メソッドしかありませんでした
+print(&quot;2 * 3: {}&quot;.format(2 * 3))  # 2 * 3: 6
+</code></pre>
+<h3 id="9-1-1-書式指定"><a class="header" href="#9-1-1-書式指定">9-1-1. 書式指定</a></h3>
+<ul>
+<li>詳しくは、<a href="https://gammasoft.jp/blog/python-string-format/">Pythonの文字列フォーマット（formatメソッドの使い方）</a> を参照。</li>
+</ul>
+<pre><code class="language-py">print(&quot;pi = {:.4}&quot;.format(3.141592653589793238462643383279))  # 3.142
+</code></pre>
+<h2 id="9-2-エスケープ"><a class="header" href="#9-2-エスケープ">9-2. エスケープ</a></h2>
+<p>シングルクオーテーションを出力する際は、ダブルクォーテーションで囲み、
+ダブルクオーテーションを出力する際は、シングルクォーテーションで囲みます。</p>
+<pre><code class="language-py">print(&quot;シングルクオーテーションは ' です&quot;)  # シングルクオーテーションは ' です
+print('ダブルクオーテーションは &quot; です')  # ダブルクオーテーションは &quot; です
+
+# もちろん、以下のように出力することも可能ですが、ダサいです
+print('シングルクオーテーションは \' です')  # シングルクオーテーションは ' です
+print(&quot;ダブルクオーテーションは \&quot; です&quot;)  # ダブルクオーテーションは &quot; です
+</code></pre>
+<pre><code class="language-py">print(&quot;バックスラッシュは \\ です&quot;)  # バックスラッシュは \ です
+print(&quot;改行は\nです&quot;)
+# 改行は
+# です
+</code></pre>
+<h2 id="9-3-raw-文字列-raw-strings"><a class="header" href="#9-3-raw-文字列-raw-strings">9-3. Raw 文字列 (Raw Strings)</a></h2>
+<p>制御文字 (\, \n) をそのまま出力。</p>
+<pre><code class="language-py">print(&quot;a\\b\nA\\B&quot;)
+# a\b
+# A\B
+print(r&quot;a\\b\nA\\B&quot;) # a\\b\nA\\B
+</code></pre>
+<h2 id="9-4-sep-end-に値を入れてみよう"><a class="header" href="#9-4-sep-end-に値を入れてみよう">9-4. sep, end に値を入れてみよう</a></h2>
+<pre><code class="language-py"># default は sep=&quot; &quot;
+print(1, 2, 3, sep=&quot; &lt; &quot;)  # 1 &lt; 2 &lt; 3
+# default は end=&quot;\n&quot; (\n は改行を意味する制御文字)
+print(&quot;No line break.&quot;, end=&quot;&quot;)  # No line break. (改行なし)
+</code></pre>
+<h1 id="課題-1"><a class="header" href="#課題-1">課題</a></h1>
+<p>本講座の課題を独力で解くのは難しいです。<br />
+そのため、付属の解答を読んで、どのような仕組みで動いているか理解する (debug をして、変数がどのように変わるかを見るなど) だけで十分です。<br />
+ただし、コピペ AC はしておいてください。</p>
+<ul>
+<li>(1) 条件分岐 (if, else) <a href="https://atcoder.jp/contests/abs/tasks/abc086_a">ABC086A - Product</a></li>
+</ul>
+<h1 id="課題の解答-1"><a class="header" href="#課題の解答-1">課題の解答</a></h1>
+<ul>
+<li>(1) 条件分岐 (if, else) <a href="https://atcoder.jp/contests/abs/tasks/abc086_a">ABC086A - Product</a></li>
+</ul>
+<pre><code class="language-py">a, b = map(int, input().split())
+if a * b % 2 == 0:
+    print(&quot;Even&quot;)
+else:
+    print(&quot;Odd&quot;)
+</code></pre>
+<h1 id="次回-第-3-回-へのリンク"><a class="header" href="#次回-第-3-回-へのリンク">次回 (第 3 回) へのリンク</a></h1>
+<p>{{&lt; post 440 &gt;}}</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第-3-回-python-勉強会-2022--型配列-listループ-for-while"><a class="header" href="#第-3-回-python-勉強会-2022--型配列-listループ-for-while">第 3 回 Python 勉強会 2022 | 型、配列 (list)、ループ (for, while)</a></h1>
+<h1 id="0-予習事項"><a class="header" href="#0-予習事項">0. 予習事項</a></h1>
+<p>「1. 型とは？」を読んでおいてください。(TODO: 予習をするのは面倒では？)</p>
+<h1 id="1-型とは"><a class="header" href="#1-型とは">1. 型とは？</a></h1>
+<ul>
+<li><code>bool</code> 型<br />
+if の中に入れるやつで、<code>True</code> (=1) と <code>False</code> (=0) の二値しか取りません。</li>
+<li><code>int</code> 型<br />
+整数。ちなみに、C++ と異なり何桁でも無限に取れます (多倍長整数と言います)。</li>
+<li><code>float</code> 型<br />
+小数。</li>
+<li><code>str</code> 型<br />
+文字列。<code>str</code> は string の略で、文字列の意。</li>
+</ul>
+<pre><code class="language-py">x = True
+print(x)  # True
+print(type(x))  # bool
+
+print(type(3.0))  # float?
+print(type(3))  # int
+print(3.0 == 3)  # True
+
+print(type(&quot;3&quot;))  # str
+print(&quot;3&quot; == 3)  # False (型が違います)
+
+print(True + True)  # 2 (True の実態は 1 です)
+</code></pre>
+<h1 id="2-配列-list"><a class="header" href="#2-配列-list">2. 配列 (list)</a></h1>
+<p>プログラミングで最も使われるデータ構造は <code>list</code> です。
+なお、<code>list</code> に付属の関数は表の通りです。
+さらに詳しくは、<a href="https://atmarkit.itmedia.co.jp/ait/articles/2012/25/news023.html">［解決！Python］リスト（配列）の使い方まとめ</a> を参照してください。</p>
+<table><thead><tr><th>メソッド名</th><th>説明</th><th>使い方 (リストの変数名が li のとき)</th></tr></thead><tbody>
+<tr><td>append(x)</td><td>末尾に x を追加</td><td>li.append(6)</td></tr>
+<tr><td>pop(i=-1)</td><td>i 番目の要素を削除</td><td>li.pop()とか li.pop(2)</td></tr>
+<tr><td>count(x)</td><td>出現数を数える</td><td>li.count(1)</td></tr>
+<tr><td>sort()</td><td>ソートする</td><td>li.sort()</td></tr>
+<tr><td>reverse()</td><td>逆順にする</td><td>li.reverse()</td></tr>
+</tbody></table>
+<pre><code class="language-py"># いちいち変数を作るのは面倒
+# num0 = 3
+# num1 = 1
+# num2 = 4
+# num3 = 1
+# num4 = 5
+
+# 配列 (list) にしましょう。配列とは、数個の変数を 1 つとしてもつもののことです。
+nums = [3, 1, 4, 1, 5]
+
+print(nums)  # [3, 1, 4, 1, 5]
+# 配列の前に * (アスタリスク) を付けると配列の中身を展開してくれます
+print(*nums)  # 3 1 4 1 5
+print(nums[0])  # 3
+</code></pre>
+<pre><code class="language-py">planets = [&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Malacandra&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;]
+print(planets.pop())  # Pluto
+print(planets)
+planets.index(&quot;Jupiter&quot;)  # 4 (index を返す)
+</code></pre>
+<h2 id="2-1-発展-ソート関数-lisort-と-sortedli-の違い"><a class="header" href="#2-1-発展-ソート関数-lisort-と-sortedli-の違い">2-1. (発展) ソート関数 <code>li.sort()</code> と <code>sorted(li)</code> の違い</a></h2>
+<table><thead><tr><th>使い方</th><th>破壊的か？</th><th>出自</th></tr></thead><tbody>
+<tr><td>li.sort()</td><td>破壊的</td><td>型 list のメソッド</td></tr>
+<tr><td>sorted(li)</td><td>破壊的でない</td><td>組み込み関数</td></tr>
+</tbody></table>
+<p>ちなみに、どのプログラミング言語でも、デフォルトのソートは昇順ソートです。</p>
+<ul>
+<li>昇順ソート: [3, 1, 4, 1, 5] -&gt; [1, 1, 3, 4, 5] のように小さい順に並べる意。</li>
+<li>降順ソート: [3, 1, 4, 1, 5] -&gt; [5, 4, 3, 1, 1] のように大きい順に並べる意。</li>
+</ul>
+<pre><code class="language-py">nums = [3, 1, 4, 1, 5]
+nums.sort()  # nums にソート結果を代入
+print(nums)  # [1, 1, 3, 4, 5]
+</code></pre>
+<pre><code class="language-py">nums = [3, 1, 4, 1, 5]
+nums2 = sorted(nums)  # nums は不変
+print(nums2)  # [1, 1, 3, 4, 5]
+</code></pre>
+<h1 id="3-組み込み関数-range"><a class="header" href="#3-組み込み関数-range">3. 組み込み関数 <code>range</code></a></h1>
+<p>繰り返し実行機能である <code>for</code> 文を学習する前に、まずは組み込み関数 <code>range</code> を紹介します。</p>
+<table><thead><tr><th>使い方</th><th>対応する配列</th><th>対応する半開区間</th><th>具体例</th><th></th></tr></thead><tbody>
+<tr><td>range(stop)</td><td>[0, 1, ..., stop - 1]</td><td>$[0, stop)$</td><td>range(5) は、配列 [0, 1, 2, 3, 4] に対応。1 つ目の要素が 1 ではなく 0 (<code>0-indexed</code> という。) であることに注意。</td><td></td></tr>
+<tr><td>range(start, stop)</td><td>[start, start + 1, ..., stop - 1]</td><td>$[start, stop)$</td><td>range(2, 5) は、配列 [2, 3, 4] に対応。</td><td></td></tr>
+<tr><td>range(start, stop, step)</td><td>[start, start + step, ...]</td><td>$[start, stop)$ の step 個飛び</td><td>range(0, 5, 2) は、配列 [0, 2, 4] に対応。</td><td></td></tr>
+</tbody></table>
+<pre><code class="language-py"># list でラップしないと生の range が出力されます
+print(range(5))  # range(0, 5)
+
+# 以下では list でラップします
+print(list(range(5)))  # [0, 1, 2, 3, 4]
+print(list(range(2, 5)))  # [2, 3, 4]
+print(list(range(0, 5, 2)))  # [0, 2, 4]
+</code></pre>
+<h1 id="4-一定回数を繰り返す-for-while"><a class="header" href="#4-一定回数を繰り返す-for-while">4. 一定回数を繰り返す (<code>for</code>, <code>while</code>)</a></h1>
+<pre><code class="language-py"># 先述の通り range(5) は [0, 1, 2, 3, 4] の意です
+for i in range(5):
+    print(i)
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
+</code></pre>
+<pre><code class="language-py">nums = [3, 1, 4, 1, 5]
+for x in range(len(nums)):
+    print(x)
+# 3
+# 1
+# 4
+# 1
+# 5
+</code></pre>
+<pre><code class="language-py"># TODO: 「for x in a:」を使ったコードを書く
+</code></pre>
+<h2 id="4-1-for-で配列-list-を構築する構文"><a class="header" href="#4-1-for-で配列-list-を構築する構文">4-1. for で配列 (list) を構築する構文</a></h2>
+<pre><code class="language-py">nums = [3, 1, 4, 1, 5]
+# 配列 nums 内のそれぞれの要素を 2 乗する
+nums2 = [num ** 2 for num in nums]
+print(nums2)  # [9, 1, 16, 1, 25]
+</code></pre>
+<pre><code class="language-py">planets = [&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Malacandra&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;]
+planets2 = [planet[0] for planet in planets]
+print(planets2)  # ['M', 'V', 'E', 'M', 'J', 'S', 'U', 'N']
+</code></pre>
+<pre><code class="language-py">planets = [&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Malacandra&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;]
+planets2 = [
+  planet.upper() + '!'
+  for planet in planets
+  if len(planet) &lt; 6
+]
+print(planets2)  # ['VENUS!', 'EARTH!', 'MARS!']
+</code></pre>
+<pre><code class="language-py"># 平方数
+square_number = [n ** 2 for n in range(10)]
+print(square_number)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+</code></pre>
+<h1 id="5-配列-list-の要素の総和を求める-for"><a class="header" href="#5-配列-list-の要素の総和を求める-for">5. 配列 (list) の要素の総和を求める (for)</a></h1>
+<pre><code class="language-py">a = [1, 2, 3, 4]
+tot = 0
+for i in range(len(a)):
+    tot += a[i]
+    print(&quot;tot:&quot;, tot)
+    # tot: 1
+    # tot: 3
+    # tot: 6
+    # tot: 10
+print(tot)  # 10
+</code></pre>
+<p>別解として、組み込み関数 <code>sum</code> を使う方法もあります。
+組み込み関数とは、デフォルトで (つまり import せずに) 使用可能な、標準搭載の関数のことです。</p>
+<pre><code class="language-py">a = [1, 2, 3, 4]
+print(sum(a))  # 10
+</code></pre>
+<h1 id="6-while-文の説明をここに"><a class="header" href="#6-while-文の説明をここに">6. (while 文の説明をここに)</a></h1>
+<p>(工事中)</p>
+<h1 id="課題-2"><a class="header" href="#課題-2">課題</a></h1>
+<p>コピペ AC 可。</p>
+<ul>
+<li>(2) for <a href="https://atcoder.jp/contests/abs/tasks/abc081_a">C081A - Placing Marbles</a></li>
+<li>(3) for, while <a href="https://atcoder.jp/contests/abs/tasks/abc081_b">ABC081B - Shift only</a></li>
+<li>(4) for <a href="https://atcoder.jp/contests/abs/tasks/abc087_b">ABC087B - Coins</a></li>
+</ul>
+<h1 id="課題の解答-2"><a class="header" href="#課題の解答-2">課題の解答</a></h1>
+<ul>
+<li>(2) for <a href="https://atcoder.jp/contests/abs/tasks/abc081_a">C081A - Placing Marbles</a></li>
+</ul>
+<pre><code class="language-py">s = input()
+ans = 0
+for c in s:
+    if c == &quot;1&quot;:
+        ans += 1
+print(ans)
+</code></pre>
+<ul>
+<li>(3) for, while <a href="https://atcoder.jp/contests/abs/tasks/abc081_b">ABC081B - Shift only</a></li>
+</ul>
+<pre><code class="language-py">n = int(input())
+a = list(map(int, input().split()))
+ans = 0
+while True:
+    cnt = 0
+    for i in range(n):
+        if a[i] % 2 == 0:
+            cnt += 1
+    if cnt &lt; n:
+        break
+    for i in range(n):
+        a[i] //= 2
+    ans += 1
+print(ans)
+</code></pre>
+<ul>
+<li>(4) for <a href="https://atcoder.jp/contests/abs/tasks/abc087_b">ABC087B - Coins</a></li>
+</ul>
+<pre><code class="language-py">a = int(input())
+b = int(input())
+c = int(input())
+x = int(input())
+# 上 4 行と等価
+# a, b, c, x = [int(input()) for _ in range(4)]
+
+ans = 0
+for i in range(a + 1):
+    for j in range(b + 1):
+        for k in range(c + 1):
+            tot = 500 * i + 100 * j + 50 * k
+            if tot == x:
+                ans += 1
+print(ans)
+</code></pre>
+<h1 id="次回-第-4-回-へのリンク"><a class="header" href="#次回-第-4-回-へのリンク">次回 (第 4 回) へのリンク</a></h1>
+<p>{{&lt; post 441 &gt;}}</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリ"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリ">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ</a></h1>
+<h1 id="1-自分で関数を作ってみよう-def"><a class="header" href="#1-自分で関数を作ってみよう-def">1. 自分で関数を作ってみよう (def)</a></h1>
+<p>下記は、長方形の面積を求めるプログラムです。</p>
+<pre><code class="language-py">def calc_rect_area(width, height):
+    return width * height
+
+print(calc_rect_area(20, 30))  # 600
+</code></pre>
+<h2 id="1-1-デフォルト引数-ひきすう-を付けてみよう"><a class="header" href="#1-1-デフォルト引数-ひきすう-を付けてみよう">1-1. デフォルト引数 (ひきすう) を付けてみよう</a></h2>
+<pre><code class="language-py">def calc_rect_area(width=50, height=70):
+    return width * height
+
+print(calc_rect_area(20, 30))  # 600
+
+# print(calc_rect_area(20, 70)) として解釈される
+print(calc_rect_area(20))  # 1400
+
+# print(calc_rect_area(50, 70)) として解釈される
+print(calc_rect_area())  # 3500
+</code></pre>
+<h2 id="1-2-発展-lambda-ラムダ-関数"><a class="header" href="#1-2-発展-lambda-ラムダ-関数">1-2. (発展) lambda (ラムダ) 関数</a></h2>
+<pre><code class="language-py">def calc_rect_area(width, height):
+    return width * height
+
+print(calc_rect_area(10, 20))  # 200
+
+# calc_rect_area と等価な関数
+calc_rect_area2 = lambda w, h: w * h
+print(calc_rect_area2(10, 20))  # 200
+</code></pre>
+<h1 id="2-発展-再帰関数"><a class="header" href="#2-発展-再帰関数">2. (発展) 再帰関数</a></h1>
+<pre><code class="language-py"># エラトステネスの篩を用いて最大公約数を求める
+def gcd(x, y):
+    if x == 0:
+        return y
+    else:
+        return gcd(y % x, x)
+
+# 三興演算子を使ってもいいですね
+# def gcd(x, y):
+#   return y if x == 0 else gcd(y % x, x)
+
+print(gcd(12, 18))  # 6
+
+
+# ちなみに、最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」で求まります
+def lcm(x, y):
+    if x == 0 and y == 0:
+        return 0
+    return x * y // gcd(x, y)
+
+print(lcm(12, 18))  # 36
+</code></pre>
+<h1 id="3-外部ライブラリ-math-を使ってみよう"><a class="header" href="#3-外部ライブラリ-math-を使ってみよう">3. 外部ライブラリ <code>math</code> を使ってみよう</a></h1>
+<pre><code class="language-py">import math
+
+print(&quot;pi = {:.4}&quot;.format(math.pi))  # 3.142
+print(math.log(32, 2))  # 5.0
+</code></pre>
+<p>外部ライブラリ <code>math</code> を使えば、円の面積を計算できます。</p>
+<pre><code class="language-py">import math
+
+
+def calc_circle_area(radius):
+    # * よりも ** の方が先に評価されます。
+    # return math.pi * (radius ** 2) のように明示的に計算順序を書くこともできます。
+    return math.pi * radius ** 2
+
+print(calc_circle_area(10))  # 314.1592653589793
+</code></pre>
+<h1 id="4-超発展-web-scraping"><a class="header" href="#4-超発展-web-scraping">4. (超発展) Web Scraping</a></h1>
+<h2 id="4-1-beautifulsoup-で-web-scraping"><a class="header" href="#4-1-beautifulsoup-で-web-scraping">4-1. <code>BeautifulSoup</code> で Web Scraping</a></h2>
+<p>Static Hosting なサイトに対しては、<code>BeautifulSoup</code> のみで Web Scraping できます。
+(なお、JavaScript Hosting なサイトに対しては、<code>selenium</code> + <code>BeautifulSoup</code> で Web Scraping できます。)</p>
+<pre><code class="language-py"># https://oxylabs.io/blog/python-web-scraping
+import requests
+import sys
+from bs4 import BeautifulSoup
+
+url = &quot;https://ch-random.net/authors/&quot;
+response = requests.get(url)
+soup = BeautifulSoup(response.text, &quot;html.parser&quot;)
+
+# https://realpython.com/beautiful-soup-web-scraper-python/
+# 以下は等価
+# - soup.find(&quot;img&quot;, class_=&quot;my-portrait&quot;)
+# - soup.select(&quot;img.my-portrait&quot;)
+
+footers = soup.select(&quot;div.projects-container&quot;)
+
+# 生成したいもの
+# const authorsDict = {
+#   yomog: {
+#     year: 2,
+#     name: &quot;よもぎ&quot;,
+#     icon: &quot;https://ch-random.net/authors/yomog/avatar_hue523f5c0a45e10cf0e33f8e085b52548_162276_250x250_fill_lanczos_center_2.png&quot;,
+#   },
+#   // ...
+# };
+print(&quot;const authorsDict = {&quot;)
+
+for (i, footer) in enumerate(footers[1:4]):
+    print(f&quot;  // {i + 2} 回生&quot;, file=sys.stderr)
+    h4s = footer.select(&quot;h4&quot;)
+    imgs = footer.select(&quot;img.my-portrait&quot;)
+    for j in range(len(h4s)):
+        # https://stackoverflow.com/questions/55385113/how-do-i-scrape-image-src-in-beautifulsoup
+        src = str(imgs[j].get(&quot;src&quot;))
+        author = src.split(&quot;/&quot;)[2]
+        print(f&quot;  {author}: {{&quot;)
+        print(f'    year: {i + 2},')
+        print(f'    name: &quot;{h4s[j].text}&quot;,')
+        print(f'    icon: &quot;https://ch-random.net{src}&quot;,')
+        print(&quot;  },&quot;)
+
+print(&quot;};&quot;)
+</code></pre>
+<h1 id="課題-3"><a class="header" href="#課題-3">課題</a></h1>
+<p>コピペ AC 可。</p>
+<ul>
+<li>(5) def <a href="https://atcoder.jp/contests/abs/tasks/abc083_b">ABC083B - Some Sums</a></li>
+<li>(6) sort <a href="https://atcoder.jp/contests/abs/tasks/abc088_b">ABC088B - Card Game for Two</a></li>
+</ul>
+<h1 id="課題の解答-3"><a class="header" href="#課題の解答-3">課題の解答</a></h1>
+<ul>
+<li>(5) def <a href="https://atcoder.jp/contests/abs/tasks/abc083_b">ABC083B - Some Sums</a></li>
+</ul>
+<ol>
+<li>関数を使わないで書いた場合。</li>
+</ol>
+<pre><code class="language-py">n, a, b = map(int, input().split())
+ans = 0
+for x in range(1, n + 1):
+    sm = 0
+    x2 = x
+    while x2 &gt; 0:
+        sm += x2 % 10
+        x2 //= 10
+    if a &lt;= sm &lt;= b:
+        ans += x
+print(ans)
+</code></pre>
+<ol start="2">
+<li>関数を define (定義) して解いた場合。見やすくなりましたね。</li>
+</ol>
+<pre><code class="language-py">def calc_sum(x):
+    res = 0
+    while x &gt; 0:
+        res += x % 10
+        x //= 10
+    return res
+
+n, a, b = map(int, input().split())
+ans = 0
+for x in range(1, n + 1):
+    sm = calc_sum(x)
+    if a &lt;= sm &lt;= b:
+        ans += x
+print(ans)
+</code></pre>
+<ul>
+<li>(6) sort <a href="https://atcoder.jp/contests/abs/tasks/abc088_b">ABC088B - Card Game for Two</a></li>
+</ul>
+<ol>
+<li>昇順ソートを用いた解法</li>
+</ol>
+<pre><code class="language-py">n = int(input())
+a = list(map(int, input().split()))
+a.sort()
+ans = 0
+for i in range(n):
+    if i % 2 == n % 2:
+        ans -= a[i]
+    else:
+        ans += a[i]
+print(ans)
+</code></pre>
+<ol start="2">
+<li>降順ソートを用いた解法</li>
+</ol>
+<pre><code class="language-py">n = int(input())
+a = list(map(int, input().split()))
+a.sort(reverse=True)
+
+ans = 0
+for i in range(n):
+    if i % 2 == 0:
+        ans += a[i]
+    else:
+        ans -= a[i]
+# 直前 6 行と等価
+# ans = sum(a[::2]) - sum(a[1::2])
+
+print(ans)
+</code></pre>
+<h1 id="次回-第-5-回-へのリンク"><a class="header" href="#次回-第-5-回-へのリンク">次回 (第 5 回) へのリンク</a></h1>
+<p>{{&lt; post 442 &gt;}}</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第-5-回-python-勉強会-2022--有名データ構造クラス計算オーダー"><a class="header" href="#第-5-回-python-勉強会-2022--有名データ構造クラス計算オーダー">第 5 回 Python 勉強会 2022 | 有名データ構造、クラス、計算オーダー</a></h1>
+<h1 id="1-有名データ構造-set-deque-heapq-をさらっと紹介"><a class="header" href="#1-有名データ構造-set-deque-heapq-をさらっと紹介">1. 有名データ構造 set, deque, heapq をさらっと紹介</a></h1>
+<ol>
+<li>set 集合型</li>
+</ol>
+<ul>
+<li>(7) set <a href="https://atcoder.jp/contests/abs/tasks/abc085_b">ABC085B - Kagami Mochi</a></li>
+</ul>
+<pre><code class="language-py">n = int(input())
+st = set()
+for _ in range(n):
+    x = int(input())
+    st.add(x)
+print(len(st))
+</code></pre>
+<ol start="2">
+<li>deque 両端キュー
+機能としては list とほぼ同じ。内部実装の違いから、諸操作の計算量が異なります。</li>
+</ol>
+<table><thead><tr><th>メソッド名</th><th>collections.deque</th></tr></thead><tbody>
+<tr><td>append(x)</td><td>末尾に x を追加</td></tr>
+<tr><td>pop(i=-1)</td><td>i 番目の要素を削除</td></tr>
+<tr><td>count(x)</td><td>出現数を数える</td></tr>
+<tr><td>sort()</td><td>ソートする</td></tr>
+<tr><td>reverse()</td><td>逆順にする</td></tr>
+</tbody></table>
+<ul>
+<li>参考資料 <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a></li>
+</ul>
+<ol start="3">
+<li>heapq 優先度キュー</li>
+</ol>
+<ul>
+<li>参考資料 <a href="https://qiita.com/ell/items/fe52a9eb9499b7060ed6">【Python】優先度付きキューの使い方【heapq】【ABC141 D】</a></li>
+</ul>
+<p>(heapq に関する説明をここに)</p>
+<h1 id="2-クラス-class"><a class="header" href="#2-クラス-class">2. クラス (Class)</a></h1>
+<p>クラスを自分で書く必要に迫られることはほとんどないと思います。
+しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。
+理解できなくても全く問題ないのでお気軽に～。</p>
+<h2 id="2-1-クラスを作ってみよう"><a class="header" href="#2-1-クラスを作ってみよう">2-1. クラスを作ってみよう</a></h2>
+<pre><code class="language-py">TODO: クラスに慣れるため、calc_rect_area の Class ver. を書く予定。
+</code></pre>
+<h2 id="2-2-発展-complex-クラスを作ってみよう"><a class="header" href="#2-2-発展-complex-クラスを作ってみよう">2-2. (発展) Complex クラスを作ってみよう</a></h2>
+<pre><code class="language-py">class Complex:
+    # class の中の関数をメソッドと呼びます。
+    # メソッド名が __xxx__ の形のメソッドは、特別な働きをします。
+    def __init__(self, re=0, im=0):
+        self.re = re
+        self.im = im
+
+    def __add__(self, c):
+        return Complex(self.re + c.re, self.im + c.im)
+
+    def __mul__(self, c):
+        return Complex(self.re * c.re - self.im * c.im, self.re * c.im + self.im * c.re)
+
+    def __iadd__(self, c):
+        self.re += c.re
+        self.im += c.im
+        return self
+
+    def __imul__(self, c):
+        re2 = self.re * c.re - self.im * c.im
+        im2 = self.re * c.im + self.im * c.re
+        self.re, self.im = re2, im2
+        # 上 3 行と等価
+        # self.re, self.im = self.re * c.re - self.im * c.im, self.re * c.im + self.im * c.re
+        return self
+
+    def __repr__(self):
+        return f&quot;{self.re} + {self.im}i&quot;
+
+    # 自由に命名できます
+    def debug_print(self):
+        print(f&quot;self.re: {self.re}, self.im: {self.im}&quot;)
+
+a = Complex(0, 1)
+b = Complex(1, 0)
+a.debug_print()  # self.re: 0, self.im: 1
+b.debug_print()  # self.re: 1, self.im: 0
+print(a)  # 0 + 1i
+print(b)  # 1 + 0i
+print(a + b)  # 1 + 1i
+print(a * a)  # -1 + 0i
+print(a * b)  # 0 + 1i
+
+b += a
+print(b)  # 1 + 1i
+b *= a
+print(b)  # -1 + 1i
+</code></pre>
+<h1 id="3-計算オーダーを考えよう"><a class="header" href="#3-計算オーダーを考えよう">3. 計算オーダーを考えよう</a></h1>
+<ul>
+<li>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a>
+3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。</li>
+</ul>
+<pre><code class="language-py">n, y = map(int, input().split())
+for i in range(n + 1):
+    for j in range(n + 1):
+        k = n - i - j
+        if k &lt; 0:
+            continue
+        if i * 10000 + j * 5000 + k * 1000 == y:
+            print(i, j, k)
+            exit()
+print(&quot;-1 -1 -1&quot;)
+</code></pre>
+<h1 id="4-競プロ-er-必携の-online-judge-tools-を使ってみよう"><a class="header" href="#4-競プロ-er-必携の-online-judge-tools-を使ってみよう">4. 競プロ er 必携の <code>online-judge-tools</code> を使ってみよう</a></h1>
+<h2 id="4-1-online-judge-tools-をインストール"><a class="header" href="#4-1-online-judge-tools-をインストール">4-1. <code>online-judge-tools</code> をインストール</a></h2>
+<p>(工事中)</p>
+<h2 id="4-2-oj-t-を使ってみよう"><a class="header" href="#4-2-oj-t-を使ってみよう">4-2. <code>oj t</code> を使ってみよう</a></h2>
+<p>(工事中)</p>
+<h2 id="4-3-oj-s-を使ってみよう"><a class="header" href="#4-3-oj-s-を使ってみよう">4-3. <code>oj s</code> を使ってみよう</a></h2>
+<p>(工事中)</p>
+<h1 id="5-online-judge-verify-helper-を用いて-github-上にライブラリを公開してみよう"><a class="header" href="#5-online-judge-verify-helper-を用いて-github-上にライブラリを公開してみよう">5. <code>online-judge-verify-helper</code> を用いて GitHub 上にライブラリを公開してみよう</a></h1>
+<h2 id="5-1-準備"><a class="header" href="#5-1-準備">5-1. 準備</a></h2>
+<h3 id="5-1-1-github-のアカウントを作る"><a class="header" href="#5-1-1-github-のアカウントを作る">5-1-1. GitHub のアカウントを作る。</a></h3>
+<h3 id="5-1-2-github-desktop-をインストール"><a class="header" href="#5-1-2-github-desktop-をインストール">5-1-2. GitHub Desktop をインストール。</a></h3>
+<h3 id="5-1-3-github-の各種設定"><a class="header" href="#5-1-3-github-の各種設定">5-1-3. GitHub の各種設定</a></h3>
+<p>GitHub に SSH 接続するなど。ライブラリ整備 (GitHub Pages) をしましょう。(GitHub の練習として)<br />
+(工事中)</p>
+<h2 id="5-3-ライブラリを公開"><a class="header" href="#5-3-ライブラリを公開">5-3. ライブラリを公開</a></h2>
+<p><a href="https://github.com/cheran-senthil/PyRival">cheran-senthil/PyRival</a> を参考に、ライブラリを公開してみましょう。<br />
+(GitHub Desktop の使い方)<br />
+(とりあえず Complex のみでよい)</p>
+<h1 id="6-web-制作にご興味が"><a class="header" href="#6-web-制作にご興味が">6. ？？？「Web 制作にご興味が？」</a></h1>
+<img src="https://i.imgur.com/OCMiU8x.png" width="480">
+<p>今回、GitHub Pages でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
+ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、是非お気軽にご参加ください。
+<a href="https://rvw2022s.herokuapp.com">RVW 2022 Spring</a> 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。</p>
+<h1 id="7-合作をしよう"><a class="header" href="#7-合作をしよう">7. 合作をしよう</a></h1>
+<p>公立大の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期に hackathon を行っています。
+合作に参加すると、他人のコードを読めて、知識が深まります。
+プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。</p>
+<ul>
+<li>参考: Hackathon2022Spring
+テーマ「ジャンプ」(テーマは各 hackathon ごとに異なる) に沿ったゲームを作り合う対抗戦。
+<ul>
+<li>Computer House Random の作ったゲーム <a href="https://github.com/Nisk36/Hackathon">Nisk36/Hackathon</a></li>
+<li>App Navi の作ったゲーム <a href="https://blog.opuappnavi.com/post/games-in-2021/#jumpin">JumPin</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="8-競プロをしよう"><a class="header" href="#8-競プロをしよう">8. 競プロをしよう</a></h1>
+<h2 id="8-1-バチャに参加しよう"><a class="header" href="#8-1-バチャに参加しよう">8-1. バチャに参加しよう</a></h2>
+<p>毎週月・木の 21:00-22:00 にバチャをしています。<br />
+この勉強会を通じて、競プロに興味を持った方はぜひ参加して、アルゴリズム力を高めましょう。</p>
+<h2 id="8-2-競プロの大会に出場しよう"><a class="header" href="#8-2-競プロの大会に出場しよう">8-2. 競プロの大会に出場しよう</a></h2>
+<p>Computer House Random では <a href="https://icpc.iisf.or.jp/blog/2022/03/29/icpc-regional-2022/">ICPC</a> と <a href="https://products.sint.co.jp/pg_battle">PG BATTLE</a> に出場しています (任意参加)。<br />
+バチャに定期的に参加している人に声をかけるので、よろしくお願いします。</p>
+<h1 id="9-競プロだけに傾倒しないように"><a class="header" href="#9-競プロだけに傾倒しないように">9. 競プロだけに傾倒しないように</a></h1>
+<p>競プロ<strong>だけ</strong>に現を抜かし、Web 制作やゲーム制作を通じて実際にコードを書くことを疎かにしてはなりません (大会に出場しようと言っておいてあれですが)。<br />
+競プロ (AtCoder など) は飽くまでも、実際に (つまり競プロ以外で) コードを書く際に、自分の中での固まった命名規則で変数を命名したり (「camelCase, PascalCase, snake_case が混ざったコードを書かない」など)、用いるべきデータ構造を見極めたり、構築すべき構造を大局的に捉えて完成形から逆算してコードを書いたりするための基礎練習に過ぎません。何かしらのプロダクトを作ることに時間を割くべきと、よもぎは思います。</p>
+<blockquote>
+<p>我々の目的の一つは、我々が始めてしまった競技プログラミングを我々が終わらせることです。<br />
+- <a href="https://nuc.hatenadiary.org/entry/2021/03/31">Twitter で医師を拾ってきて Google のソフトウェアエンジニアにするだけの簡単なお仕事</a></p>
+</blockquote>
+<h1 id="任意課題"><a class="header" href="#任意課題">任意課題</a></h1>
+<p>難しいので (9), (10) は任意課題としたいと思います。<br />
+なお、質問は受け付けておりますので、お気軽に。</p>
+<ul>
+<li>(7) set <a href="https://atcoder.jp/contests/abs/tasks/abc085_b">ABC085B - Kagami Mochi</a></li>
+<li>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a></li>
+<li>(9) 後ろから見るテク <a href="https://atcoder.jp/contests/abs/tasks/arc065_a">ABC049C - 白昼夢</a></li>
+<li>(10) マンハッタン距離, パリティ <a href="https://atcoder.jp/contests/abs/tasks/arc089_a">ABC086C - Traveling</a>
+意欲的な方は <a href="https://kenkoooo.com/atcoder/#/training/Boot%20camp%20for%20Beginners">Boot camp for Beginners</a> も埋めておきましょう。</li>
+</ul>
+<h1 id="任意課題の解答"><a class="header" href="#任意課題の解答">任意課題の解答</a></h1>
+<ul>
+<li>
+<p>(7) 掲載済みのため略。</p>
+</li>
+<li>
+<p>(8) 掲載済みのため略。</p>
+</li>
+<li>
+<p>(9) 後ろから見るテク <a href="https://atcoder.jp/contests/abs/tasks/arc065_a">ABC049C - 白昼夢</a></p>
+</li>
+</ul>
+<pre><code class="language-py">s = input()
+ts = [&quot;dream&quot;, &quot;dreamer&quot;, &quot;erase&quot;, &quot;eraser&quot;]
+while s != &quot;&quot;:
+    for t in ts:
+        if s.endswith(t):
+            s = s[:-len(t)]
+            break
+    else:
+        print(&quot;NO&quot;)
+        exit()
+print(&quot;YES&quot;)
+</code></pre>
+<ul>
+<li>(10) マンハッタン距離, パリティ <a href="https://atcoder.jp/contests/abs/tasks/arc089_a">ABC086C - Traveling</a></li>
+</ul>
+<pre><code class="language-py">n = int(input())
+t0 = 0
+x0 = 0
+y0 = 0
+for i in range(n):
+    t, x, y = map(int, input().split())
+    # 座標 (x0, y0) と 座標 (x, y) のマンハッタン距離
+    manhattan = abs(x - x0) + abs(y - y0)
+    # 余った時間
+    rest_time = t - t0 - manhattan
+    # 余った時間が負 or 奇数なら No
+    if rest_time &lt; 0 or rest_time % 2 == 1:
+        print(&quot;No&quot;)
+        exit()
+    t0 = t
+    x0 = x
+    y0 = y
+print(&quot;Yes&quot;)
+</code></pre>
+<h1 id="おわり"><a class="header" href="#おわり">おわり</a></h1>
+<p>お疲れ様でした。強くなれましたか？</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_line_numbers = true;
+        </script>
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            MathJax.Hub.Register.StartupHook('End', function() {
+                window.setTimeout(window.print, 100);
+            });
+        });
+        </script>
+    </body>
+</html>
