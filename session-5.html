@@ -112,6 +112,9 @@
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
+                        <a href="https://github.com/moyomogi/python_2022_md" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
                     </div>
                 </div>
 
@@ -139,7 +142,7 @@
                         <h1 id="第-5-回-python-勉強会-2022--有名データ構造クラス計算オーダー"><a class="header" href="#第-5-回-python-勉強会-2022--有名データ構造クラス計算オーダー">第 5 回 Python 勉強会 2022 | 有名データ構造、クラス、計算オーダー</a></h1>
 <h1 id="1-有名データ構造-set-deque-heapq-をさらっと紹介"><a class="header" href="#1-有名データ構造-set-deque-heapq-をさらっと紹介">1. 有名データ構造 set, deque, heapq をさらっと紹介</a></h1>
 <ol>
-<li>set 集合型</li>
+<li>集合型 <code>set</code></li>
 </ol>
 <ul>
 <li>(7) set <a href="https://atcoder.jp/contests/abs/tasks/abc085_b">ABC085B - Kagami Mochi</a></li>
@@ -152,26 +155,38 @@ for _ in range(n):
 print(len(st))
 </code></pre>
 <ol start="2">
-<li>deque 両端キュー
-機能としては list とほぼ同じ。内部実装の違いから、諸操作の計算量が異なります。</li>
+<li>両端キュー <code>deque</code>
+機能としては list に似ていますが、先頭に要素を追加する <code>appendleft</code> や先頭の要素を削除する <code>popleft</code> があります。</li>
 </ol>
-<table><thead><tr><th>メソッド名</th><th>collections.deque</th></tr></thead><tbody>
-<tr><td>append(x)</td><td>末尾に x を追加</td></tr>
-<tr><td>pop(i=-1)</td><td>i 番目の要素を削除</td></tr>
-<tr><td>count(x)</td><td>出現数を数える</td></tr>
-<tr><td>sort()</td><td>ソートする</td></tr>
-<tr><td>reverse()</td><td>逆順にする</td></tr>
-</tbody></table>
 <ul>
-<li>参考資料 <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a></li>
+<li>
+<p>list の主要なメソッド</p>
+<table><thead><tr><th>メソッド名</th><th>機能</th><th>計算量</th></tr></thead><tbody>
+<tr><td>append(x)</td><td>末尾に要素を追加</td><td>$O(1)$</td></tr>
+<tr><td>insert(i, x)</td><td>途中に要素を追加</td><td>$O(n)$</td></tr>
+<tr><td>pop()</td><td>末尾の要素を削除</td><td>$O(1)$</td></tr>
+</tbody></table>
+</li>
+<li>
+<p>deque の主要なメソッド</p>
+<table><thead><tr><th>メソッド名</th><th>機能</th><th>計算量</th></tr></thead><tbody>
+<tr><td>append(x)</td><td>末尾に要素を追加</td><td>$O(1)$</td></tr>
+<tr><td>appendleft(x)</td><td>先頭に要素を追加</td><td>$O(1)$</td></tr>
+<tr><td>pop()</td><td>末尾の要素を削除</td><td>$O(1)$</td></tr>
+<tr><td>popleft()</td><td>先頭の要素を削除</td><td>$O(1)$</td></tr>
+</tbody></table>
+</li>
+<li>
+<p>参考資料 <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a></p>
+</li>
 </ul>
 <ol start="3">
-<li>heapq 優先度キュー</li>
+<li>優先度キュー <code>heapq</code>
+ほとんど使わないので説明略。</li>
 </ol>
 <ul>
 <li>参考資料 <a href="https://qiita.com/ell/items/fe52a9eb9499b7060ed6">【Python】優先度付きキューの使い方【heapq】【ABC141 D】</a></li>
 </ul>
-<p>(heapq に関する説明をここに)</p>
 <h1 id="2-クラス-class"><a class="header" href="#2-クラス-class">2. クラス (Class)</a></h1>
 <p>クラスを自分で書く必要に迫られることはほとんどないと思います。
 しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。
@@ -228,7 +243,7 @@ print(b)  # 1 + 1i
 b *= a
 print(b)  # -1 + 1i
 </code></pre>
-<h1 id="3-計算オーダーを考えよう"><a class="header" href="#3-計算オーダーを考えよう">3. 計算オーダーを考えよう</a></h1>
+<h1 id="3-発展-計算オーダーを考えよう"><a class="header" href="#3-発展-計算オーダーを考えよう">3. (発展) 計算オーダーを考えよう</a></h1>
 <ul>
 <li>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a>
 3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。</li>
@@ -244,24 +259,53 @@ for i in range(n + 1):
             exit()
 print(&quot;-1 -1 -1&quot;)
 </code></pre>
-<h1 id="4-競プロ-er-必携の-online-judge-tools-を使ってみよう"><a class="header" href="#4-競プロ-er-必携の-online-judge-tools-を使ってみよう">4. 競プロ er 必携の <code>online-judge-tools</code> を使ってみよう</a></h1>
-<h2 id="4-1-online-judge-tools-をインストール"><a class="header" href="#4-1-online-judge-tools-をインストール">4-1. <code>online-judge-tools</code> をインストール</a></h2>
-<p>(工事中)</p>
-<h2 id="4-2-oj-t-を使ってみよう"><a class="header" href="#4-2-oj-t-を使ってみよう">4-2. <code>oj t</code> を使ってみよう</a></h2>
-<p>(工事中)</p>
-<h2 id="4-3-oj-s-を使ってみよう"><a class="header" href="#4-3-oj-s-を使ってみよう">4-3. <code>oj s</code> を使ってみよう</a></h2>
-<p>(工事中)</p>
-<h1 id="5-online-judge-verify-helper-を用いて-github-上にライブラリを公開してみよう"><a class="header" href="#5-online-judge-verify-helper-を用いて-github-上にライブラリを公開してみよう">5. <code>online-judge-verify-helper</code> を用いて GitHub 上にライブラリを公開してみよう</a></h1>
-<h2 id="5-1-準備"><a class="header" href="#5-1-準備">5-1. 準備</a></h2>
-<h3 id="5-1-1-github-のアカウントを作る"><a class="header" href="#5-1-1-github-のアカウントを作る">5-1-1. GitHub のアカウントを作る。</a></h3>
-<h3 id="5-1-2-github-desktop-をインストール"><a class="header" href="#5-1-2-github-desktop-をインストール">5-1-2. GitHub Desktop をインストール。</a></h3>
-<h3 id="5-1-3-github-の各種設定"><a class="header" href="#5-1-3-github-の各種設定">5-1-3. GitHub の各種設定</a></h3>
-<p>GitHub に SSH 接続するなど。ライブラリ整備 (GitHub Pages) をしましょう。(GitHub の練習として)<br />
-(工事中)</p>
-<h2 id="5-3-ライブラリを公開"><a class="header" href="#5-3-ライブラリを公開">5-3. ライブラリを公開</a></h2>
-<p><a href="https://github.com/cheran-senthil/PyRival">cheran-senthil/PyRival</a> を参考に、ライブラリを公開してみましょう。<br />
-(GitHub Desktop の使い方)<br />
-(とりあえず Complex のみでよい)</p>
+<h1 id="4-発展-github-上にライブラリを公開してみよう"><a class="header" href="#4-発展-github-上にライブラリを公開してみよう">4. (発展) GitHub 上にライブラリを公開してみよう</a></h1>
+<p>GitHub の練習として、ライブラリを GitHub Pages に公開してみましょう。</p>
+<h2 id="4-1-準備"><a class="header" href="#4-1-準備">4-1. 準備</a></h2>
+<h3 id="4-1-1-github-のアカウントを作る"><a class="header" href="#4-1-1-github-のアカウントを作る">4-1-1. GitHub のアカウントを作る</a></h3>
+<p><a href="https://github.com/join">Hoin GitHub - GitHub</a> から登録してください。</p>
+<h3 id="4-1-2-github-desktop-をインストール"><a class="header" href="#4-1-2-github-desktop-をインストール">4-1-2. GitHub Desktop をインストール</a></h3>
+<p>(GitHub Desktop に関する説明、誰か書いてほしい)</p>
+<ul>
+<li>(参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。</li>
+</ul>
+<ol>
+<li>github に ssh 接続する。</li>
+</ol>
+<ul>
+<li>参考資料 <a href="https://zenn.dev/schnell/articles/0e1c2e9db5c08d">GitHub に ssh 接続するまでの手順</a></li>
+</ul>
+<ol start="2">
+<li>以下のコマンドを実行。</li>
+</ol>
+<pre><code class="language-sh"># 下 4 行は初回のみ実行
+$ git init
+# moyomogi, python_2022_lib は自分のものに読み替えてください
+git remote add origin git@github.com:moyomogi/python_2022_lib.git
+# moyomogi は自分のものに読み替えてください
+$ git config --local user.name &quot;moyomogi&quot;
+# mozuyomogi@gmail.com は自分のものに読み替えてください
+$ git config --local user.email &quot;mozuyomogi@gmail.com&quot;
+
+# ファイルをアップロード
+$ git add .
+$ git commit -m &quot;First commit&quot;
+$ git push origin master
+</code></pre>
+<h3 id="4-1-3-github-の各種設定"><a class="header" href="#4-1-3-github-の各種設定">4-1-3. GitHub の各種設定</a></h3>
+<h2 id="4-2-ライブラリを公開"><a class="header" href="#4-2-ライブラリを公開">4-2. ライブラリを公開</a></h2>
+<ol>
+<li>勉強会用のフォルダと同じ階層に、別のフォルダ (フォルダ名は例えば <code>python_2022_lib</code> として、<code>YOUR_NAME/python_2022_lib</code> のように) を作ってください。</li>
+<li><a href="https://github.com/moyomogi/python_2022_lib">moyomogi/python_2022_lib</a> の Download Zip からコードをダウンロード。</li>
+<li>GitHub Desktop を用いてファイルをアップロード。</li>
+<li>GitHub Pages を有効にする。
+<ol>
+<li><code>https://github.com/YOUR_NAME/python_2022_lib</code> を開き、Settings タブを開く。</li>
+<li>Pages ページを開き、「gh-pages」ブランチを選択。
+<img src="https://raw.githubusercontent.com/moyomogi/python_2022_md/master/docs/lib_pages.jpg" width="480"></li>
+</ol>
+</li>
+</ol>
 <h1 id="6-web-制作にご興味が"><a class="header" href="#6-web-制作にご興味が">6. ？？？「Web 制作にご興味が？」</a></h1>
 <img src="https://i.imgur.com/OCMiU8x.png" width="480">
 <p>今回、GitHub Pages でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
@@ -287,7 +331,7 @@ print(&quot;-1 -1 -1&quot;)
 <h2 id="8-2-競プロの大会に出場しよう"><a class="header" href="#8-2-競プロの大会に出場しよう">8-2. 競プロの大会に出場しよう</a></h2>
 <p>Computer House Random では <a href="https://icpc.iisf.or.jp/blog/2022/03/29/icpc-regional-2022/">ICPC</a> と <a href="https://products.sint.co.jp/pg_battle">PG BATTLE</a> に出場しています (任意参加)。<br />
 バチャに定期的に参加している人に声をかけるので、よろしくお願いします。</p>
-<h1 id="9-競プロだけに傾倒しないように"><a class="header" href="#9-競プロだけに傾倒しないように">9. 競プロだけに傾倒しないように</a></h1>
+<h2 id="8-3-競プロだけに傾倒しないように"><a class="header" href="#8-3-競プロだけに傾倒しないように">8-3. 競プロだけに傾倒しないように</a></h2>
 <p>競プロ<strong>だけ</strong>に現を抜かし、Web 制作やゲーム制作を通じて実際にコードを書くことを疎かにしてはなりません (大会に出場しようと言っておいてあれですが)。<br />
 競プロ (AtCoder など) は飽くまでも、実際に (つまり競プロ以外で) コードを書く際に、自分の中での固まった命名規則で変数を命名したり (「camelCase, PascalCase, snake_case が混ざったコードを書かない」など)、用いるべきデータ構造を見極めたり、構築すべき構造を大局的に捉えて完成形から逆算してコードを書いたりするための基礎練習に過ぎません。何かしらのプロダクトを作ることに時間を割くべきと、よもぎは思います。</p>
 <blockquote>
