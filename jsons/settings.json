@@ -1,0 +1,116 @@
+{
+  // 機能関係
+  "editor.tabCompletion": "on", // prefix 入力時 snippet を挿入
+  "editor.snippetSuggestions": "top",
+  "editor.smoothScrolling": true, // スクロールを滑らかにする。
+  "editor.showFoldingControls": "always", // 行の折りたたみ記号の表示
+  "editor.wordSeparators": " !\"#$%&'()*+,-./;:<=>?@[\\]^`{|}~　！＃＄％＆（）＊＋、。・／：；＜＝＞？「」【】『』｛｜｝∑",
+  "editor.copyWithSyntaxHighlighting": false, // テキストコピー時に書式設定を含めない
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveMode": "modifications",
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true, // format: [shift+alt+f]
+  "files.autoGuessEncoding": true, // ファイルを開いたときエンコードを自動で推測
+  "files.autoSave": "afterDelay",
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "debug.inlineValues": true, // デバッグ中に行内に変数値を表示
+  "debug.internalConsoleOptions": "openOnSessionStart", // デバッグコンソール
+  "debug.openDebug": "openOnSessionStart", // デバッグビュー
+  "explorer.confirmDragAndDrop": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.watcherExclude": {
+    // 動作速度改善
+    "node_modules": true
+  },
+  "search.exclude": {
+    // 検索速度向上
+    "node_modules": true
+  },
+  "search.showLineNumbers": true, // 検索ビューの検索結果に行数を併記
+  // "terminal.integrated.fontFamily": "'Ricty Diminished', 'ＭＳ ゴシック', monospace",
+  // "editor.fontFamily": "'Ricty Diminished', 'ＭＳ ゴシック', monospace",
+  // "editor.inlayHints.fontFamily": "'Ricty Diminished', 'ＭＳ ゴシック', monospace",
+  // "markdown.preview.fontFamily": "'Ricty Diminished', 'ＭＳ ゴシック', monospace",
+  // "editor.lineHeight": 12,
+  // "editor.fontSize": 12,
+  // "terminal.integrated.fontSize": 12,
+  // "editor.suggestFontSize": 11,
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.horizontalScrollbarSize": 16,
+  "editor.scrollbar.vertical": "visible",
+  "editor.scrollbar.verticalScrollbarSize": 16,
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.acceptSuggestionOnCommitCharacter": true, // true にしていると自動でタブサイズが決まってしまう
+  "editor.wordWrap": "on", // 行折り返し
+  "editor.renderLineHighlight": "all", // 編集行が強調される
+  "editor.renderControlCharacters": true,
+  "window.customMenuBarAltFocus": false,
+  "editor.links": true, // リンクをクリック可能に
+  "editor.minimap.size": "fill",
+  "editor.minimap.maxColumn": 20,
+  "editor.minimap.showSlider": "always",
+  "editor.autoClosingDelete": "never",
+  "editor.renderWhitespace": "boundary",
+  "window.enableMenuBarMnemonics": false,
+  "window.menuBarVisibility": "toggle",
+  // terminal関係
+  "terminal.integrated.wordSeparators": " !\"#$%&'()*+,-./;:<=>?@[\\]^`{|}~",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorWidth": 2,
+  "terminal.integrated.enableBell": true,
+  "terminal.integrated.environmentChangesIndicator": "on",
+  // editor.tabSize
+  "editor.detectIndentation": false,
+  "[markdown]": {
+    "files.trimTrailingWhitespace": false,
+    "editor.tabSize": 2
+  },
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": false,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  // python
+  "python.pythonPath": "/usr/bin/python3",
+  "python.analysis.typeCheckingMode": "strict",
+  "python.analysis.completeFunctionParens": true,
+  "python.autoComplete.addBrackets": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportUnusedImport": "none",
+    "reportPrivateImportUsage": "none",
+    "reportGeneralTypeIssues": "none",
+    "reportUnnecessaryComparison": "none",
+    "reportUnknownArgumentType": "none",
+    "reportUnknownLambdaType": "none",
+    "reportUnknownMemberType": "none",
+    "reportUnknownParameterType": "none",
+    "reportUnknownVariableType": "none",
+    "reportMissingParameterType": "none",
+    "reportMissingTypeStubs": "none"
+  },
+  "python.languageServer": "Pylance",
+  // python - linting
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    // https://qiita.com/KuruwiC/items/8e12704e338e532eb34a
+    "--ignore=W293,W503,E115,E305,E265,E402,E731,E741,F401",
+    "--max-line-length",
+    "150"
+  ],
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    // vscodeに導入したblackが機能しない https://qiita.com/sisi0808/items/daee7b8ce2b0f17004d7
+    "--line-length",
+    "119"
+  ],
+  "workbench.editor.centeredLayoutAutoResize": false
+}

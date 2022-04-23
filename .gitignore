@@ -1,0 +1,14 @@
+# Directory
+out
+
+/.vscode
+/bin
+/book
+
+# File
+*.Identifier
+*.log
+*.pdf
+
+/cptest.sh
+/input.md

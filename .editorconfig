@@ -1,0 +1,7 @@
+# このファイルが作動するためには、VSCode 拡張機能の
+# editorconfig.editorconfig が必要です。
+# 記法は EditorConfig 公式 (https://editorconfig.org) を参照。
+root = true
+
+[*]
+end_of_line: lf

@@ -1,0 +1,627 @@
+{
+  // define
+  "inffloat": {
+    "prefix": "inffloat",
+    "body": ["INF = float(\"inf\")"]
+  },
+  "inf1e9": {
+    "prefix": "inf1e9",
+    "body": ["INF = 10 ** 9"]
+  },
+  "mod1": {
+    "prefix": "mod1",
+    "body": ["MOD = 10 ** 9 + 7"]
+  },
+  "mod9": {
+    "prefix": "mod9",
+    "body": ["MOD = 998244353"]
+  },
+  "v": {
+    "prefix": "v",
+    "body": ["${2:a} = [0] * ${1:n}"]
+  },
+  "vv": {
+    "prefix": "vv",
+    "body": ["${1:a} = [[0] * ${2:w} for _ in range(${3:h})]"]
+  },
+
+  // inp
+  "inp": {
+    "prefix": "inp",
+    "body": ["${1:n} = int(input())"]
+  },
+  "inp2": {
+    "prefix": "inp2",
+    "body": ["${1:a}, ${2:b} = map(int, input().split())"]
+  },
+  "inp3": {
+    "prefix": "inp3",
+    "body": ["${1:a}, ${2:b}, ${3:c} = map(int, input().split())"]
+  },
+  "inp4": {
+    "prefix": "inp4",
+    "body": ["${1:a}, ${2:b}, ${3:c}, ${4:d} = map(int, input().split())"]
+  },
+  "inp5": {
+    "prefix": "inp5",
+    "body": [
+      "${1:a}, ${2:b}, ${3:c}, ${4:d}, ${5:e} = map(int, input().split())"
+    ]
+  },
+  "inpv": {
+    "prefix": "inpv",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:a} = list(map(int, input().split()))"
+    ]
+  },
+  "inpv2": {
+    "prefix": "inpv2 inpvp",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:a}${3:b} = []",
+      "for _ in range($1):",
+      "    $2, $3 = map(int, input().split())",
+      "    $2$3.append(($2, $3))"
+    ]
+  },
+  "inp3v": {
+    "prefix": "inp3v inpvt",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:a}${3:b}${4:c} = []",
+      "for _ in range($1):",
+      "    $2, $3, $4 = map(int, input().split())",
+      "    $2$3$4.append(($2, $3, $4))"
+    ]
+  },
+  "inp2v_each": {
+    "prefix": "inp2v_each",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:a} = [0 for _ in range($1)]",
+      "${3:b} = [0 for _ in range($1)]",
+      "for i in range($1):",
+      "    $2[i], $3[i] = map(int, input().split())"
+    ]
+  },
+  "inp3v_each": {
+    "prefix": "inp3v_each",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:a} = [0 for _ in range($1)]",
+      "${3:b} = [0 for _ in range($1)]",
+      "${4:c} = [0 for _ in range($1)]",
+      "for i in range($1):",
+      "    $2[i], $3[i], $4[i] = map(int, input().split())"
+    ]
+  },
+  "inpvv": {
+    "prefix": "inpvv inpmat",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:v} = []",
+      "for _ in range($1):",
+      "    $2.append(list(map(int, input().split())))",
+      "# print($2)"
+    ]
+  },
+  "inptree(n,n-1)": {
+    "prefix": "inptree(n,n-1), inpedges",
+    "body": [
+      "n = int(input())",
+      "edges = [[] for _ in range(n)]",
+      "for _ in range(n - 1):",
+      "    a, b = map(lambda x: int(x) - 1, input().split())",
+      "    edges[a].append(b)",
+      "    edges[b].append(a)"
+    ]
+  },
+  "inpedges(n,m)": {
+    "prefix": "inpedges(n,m)",
+    "body": [
+      "n, m = map(int, input().split())",
+      "edges = [[] for _ in range(n)]",
+      "for _ in range(m):",
+      "    a, b = map(lambda x: int(x) - 1, input().split())",
+      "    edges[a].append(b)",
+      "    edges[b].append(a)",
+      "print(edges)"
+    ]
+  },
+  "inpstr": {
+    "prefix": "inpstr",
+    "body": ["${1:s} = input()"]
+  },
+  "inpstr2": {
+    "prefix": "inpstr2",
+    "body": ["${1:s}, ${2:t} = input(), input()"]
+  },
+  "inpstr3": {
+    "prefix": "inpstr3",
+    "body": ["${1:s}, ${2:t}, ${3:u} = input(), input(), input()"]
+  },
+  "inpvs_single": {
+    "prefix": "inpvs_single",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:s} = input().split()",
+      "# ${2:s} = [input() for _ in range($1)]"
+    ]
+  },
+  "inpvs_multi": {
+    "prefix": "inpvs_multi",
+    "body": [
+      "${1:n} = int(input())",
+      "${2:s} = [input() for _ in range($1)]",
+      "# ${2:s} = input().split()"
+    ]
+  },
+  "inpmaze": {
+    "prefix": "inpmaze",
+    "body": [
+      "${1:h}, ${2:w} = map(int, input().split())",
+      "${3:s} = []",
+      "for i in range($1):",
+      "    $2.append(input())"
+    ]
+  },
+
+  // out
+  "out": {
+    "prefix": "out",
+    "body": ["print(${1:n})"]
+  },
+  "out2": {
+    "prefix": "out2",
+    "body": ["print(${1:a}, ${2:b})"]
+  },
+  "out3": {
+    "prefix": "out3",
+    "body": ["print(${1:a}, ${2:b}, ${3:c})"]
+  },
+  "outvi_single": {
+    "prefix": "outvi_single",
+    "body": ["print(*${1:v})"]
+  },
+  "outvi_multi": {
+    "prefix": "outvi_multi",
+    "body": ["print(*${1:v}, sep=\"\n\")"]
+  },
+  "outvi_each": {
+    "prefix": "outvi_each",
+    "body": ["for i in range(len(${1:v}[i]):", "    print(abs(${1:v}[i]))"]
+  },
+  "outvvi": {
+    "prefix": "outvvi",
+    "body": ["for i in range(len(${1:v})):", "    print(*${1:v}[i])"]
+  },
+  "yes": {
+    "prefix": "yes",
+    "body": ["print(${1:\"Yes\"} if ${2:valid} else ${3:\"No\"})"]
+  },
+  "dump": {
+    "prefix": "dump dout",
+    "body": ["print(\"${1:n}:\", ${1:n}, file=sys.stderr)"]
+  },
+  "dump2": {
+    "prefix": "dump2 dout2",
+    "body": ["print(\"${1:a}:\", $1, \"${2:b}:\", $2, file=sys.stderr)"]
+  },
+  "dump3": {
+    "prefix": "dump3 dout3",
+    "body": [
+      "print(\"${1:a}:\", $1, \"${2:b}:\", $2, \"${3:c}:\", $3, file=sys.stderr)"
+    ]
+  },
+  "dump4": {
+    "prefix": "dump4 dout4",
+    "body": [
+      "print(\"${1:a}:\", $1, \"${2:b}:\", $2, \"${3:c}:\", $3, \"${4:d}:\", $4, file=sys.stderr)"
+    ]
+  },
+
+  // import
+  "fromimport": {
+    "prefix": "fromimport",
+    "body": ["from ${1:math} import ${2:pi}"]
+  },
+  "dequeimport": {
+    "prefix": "dequeimport",
+    "body": [
+      "from collections import deque",
+      "# deque: double ended queue (デック)"
+    ]
+  },
+  "defaultdict": {
+    "prefix": "defaultdict",
+    "body": ["from collections import defaultdict", "d = defaultdict(int)"]
+  },
+
+  // for
+  "lifor": {
+    "prefix": "lifor",
+    "body": ["[$1 for _ in range(${2:n})]"]
+  },
+  "for": {
+    "prefix": "for",
+    "body": ["for ${1:_} in range(${2:n}):"]
+  },
+  "forr": {
+    "prefix": "forr",
+    "body": ["for ${1:_} in range(${2:n})[::-1]:"]
+  },
+  "fora": {
+    "prefix": "fora",
+    "body": ["for ${1:x} in ${2:xs}:"]
+  },
+  "foritems": {
+    "prefix": "foritems",
+    "body": ["for k, ${2:v} in ${1:di}.items():", "    print(k, ${2:v})"]
+  },
+  "forenumerate": {
+    "prefix": "forenumerate",
+    "body": [
+      "for i, ${2:v} in enumerate(${1:[\"tic\",\"tac\",\"toe\"]}):",
+      "    print(i, ${2:v})"
+    ]
+  },
+
+  // misc
+  "meguru birarySearch": {
+    "prefix": "meguru birarySearch",
+    "body": [
+      "# meguru birarySearch",
+      "ng = 0",
+      "ok = int(1e5)",
+      "while ok - ng > 1:",
+      "    mid = (ok + ng) // 2",
+      "    if mid * (mid + 1) // 2 >= x:",
+      "        ok = mid",
+      "    else:",
+      "        ng = mid",
+      "print(ok)"
+    ]
+  },
+  "ternaryOperator": {
+    "prefix": "ternaryOperator 3項演算子",
+    "body": ["${1:x} if ${2:x > 0} else ${3:-x}"]
+  },
+  "count_ones": {
+    "prefix": "count_ones popcount",
+    "body": [
+      "def count_ones(x):",
+      "    x = (x & 0x55555555) + (x >> 1 & 0x55555555)",
+      "    x = (x & 0x33333333) + (x >> 2 & 0x33333333)",
+      "    x = (x & 0x0F0F0F0F) + (x >> 4 & 0x0F0F0F0F)",
+      "    x = (x & 0x00FF00FF) + (x >> 8 & 0x00FF00FF)",
+      "    x = (x & 0x0000FFFF) + (x >> 16 & 0x0000FFFF)",
+      "    return x"
+    ]
+  },
+  "UnionFind": {
+    "prefix": "UnionFind",
+    "body": [
+      "class UnionFind:",
+      "    def __init__(self, n):",
+      "        self._n = n",
+      "        self.par = [-1] * n",
+      "",
+      "    def merge(self, a, b):",
+      "        x = self.find(a)",
+      "        y = self.find(b)",
+      "        if x == y:",
+      "            return x",
+      "        if -self.par[x] < -self.par[y]:",
+      "            x, y = y, x",
+      "        self.par[x] += self.par[y]",
+      "        self.par[y] = x",
+      "        return x",
+      "",
+      "    def same(self, a, b):",
+      "        return self.find(a) == self.find(b)",
+      "",
+      "    def find(self, a):",
+      "        x = a",
+      "        while self.par[x] >= 0:",
+      "            x = self.par[x]",
+      "        while self.par[a] >= 0:",
+      "            self.par[a] = x",
+      "            a = self.par[a]",
+      "        return x",
+      "",
+      "    def size(self, a):",
+      "        return -self.par[self.find(a)]",
+      "",
+      "    # def groups(self):",
+      "    #     find_buf = [self.find(i) for i in range(self._n)]",
+      "    #     res = [[] for _ in range(self._n)]",
+      "    #     for i in range(self._n):",
+      "    #         res[find_buf[i]].append(i)",
+      "    #     return list(filter(lambda r: r, res))",
+      "# uf = UnionFind(N)",
+      "# print(uf.groups())"
+    ]
+  },
+  "FenwickTree": {
+    "prefix": "FenwickTree",
+    "body": [
+      "class FenwickTree:",
+      "    def __init__(self, n=0):",
+      "        self._n = n",
+      "        self.data = [0] * n",
+      "",
+      "    def add(self, p, x):",
+      "        assert 0 <= p < self._n",
+      "        p += 1",
+      "        while p <= self._n:",
+      "            self.data[p - 1] += x",
+      "            p += p & -p",
+      "",
+      "    def sum(self, l, r):",
+      "        assert 0 <= l <= r <= self._n",
+      "        return self._sum(r) - self._sum(l)",
+      "",
+      "    def _sum(self, r):",
+      "        res = 0",
+      "        while r > 0:",
+      "            res += self.data[r - 1]",
+      "            r -= r & -r",
+      "        return res"
+    ]
+  },
+  "comb": {
+    "prefix": "comb, cmb",
+    "body": [
+      "from operator import mul",
+      "from functools import reduce",
+      "def cmb(n, r):",
+      "    r = min(n - r, r)",
+      "    # if r <= 0:",
+      "    if r == 0:",
+      "        return 1",
+      "    return reduce(mul, range(n, n - r, -1)) // reduce(mul, range(1, r + 1))",
+      "# print(cmb(5, 2))  # 10"
+    ]
+  },
+  "binom": {
+    "prefix": "binom",
+    "body": [
+      "// https://atcoder.jp/contests/abc235/editorial/3252",
+      "mod = 998244353",
+      "MAX = 5 * 10 ** 6 + 10",
+      "fac = [0] * (MAX + 1)",
+      "facinv = [0] * (MAX + 1)",
+      "fac[0] = 1",
+      "for i in range(1, MAX + 1):",
+      "    fac[i] = fac[i - 1] * i % mod",
+      "facinv[MAX] = pow(fac[MAX], mod - 2, mod)",
+      "for i in reversed(range(MAX)):",
+      "    facinv[i] = facinv[i + 1] * (i + 1) % mod",
+      "def binom(n, r):",
+      "    if n < 0 or r < 0 or n < r:",
+      "        return 0",
+      "    return fac[n] * facinv[r] % mod * facinv[n - r] % mod"
+    ]
+  },
+  "dydx": {
+    "prefix": "dydx",
+    "body": ["dy, dx = [0, 1, 0, -1], [1, 0, -1, 0]"]
+  },
+  "invmod": {
+    "prefix": "invmod",
+    "body": [
+      "def invmod(x, m):",
+      "    return modpow(x, m - 2, m)",
+      "",
+      "# MOD = 998244353",
+      "# inv2 = invmod(2, MOD)",
+      "# print(inv2 * 2 % MOD)"
+    ]
+  },
+  "continue": {
+    "prefix": "continue",
+    "body": ["continue"]
+  },
+  "dfs(slow)": {
+    "prefix": "dfs(slow)",
+    "body": [
+      "def dfs(v1, v0):",
+      "  global cnt",
+      "  ans[v1][0] = cnt",
+      "  for v2 in edges[v1]:",
+      "      if v0 == v2:",
+      "          continue",
+      "      dfs(v2, v1)",
+      "  if v0 != -1 and len(edges[v1]) == 1:",
+      "      cnt += 1",
+      "  ans[v1][1] = cnt - 1"
+    ]
+  },
+  "dfs_with_stack(deque)": {
+    "prefix": "dfs_with_stack(deque)",
+    "body": [
+      "# dfs_with_stack(deque)",
+      "# deque: double ended queue (デック)",
+      "cnt = 1",
+      "ans = [[-1, -1] for _ in range(n)]",
+      "# 帰りがけ, 行きがけ",
+      "st = deque([(0, -1, False), (0, -1, True)])",
+      "while st:",
+      "    v1, v0, enters = st.pop()",
+      "    print(\"v1:\", v1, \"v0:\", v0, \"enters:\", enters, file=sys.stderr)",
+      "    if enters:",
+      "        # 行きがけ",
+      "        ans[v1][0] = cnt",
+      "        for v2 in edges[v1]:",
+      "            if v0 == v2:",
+      "                continue",
+      "            # 帰りがけ",
+      "            st.append((v2, v1, False))",
+      "            # 行きがけ",
+      "            st.append((v2, v1, True))",
+      "    else:",
+      "        # 帰りがけ",
+      "        if v0 != -1 and len(edges[v1]) == 1:",
+      "            cnt += 1",
+      "        ans[v1][1] = cnt - 1"
+    ]
+  },
+  "bfs_with_queue(deque)": {
+    "prefix": "bfs_with_queue(deque)",
+    "body": [
+      "# bfs_with_queue(deque)",
+      "# deque: double ended queue (デック)",
+      "dist = [None] * len(edges)",
+      "q = deque([0])",
+      "dist[0] = 0",
+      "while q:",
+      "    v1 = q.popleft()",
+      "    for w2 in edges[v1]:",
+      "        if dist[w2] is not None:",
+      "            continue",
+      "        dist[w2] = v1 + 1",
+      "        q.append(w2)"
+    ]
+  },
+  "modular": {
+    "prefix": "modint modular",
+    "body": [
+      "MOD = 998244353",
+      "",
+      "",
+      "class Modular:",
+      "    def __init__(self, v = 0):",
+      "        self._v = 0 if v == 0 else v % MOD",
+      "",
+      "    def init_unchecked(self, v):",
+      "        x = Modular()",
+      "        x._v = v",
+      "        return x",
+      "",
+      "    def val(self):",
+      "        return self._v",
+      "",
+      "    def __iadd__(self, rhs):",
+      "        self._v += rhs._v if isinstance(rhs, Modular) else rhs",
+      "        if self._v >= MOD:",
+      "            self._v -= MOD",
+      "        return self",
+      "",
+      "    def __isub__(self, rhs):",
+      "        self._v -= rhs._v if isinstance(rhs, Modular) else rhs",
+      "        if self._v < 0:",
+      "            self._v += MOD",
+      "        return self",
+      "",
+      "    def __imul__(self, rhs):",
+      "        self._v *= rhs._v if isinstance(rhs, Modular) else rhs",
+      "        self._v %= MOD",
+      "        return self",
+      "",
+      "    def __ifloordiv__(self, rhs):",
+      "        inv = rhs.inv()._v if isinstance(rhs, Modular) else self.pow(rhs, MOD - 2)",
+      "        self._v = self._v * inv % MOD",
+      "        return self",
+      "",
+      "    def __pos__(self):",
+      "        return self",
+      "",
+      "    def __neg__(self):",
+      "        return Modular() - self",
+      "",
+      "    def __pow__(self, n):",
+      "        assert n >= 0",
+      "        return self.init_unchecked(pow(self._v, n, MOD))",
+      "",
+      "    def pow(self, n):",
+      "        assert n >= 0",
+      "        x = self._v",
+      "        res = self.init_unchecked(1)",
+      "        while n:",
+      "            if n & 1:",
+      "                res *= x",
+      "            x *= x",
+      "            n >>= 1",
+      "        return res",
+      "",
+      "    def inv(self):",
+      "        return self.pow(self._v, MOD - 2)",
+      "",
+      "    def __add__(self, rhs):",
+      "        if isinstance(rhs, Modular):",
+      "            res = self._v + rhs._v",
+      "            return self.init_unchecked(res - MOD if res >= MOD else res)",
+      "        else:",
+      "            return Modular(self._v + rhs)",
+      "",
+      "    def __sub__(self, rhs):",
+      "        if isinstance(rhs, Modular):",
+      "            res = self._v - rhs._v",
+      "            return self.init_unchecked(res + MOD if res < 0 else res)",
+      "        else:",
+      "            return Modular(self._v - rhs)",
+      "",
+      "    def __mul__(self, rhs):",
+      "        return Modular(self._v * (rhs._v if isinstance(rhs, Modular) else rhs))",
+      "",
+      "    def __floordiv__(self, rhs):",
+      "        inv = rhs.inv()._v if isinstance(rhs, Modular) else self.pow(rhs, MOD - 2)",
+      "        return Modular(self._v * inv)",
+      "",
+      "    def __eq__(self, rhs):",
+      "        return self._v == (rhs._v if isinstance(rhs, Modular) else rhs)",
+      "",
+      "    def __ne__(self, rhs):",
+      "        return self._v != (rhs._v if isinstance(rhs, Modular) else rhs)",
+      "",
+      "    def __repr__(self):",
+      "        return str(self._v)",
+      "",
+      "mr = Modular"
+    ]
+  },
+  "combinations": {
+    "prefix": "combinations",
+    "body": ["from itertools import combinations"]
+  },
+  "permutations": {
+    "prefix": "permutations",
+    "body": ["from itertools import permutations"]
+  },
+  "chmax": {
+    "prefix": "chmax",
+    "body": ["${1:ans} = max(${1:ans}, ${2:cur})"]
+  },
+  "chmin": {
+    "prefix": "chmin",
+    "body": ["${1:ans} = min(${1:ans}, ${2:cur})"]
+  },
+  "WarshallFloyd": {
+    "prefix": "WarshallFloyd",
+    "body": [
+      "for k in range(n):",
+      "    for i in range(n):",
+      "        for j in range(n):",
+      "            dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])"
+    ]
+  },
+  "bisect lower_bound upper_bound": {
+    "prefix": "bisect lower_bound upper_bound bisect_left bisect_right",
+    "body": [
+      "# import bisect",
+      "# idx = bisect.bisect_left(a, x, lo=0, hi=len(a))",
+      "# idx = bisect.bisect_right(a, x, lo=0, hi=len(a))"
+    ]
+  },
+  "heapq": {
+    "prefix": "heapq",
+    "body": [
+      "# import heapq",
+      "# hp = [0 for _ in range(n)]",
+      "# heapq.heapify(hp)",
+      "# x = heapq.heappop(hp)  # minimum",
+      "# heapq.heappush(hp, x)"
+    ]
+  }
+}

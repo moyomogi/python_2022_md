@@ -1,0 +1,37 @@
+# Description:
+#   rust で実走された crate である mdbook, mdbook-pdf を用いて、
+#   md から html および pdf を生成します。
+# Setup:
+#   # Install and setup rust
+#   $ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#   $ source $HOME/.cargo/env
+#   $ rustup install stable
+#   $ rustup update
+#   $ rustup component add clippy rls rustfmt
+#   $ echo -e "[net]\ngit-fetch-with-cli = true" >> ~/.cargo/config
+#   # Install mdbook
+#   $ cargo install mdbook
+#   $ cargo install mdbook-pdf
+# Usage:
+#   $ mdbook build && cp book/pdf/output.pdf book/python_2022.pdf
+[book]
+title = "python_2022"
+src = "book_src"
+
+[output.html]
+mathjax-support = true
+
+[output.html.playground]
+editable = true
+line-numbers = true
+
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 2
+boost-paragraph = 1
+expand = true
+heading-split-level = 2
+
+[output.pdf]
