@@ -2,7 +2,7 @@
 
 # 1. 有名データ構造 set, deque, heapq をさらっと紹介
 
-1. set 集合型
+1. 集合型 `set`
 
 - (7) set [ABC085B - Kagami Mochi](https://atcoder.jp/contests/abs/tasks/abc085_b)
 
@@ -15,24 +15,32 @@ for _ in range(n):
 print(len(st))
 ```
 
-2. deque 両端キュー
-   機能としては list とほぼ同じ。内部実装の違いから、諸操作の計算量が異なります。
+2. 両端キュー `deque`
+   機能としては list に似ていますが、先頭に要素を追加する `appendleft` や先頭の要素を削除する `popleft` があります。
 
-| メソッド名 | collections.deque  |
-| ---------- | ------------------ |
-| append(x)  | 末尾に x を追加    |
-| pop(i=-1)  | i 番目の要素を削除 |
-| count(x)   | 出現数を数える     |
-| sort()     | ソートする         |
-| reverse()  | 逆順にする         |
+- list の主要なメソッド
+
+  | メソッド名   | 機能             | 計算量 |
+  | ------------ | ---------------- | ------ |
+  | append(x)    | 末尾に要素を追加 | $O(1)$ |
+  | insert(i, x) | 途中に要素を追加 | $O(n)$ |
+  | pop()        | 末尾の要素を削除 | $O(1)$ |
+
+- deque の主要なメソッド
+
+  | メソッド名    | 機能             | 計算量 |
+  | ------------- | ---------------- | ------ |
+  | append(x)     | 末尾に要素を追加 | $O(1)$ |
+  | appendleft(x) | 先頭に要素を追加 | $O(1)$ |
+  | pop()         | 末尾の要素を削除 | $O(1)$ |
+  | popleft()     | 先頭の要素を削除 | $O(1)$ |
 
 - 参考資料 [Python の deque でキュー、スタック、デック（両端キュー）を扱う](https://note.nkmk.me/python-collections-deque/)
 
-3. heapq 優先度キュー
+3. 優先度キュー `heapq`
+   ほとんど使わないので説明略。
 
 - 参考資料 [【Python】優先度付きキューの使い方【heapq】【ABC141 D】](https://qiita.com/ell/items/fe52a9eb9499b7060ed6)
-
-(heapq に関する説明をここに)
 
 # 2. クラス (Class)
 
@@ -41,6 +49,7 @@ print(len(st))
 理解できなくても全く問題ないのでお気軽に～。
 
 ## 2-1. クラスを作ってみよう
+
 ```py
 TODO: クラスに慣れるため、calc_rect_area の Class ver. を書く予定。
 ```
@@ -97,7 +106,7 @@ b *= a
 print(b)  # -1 + 1i
 ```
 
-# 3. 計算オーダーを考えよう
+# 3. (発展) 計算オーダーを考えよう
 
 - (8) 計算オーダーを考える [C085C - Otoshidama](https://atcoder.jp/contests/abs/tasks/abc085_c)
   3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。
@@ -115,38 +124,55 @@ for i in range(n + 1):
 print("-1 -1 -1")
 ```
 
-# 4. 競プロ er 必携の `online-judge-tools` を使ってみよう
+# 4. (発展) GitHub 上にライブラリを公開してみよう
 
-## 4-1. `online-judge-tools` をインストール
+GitHub の練習として、ライブラリを GitHub Pages に公開してみましょう。
 
-(工事中)
+## 4-1. 準備
 
-## 4-2. `oj t` を使ってみよう
+### 4-1-1. GitHub のアカウントを作る
 
-(工事中)
+[Hoin GitHub - GitHub](https://github.com/join) から登録してください。
 
-## 4-3. `oj s` を使ってみよう
+### 4-1-2. GitHub Desktop をインストール
 
-(工事中)
+(GitHub Desktop に関する説明、誰か書いてほしい)
 
-# 5. `online-judge-verify-helper` を用いて GitHub 上にライブラリを公開してみよう
+- (参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
 
-## 5-1. 準備
-### 5-1-1. GitHub のアカウントを作る。  
+1. github に ssh 接続する。
 
-### 5-1-2. GitHub Desktop をインストール。  
+- 参考資料 [GitHub に ssh 接続するまでの手順](https://zenn.dev/schnell/articles/0e1c2e9db5c08d)
 
-### 5-1-3. GitHub の各種設定
+2. 以下のコマンドを実行。
 
-GitHub に SSH 接続するなど。ライブラリ整備 (GitHub Pages) をしましょう。(GitHub の練習として)  
-(工事中)  
+```sh
+# 下 4 行は初回のみ実行
+$ git init
+# moyomogi, python_2022_lib は自分のものに読み替えてください
+git remote add origin git@github.com:moyomogi/python_2022_lib.git
+# moyomogi は自分のものに読み替えてください
+$ git config --local user.name "moyomogi"
+# mozuyomogi@gmail.com は自分のものに読み替えてください
+$ git config --local user.email "mozuyomogi@gmail.com"
 
+# ファイルをアップロード
+$ git add .
+$ git commit -m "First commit"
+$ git push origin master
+```
 
-## 5-3. ライブラリを公開
+### 4-1-3. GitHub の各種設定
 
-[cheran-senthil/PyRival](https://github.com/cheran-senthil/PyRival) を参考に、ライブラリを公開してみましょう。  
-(GitHub Desktop の使い方)  
-(とりあえず Complex のみでよい)  
+## 4-2. ライブラリを公開
+
+1. 勉強会用のフォルダと同じ階層に、別のフォルダ (フォルダ名は例えば `python_2022_lib` として、`YOUR_NAME/python_2022_lib` のように) を作ってください。
+2. [moyomogi/python_2022_lib](https://github.com/moyomogi/python_2022_lib) の Download Zip からコードをダウンロード。
+3. GitHub Desktop を用いてファイルをアップロード。
+4. GitHub Pages を有効にする。
+   1. `https://github.com/YOUR_NAME/python_2022_lib` を開き、Settings タブを開く。
+   2. Pages ページを開き、「gh-pages」ブランチを選択。
+      <img src="https://raw.githubusercontent.com/moyomogi/python_2022_md/master/docs/lib_pages.jpg" width="480">
 
 # 6. ？？？「Web 制作にご興味が？」
 
@@ -170,18 +196,19 @@ GitHub に SSH 接続するなど。ライブラリ整備 (GitHub Pages) をし�
 # 8. 競プロをしよう
 
 ## 8-1. バチャに参加しよう
+
 毎週月・木の 21:00-22:00 にバチャをしています。  
-この勉強会を通じて、競プロに興味を持った方はぜひ参加して、アルゴリズム力を高めましょう。  
+この勉強会を通じて、競プロに興味を持った方はぜひ参加して、アルゴリズム力を高めましょう。
 
 ## 8-2. 競プロの大会に出場しよう
 
 Computer House Random では [ICPC](https://icpc.iisf.or.jp/blog/2022/03/29/icpc-regional-2022/) と [PG BATTLE](https://products.sint.co.jp/pg_battle) に出場しています (任意参加)。  
-バチャに定期的に参加している人に声をかけるので、よろしくお願いします。  
+バチャに定期的に参加している人に声をかけるので、よろしくお願いします。
 
-# 9. 競プロだけに傾倒しないように
+## 8-3. 競プロだけに傾倒しないように
 
 競プロ**だけ**に現を抜かし、Web 制作やゲーム制作を通じて実際にコードを書くことを疎かにしてはなりません (大会に出場しようと言っておいてあれですが)。  
-競プロ (AtCoder など) は飽くまでも、実際に (つまり競プロ以外で) コードを書く際に、自分の中での固まった命名規則で変数を命名したり (「camelCase, PascalCase, snake_case が混ざったコードを書かない」など)、用いるべきデータ構造を見極めたり、構築すべき構造を大局的に捉えて完成形から逆算してコードを書いたりするための基礎練習に過ぎません。何かしらのプロダクトを作ることに時間を割くべきと、よもぎは思います。  
+競プロ (AtCoder など) は飽くまでも、実際に (つまり競プロ以外で) コードを書く際に、自分の中での固まった命名規則で変数を命名したり (「camelCase, PascalCase, snake_case が混ざったコードを書かない」など)、用いるべきデータ構造を見極めたり、構築すべき構造を大局的に捉えて完成形から逆算してコードを書いたりするための基礎練習に過ぎません。何かしらのプロダクトを作ることに時間を割くべきと、よもぎは思います。
 
 > 我々の目的の一つは、我々が始めてしまった競技プログラミングを我々が終わらせることです。  
 >  \- [Twitter で医師を拾ってきて Google のソフトウェアエンジニアにするだけの簡単なお仕事](https://nuc.hatenadiary.org/entry/2021/03/31)

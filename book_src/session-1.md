@@ -69,6 +69,12 @@ $ sudo apt -y upgrade
 ```sh
 $ sudo apt install -y software-properties-common
 $ sudo add-apt-repository universe
+
+# build-essential, gdb: C++ 向け
+# python3, flake8: Python 向け
+# pkg-config:
+#   これがないとバグるツールが結構あるので
+#   まとめてインストールしえおきましょう。
 $ sudo apt install -y build-essential gdb python3 flake8 pkg-config
 ```
 
@@ -203,7 +209,8 @@ $ python3 main.py
     .py ファイルを綺麗にインデントできます。
   - `Highlight Trailing White Spaces`
 
-# 10. AtCoder に登録してみよう
+# 10. AtCoder 入門
+## 10-1. AtCoder に登録してみよう
 
 AtCoder は毎週土曜 21:00-22:40 に競技プログラミングのコンテストを行っているサイトです。
 (競技プログラミングとは何かについて知りたい方は、[競プロのすすめ](https://ch-random.net/post/246/) を参照してください。)
@@ -211,7 +218,11 @@ AtCoder は毎週土曜 21:00-22:40 に競技プログラミングのコンテ�
 1. [AtCoder の Register ページ](https://atcoder.jp/register) から新規登録してください。
 2. また、AtCoder 上の問題一覧を見れるサイト、[AtCoder Problems](https://kenkoooo.com/atcoder/#/table/) (ちなみに fanmade のサイトです) をブックマークしておきましょう。
 
-# 11. 課題 0 を AC してみよう
+## 10-2. AtCoder Easy Test を導入してみよう
+
+[AtCoder Easy Test を支える技術](https://qiita.com/magurofly/items/4b60dc02283e70230f71) を参考に。
+
+## 10-3. 課題 0 を AC してみよう
 
 コピペ AC してみましょう。
 
@@ -222,8 +233,8 @@ s = input()
 print(a + b + c, s)
 ```
 
-# 12. 各種 VSCode の機能の紹介
-## 12-1. 設定を弄ってみよう
+# 11. (発展) 各種 VSCode の機能の紹介
+## 11-1. 設定を弄ってみよう
 
 設定ファイル `settings.json` に到達する手順は以下の通りです。
 
@@ -231,25 +242,25 @@ print(a + b + c, s)
    (ちなみに、コマンド `ctrl + ,` でも設定画面が開くことができます。)
 2. 右上の小さなアイコン群のうち、ホバーで見れるテキストが `設定 (JSON) を開く` のアイコンを押すと到達できます。
 
-- [よもぎの settings.json](https://gist.github.com/moyomogi/e6c7db60357652bd37ed0a5c2559a7a6)  
+- [よもぎの settings.json](https://github.com/moyomogi/python_2022_md/tree/master/jsons)  
   良ければコピペしてください！　元々何か書かれていた場合は、元の状態に戻したくなるかもしれないので、元データを他の場所に一時退避しておいてください。
 
-## 12-2. スニペットを使ってみよう
+## 11-2. スニペットを使ってみよう
 
 python スニペットファイル `python.json` に到達する手順は以下の通りです。
 
 1. `左リボンの一番下にある歯車アイコン` > `ユーザースニペット` を押すと VSCode 内部にウィンドウが開きます。
 2. `python.json (Python)` を選択すると到達できます。
 
-- [よもぎの python.json](https://gist.github.com/moyomogi/1c50e1410dae91df7094a46a1cf8e961)  
+- [よもぎの python.json](https://github.com/moyomogi/python_2022_md/tree/master/jsons)  
   良ければコピペしてください！
 
-## 12-3. (発展) マルチカーソルを使ってみよう
+## 11-3. (超発展) マルチカーソルを使ってみよう
 
 Home/End キー (行頭/行末に移動) 程度で満足してはなりません。マルチカーソルを使うと、同時に複数個所の編集が可能です。
 詳しくは、[VSCode のマルチカーソル練習帳](https://qiita.com/TomK/items/3b1f5be07d708d7bd6c5) が実際の編集映像付きで分かりやすいので読んでみてください。
 
-# 15. 補遺
+# 12. 補遺
 
 - 大学のプログラミングの授業では C 言語が使われるはずなので、C および C++ を実行できる環境も構築しています。
 - 他人のコードを読むことがプログラミング学習に最適な手段です。すなわち、プログラミングを効率よく学ぶには、AtCoder などにて他人のコードを日常的に見ることが必要です。(再掲)

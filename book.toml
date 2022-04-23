@@ -12,13 +12,14 @@
 #   # Install mdbook
 #   $ cargo install mdbook
 # Usage:
-#   $ mdbook build && cp book/pdf/output.pdf book/python_2022.pdf
+#   $ mdbook build
 [book]
 title = "python_2022"
 src = "book_src"
 
 [output.html]
 mathjax-support = true
+git-repository-url = "https://github.com/moyomogi/python_2022_md"
 
 [output.html.playground]
 editable = true
