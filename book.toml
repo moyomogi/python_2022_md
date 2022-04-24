@@ -1,5 +1,5 @@
 # Description:
-#   rust で実走された crate である mdbook を用いて、
+#   rust で実装された crate である mdbook を用いて、
 #   md から html を生成します。
 # Setup:
 #   # Install and setup rust

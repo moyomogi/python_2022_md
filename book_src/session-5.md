@@ -15,7 +15,7 @@ for _ in range(n):
 print(len(st))
 ```
 
-2. 両端キュー `deque`
+2. 両端キュー `deque`  
    機能としては list に似ていますが、先頭に要素を追加する `appendleft` や先頭の要素を削除する `popleft` があります。
 
 - list の主要なメソッド
@@ -37,16 +37,16 @@ print(len(st))
 
 - 参考資料 [Python の deque でキュー、スタック、デック（両端キュー）を扱う](https://note.nkmk.me/python-collections-deque/)
 
-3. 優先度キュー `heapq`
+3. 優先度キュー `heapq`  
    ほとんど使わないので説明略。
 
 - 参考資料 [【Python】優先度付きキューの使い方【heapq】【ABC141 D】](https://qiita.com/ell/items/fe52a9eb9499b7060ed6)
 
 # 2. クラス (Class)
 
-クラスを自分で書く必要に迫られることはほとんどないと思います。
-しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。
-理解できなくても全く問題ないのでお気軽に～。
+クラスを自分で書く必要に迫られることはほとんどないと思います。  
+しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。  
+理解できなくても全く問題ないので気軽に聞いてください。
 
 ## 2-1. クラスを作ってみよう
 
@@ -109,6 +109,7 @@ print(b)  # -1 + 1i
 # 3. (発展) 計算オーダーを考えよう
 
 - (8) 計算オーダーを考える [C085C - Otoshidama](https://atcoder.jp/contests/abs/tasks/abc085_c)
+
   3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。
 
 ```py
@@ -136,15 +137,13 @@ GitHub の練習として、ライブラリを GitHub Pages に公開してみ�
 
 ### 4-1-2. GitHub Desktop をインストール
 
-(GitHub Desktop に関する説明、誰か書いてほしい)
+(GitHub Desktop に関する説明、誰か書いてほしい。  
+僕はコマンドでやってるので、何も分かりません。)
 
 - (参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
-
-1. github に ssh 接続する。
-
-- 参考資料 [GitHub に ssh 接続するまでの手順](https://zenn.dev/schnell/articles/0e1c2e9db5c08d)
-
-2. 以下のコマンドを実行。
+  1. github に ssh 接続する。
+  - 参考資料 [GitHub に ssh 接続するまでの手順](https://zenn.dev/schnell/articles/0e1c2e9db5c08d)
+  2. 以下のコマンドを実行。
 
 ```sh
 # 下 4 行は初回のみ実行
@@ -167,25 +166,23 @@ $ git push origin master
 ## 4-2. ライブラリを公開
 
 1. 勉強会用のフォルダと同じ階層に、別のフォルダ (フォルダ名は例えば `python_2022_lib` として、`YOUR_NAME/python_2022_lib` のように) を作ってください。
-2. [moyomogi/python_2022_lib](https://github.com/moyomogi/python_2022_lib) の Download Zip からコードをダウンロード。
-3. GitHub Desktop を用いてファイルをアップロード。
-4. GitHub Pages を有効にする。
-   1. `https://github.com/YOUR_NAME/python_2022_lib` を開き、Settings タブを開く。
-   2. Pages ページを開き、「gh-pages」ブランチを選択。
-      <img src="https://raw.githubusercontent.com/moyomogi/python_2022_md/master/docs/lib_pages.jpg" width="480">
+2. [moyomogi/python_2022_lib](https://github.com/moyomogi/python_2022_lib) の Download Zip からコードをダウンロードして、中身を 1. で作ったフォルダ内に貼り付け。
+3. ライブラリ用のレポジトリを新規作成。
+4. GitHub Desktop を用いてファイルをアップロード。
+5. GitHub のアカウントで [Netlify](https://app.netlify.com) にログインし、ライブラリのレポジトリを選択して、デプロイ。詳しい操作は [Setting up your own digital garden with Jekyll](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll) を参照。
 
 # 6. ？？？「Web 制作にご興味が？」
 
 <img src="https://i.imgur.com/OCMiU8x.png" width="480">
 
-今回、GitHub Pages でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
+今回、Netlify でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
 ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、是非お気軽にご参加ください。
 [RVW 2022 Spring](https://rvw2022s.herokuapp.com) 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。
 
 # 7. 合作をしよう
 
-公立大の部活 [App Navi](https://opuappnavi.com/#/) と不定期に hackathon を行っています。
-合作に参加すると、他人のコードを読めて、知識が深まります。
+公立大の部活 [App Navi](https://opuappnavi.com/#/) と不定期に hackathon を行っています。  
+合作に参加すると、他人のコードを読めて、知識が深まります。  
 プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。
 
 - 参考: Hackathon2022Spring

@@ -1,4 +1,4 @@
-# 第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ
+# 第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ、Web Scraping
 
 # 1. 自分で関数を作ってみよう (def)
 
@@ -26,17 +26,20 @@ print(calc_rect_area(20))  # 1400
 print(calc_rect_area())  # 3500
 ```
 
-## 1-2. (発展) lambda (ラムダ) 関数
+## 1-2. (参考) lambda (ラムダ) 関数
+
+lambda 関数を使うと def を使って定義するよりも短く書けますが、
+読みにくくなってしまうので、def を使うことをお薦めします。
 
 ```py
 def calc_rect_area(width, height):
     return width * height
 
-print(calc_rect_area(10, 20))  # 200
+print(calc_rect_area(20, 30))  # 600
 
 # calc_rect_area と等価な関数
 calc_rect_area2 = lambda w, h: w * h
-print(calc_rect_area2(10, 20))  # 200
+print(calc_rect_area2(20, 30))  # 600
 ```
 
 # 2. (発展) 再帰関数
@@ -56,7 +59,8 @@ def gcd(x, y):
 print(gcd(12, 18))  # 6
 
 
-# ちなみに、最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」で求まります
+# 本題 (再帰関数) から逸れますが、
+# 最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」を利用すると求まります。
 def lcm(x, y):
     if x == 0 and y == 0:
         return 0
@@ -94,6 +98,11 @@ print(calc_circle_area(10))  # 314.1592653589793
 
 Static Hosting なサイトに対しては、`BeautifulSoup` のみで Web Scraping できます。
 (なお、JavaScript Hosting なサイトに対しては、`selenium` + `BeautifulSoup` で Web Scraping できます。)
+
+まずは VSCode 付属のターミナルを開き、`BeautifulSoup` の入っている `beautifulsoup4` と `requests` をインストール。
+```sh
+pip3 install beautifulsoup4 requests
+```
 
 ```py
 # https://oxylabs.io/blog/python-web-scraping

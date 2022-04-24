@@ -2,7 +2,7 @@
 
 # 0. 予習事項
 
-「1. 型とは？」を読んでおいてください。(TODO: 予習をするのは面倒では？)
+「1. 型とは？」を読んでおいてください。
 
 # 1. 型とは？
 
@@ -95,12 +95,13 @@ print(nums2)  # [1, 1, 3, 4, 5]
 # 3. 組み込み関数 `range`
 
 繰り返し実行機能である `for` 文を学習する前に、まずは組み込み関数 `range` を紹介します。
+1 つ目の要素が 1 ではなく 0 (`0-indexed` という。) であることに注意。
 
-| 使い方                   | 対応する配列                      | 対応する半開区間               | 具体例                                   |     |
-| ------------------------ | --------------------------------- | ------------------------------ | ---------------------------------------- | --- |
-| range(stop)              | [0, 1, ..., stop - 1]             | $[0, stop)$                    | range(5) は、配列 [0, 1, 2, 3, 4] に対応。1 つ目の要素が 1 ではなく 0 (`0-indexed` という。) であることに注意。 |     |
-| range(start, stop)       | [start, start + 1, ..., stop - 1] | $[start, stop)$                | range(2, 5) は、配列 [2, 3, 4] に対応。    |     |
-| range(start, stop, step) | [start, start + step, ...]        | $[start, stop)$ の step 個飛び | range(0, 5, 2) は、配列 [0, 2, 4] に対応。 |     |
+| 使い方                   | 対応する配列                      | 対応する半開区間               | 具体例                                     |
+| ------------------------ | --------------------------------- | ------------------------------ | ------------------------------------------ |
+| range(stop)              | [0, 1, ..., stop - 1]             | $[0, stop)$                    | range(5) は、配列 [0, 1, 2, 3, 4] に対応。 |
+| range(start, stop)       | [start, start + 1, ..., stop - 1] | $[start, stop)$                | range(2, 5) は、配列 [2, 3, 4] に対応。    |
+| range(start, stop, step) | [start, start + step, ...]        | $[start, stop)$ の step 個飛び | range(0, 5, 2) は、配列 [0, 2, 4] に対応。 |
 
 ```py
 # list でラップしないと生の range が出力されます
@@ -108,11 +109,17 @@ print(range(5))  # range(0, 5)
 
 # 以下では list でラップします
 print(list(range(5)))  # [0, 1, 2, 3, 4]
-print(list(range(2, 5)))  # [2, 3, 4]
+print(list(range(1, 5)))  # [1, 2, 3, 4]
+print(list(range(0, 4)))  # [0, 1, 2, 3]
+print(list(range(1, 4)))  # [1, 2, 3]
 print(list(range(0, 5, 2)))  # [0, 2, 4]
 ```
 
 # 4. 一定回数を繰り返す (`for`, `while`)
+
+1. `for i in range(n)` 型
+
+i は index の頭文字です。
 
 ```py
 # 先述の通り range(5) は [0, 1, 2, 3, 4] の意です
@@ -125,19 +132,39 @@ for i in range(5):
     # 4
 ```
 
-```py
-nums = [3, 1, 4, 1, 5]
-for x in range(len(nums)):
-    print(x)
-# 3
-# 1
-# 4
-# 1
-# 5
-```
+2. `for x in range(nums)` 型
 
 ```py
-# TODO: 「for x in a:」を使ったコードを書く
+nums = [3, 1, 4, 1, 5]
+for x in nums:
+    print(x)
+    # 3
+    # 1
+    # 4
+    # 1
+    # 5
+```
+
+3. (発展) 組み込み関数 `enumerate`
+```py
+nums = [3, 1, 4, 1, 5]
+for i in range(len(nums)):
+    print(f"nums[{i}] = {nums[i]}")
+    # nums[0] = 3
+    # nums[1] = 1
+    # nums[2] = 4
+    # nums[3] = 1
+    # nums[4] = 5
+
+# 組み込み関数 enumerate を使ってもよい
+nums = [3, 1, 4, 1, 5]
+for i, x in enumerate(nums):
+    print(f"nums[{i}] = {x}")
+    # nums[0] = 3
+    # nums[1] = 1
+    # nums[2] = 4
+    # nums[3] = 1
+    # nums[4] = 5
 ```
 
 ## 4-1. for で配列 (list) を構築する構文
@@ -145,24 +172,26 @@ for x in range(len(nums)):
 ```py
 nums = [3, 1, 4, 1, 5]
 # 配列 nums 内のそれぞれの要素を 2 乗する
-nums2 = [num ** 2 for num in nums]
+nums2 = [num**2 for num in nums]
 print(nums2)  # [9, 1, 16, 1, 25]
 ```
 
 ```py
 planets = ["Mercury", "Venus", "Earth", "Malacandra", "Jupiter", "Saturn", "Uranus", "Neptune"]
+# 各 planet の 0 文字目を集めた配列 planets2 を作る
 planets2 = [planet[0] for planet in planets]
 print(planets2)  # ['M', 'V', 'E', 'M', 'J', 'S', 'U', 'N']
 ```
 
 ```py
 planets = ["Mercury", "Venus", "Earth", "Malacandra", "Jupiter", "Saturn", "Uranus", "Neptune"]
-planets2 = [
-  planet.upper() + '!'
-  for planet in planets
-  if len(planet) < 6
+# 各 planet の末尾に感嘆符 (!) を付けた配列 planets3 を作る
+planets3 = [
+    planet.upper() + '!'
+    for planet in planets
+    if len(planet) < 6
 ]
-print(planets2)  # ['VENUS!', 'EARTH!', 'MARS!']
+print(planets3)  # ['VENUS!', 'EARTH!', 'MARS!']
 ```
 
 ```py
@@ -178,7 +207,7 @@ a = [1, 2, 3, 4]
 tot = 0
 for i in range(len(a)):
     tot += a[i]
-    print("tot:", tot)
+    print("tot =", tot)
     # tot: 1
     # tot: 3
     # tot: 6
