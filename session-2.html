@@ -148,7 +148,7 @@
 <tr><td>*</td><td>乗算</td><td>print(2 * 3)</td></tr>
 <tr><td>**</td><td>累乗</td><td>print(6 ** 10)</td></tr>
 <tr><td>/</td><td>除算</td><td>print(2 / 3)</td></tr>
-<tr><td>//</td><td>除算の商、切り捨て</td><td>print(31 // 7)</td></tr>
+<tr><td>//</td><td>除算の商 (つまり切り捨て)</td><td>print(31 // 7)</td></tr>
 <tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
 </tbody></table>
 <h1 id="1-pylance-linter-formatter-は入っていますか"><a class="header" href="#1-pylance-linter-formatter-は入っていますか">1. Pylance (Linter), Formatter は入っていますか？</a></h1>
@@ -204,8 +204,8 @@ print(&quot;1 year =&quot;, seconds, &quot;seconds&quot;)
 </code></pre>
 <h1 id="5-組み込み関数-max-min-abs"><a class="header" href="#5-組み込み関数-max-min-abs">5. 組み込み関数 <code>max</code>, <code>min</code>, <code>abs</code></a></h1>
 <p>Python では、これまで登場した <code>print</code> 以外にも、
-<code>max</code>, <code>min</code>, <code>abs</code> という組み込み関数が存在します。
-組み込み関数とは、関数を自分で定義 (関数は第 4 回で取り扱います。) せずとも、デフォルトで使える関数です。</p>
+<code>max</code>, <code>min</code>, <code>abs</code> という<strong>組み込み関数</strong>が存在します。
+<strong>組み込み関数</strong>とは、関数を自分で定義 (関数は第 4 回で取り扱います。) せずとも、デフォルトで使える関数です。</p>
 <table><thead><tr><th>組み込み関数の関数名</th><th>返り値</th></tr></thead><tbody>
 <tr><td>max</td><td>引数 (ひきすう) を複数取り、最大値を返す</td></tr>
 <tr><td>min</td><td>引数を複数取り、最小値を返す</td></tr>
@@ -220,12 +220,12 @@ print(float(10))  # 10.0
 <h1 id="6-文字列操作"><a class="header" href="#6-文字列操作">6. 文字列操作</a></h1>
 <p>以下の表のようになります。($n := len(s)$ とした。)</p>
 <table><thead><tr><th>使い方</th><th>対応する集合</th><th>s = &quot;abcde&quot; のとき</th></tr></thead><tbody>
-<tr><td>s</td><td>${a[i] , \vert , i \in [0, n) }$</td><td>s は &quot;abcde&quot;</td></tr>
-<tr><td>s[index]</td><td>${a[index] }$</td><td>s[0] は &quot;a&quot;</td></tr>
-<tr><td>s[start:]</td><td>${a[i] , \vert , i \in [start, n) }$</td><td>s[1:] は &quot;bcde&quot;</td></tr>
-<tr><td>s[:stop]</td><td>${a[i] , \vert , i \in [0, stop) }$</td><td>s[:4] は &quot;abcd&quot;</td></tr>
-<tr><td>s[start:stop]</td><td>${a[i] , \vert , i \in [start, stop) }$</td><td>s[1:4] は &quot;bcd&quot;</td></tr>
-<tr><td>s[start:stop:step]</td><td>${a[i] , \vert , i \in [start, stop) }$ の step 個飛び</td><td>s[::2] (つまり s[0:5:2]) は &quot;ace&quot;</td></tr>
+<tr><td>s</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [0, n) \rbrace$</td><td>s は &quot;abcde&quot;</td></tr>
+<tr><td>s[index]</td><td>$\lbrace a[index] \rbrace$</td><td>s[0] は &quot;a&quot;</td></tr>
+<tr><td>s[start:]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [start, n) \rbrace$</td><td>s[1:] は &quot;bcde&quot;</td></tr>
+<tr><td>s[:stop]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [0, stop) \rbrace$</td><td>s[:4] は &quot;abcd&quot;</td></tr>
+<tr><td>s[start:stop]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [start, stop) \rbrace$</td><td>s[1:4] は &quot;bcd&quot;</td></tr>
+<tr><td>s[start:stop:step]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [start, stop) \rbrace$ の step 個飛び</td><td>s[::2] (つまり s[0:5:2]) は &quot;ace&quot;</td></tr>
 </tbody></table>
 <p>デフォルトは <code>[0:n]</code>、つまり半開区間 $[0, n)$ です。</p>
 <pre><code class="language-py">s = &quot;DeepLearning&quot;
@@ -237,7 +237,8 @@ print(s[:5])  # DeepL (上の行と等価)
 print(s[-3:12])  # ing
 print(s[-3:])  # ing (上の行と等価)
 
-print(s[::5])  # Den (あまり使いませんが、3 番目の引数では step を指定できます。default は 1 です。)
+# あまり使いませんが、3 番目の引数では step を指定できます。default は 1 です。
+print(s[::5])  # Den
 print(s[::-1])  # gninraeLpeeD (負の数も指定可能)
 
 print(&quot;Spam &quot; * 4)  # Spam Spam Spam Spam
@@ -268,13 +269,13 @@ else:
     print(x, &quot;は 500 より小&quot;)  # 346 は 500 より小
 </code></pre>
 <h1 id="8-発展-三項演算子"><a class="header" href="#8-発展-三項演算子">8. (発展) 三項演算子</a></h1>
-<p>三項演算子は <code>(True の時の値) if (条件) else (False の時の値)</code> と書きます。</p>
+<p><strong>三項演算子</strong>は <code>(True の時の値) if (条件) else (False の時の値)</code> と書きます。</p>
 <pre><code class="language-py">x = 765
 print(x, &quot;は偶数&quot; if x % 2 == 0 else &quot;は奇数&quot;)  # 765 は奇数
 </code></pre>
 <h1 id="9-発展-print-テク"><a class="header" href="#9-発展-print-テク">9. (発展) print テク</a></h1>
 <h2 id="9-1-f-文字列-f-strings"><a class="header" href="#9-1-f-文字列-f-strings">9-1. F 文字列 (F-Strings)</a></h2>
-<p>好みの問題ですが、コンマを使う代わりに F 文字列を用いて <code>print</code> することもできます。
+<p>好みの問題ですが、コンマを使う代わりに <strong>F 文字列</strong>を用いて <code>print</code> することもできます。
 <code>f&quot;{変数}&quot;</code> と書くと、変数の値が代入された状態の文字列になってくれます。</p>
 <pre><code class="language-py">print(&quot;2 * 3:&quot;, 2 * 3)  # 2 * 3: 6
 print(f&quot;2 * 3: {2 * 3}&quot;)  # 2 * 3: 6
@@ -305,7 +306,7 @@ print(&quot;改行は\nです&quot;)
 # です
 </code></pre>
 <h2 id="9-3-raw-文字列-raw-strings"><a class="header" href="#9-3-raw-文字列-raw-strings">9-3. Raw 文字列 (Raw Strings)</a></h2>
-<p>制御文字 (\, \n といった特殊な役割を持つ文字のこと。) をそのまま出力。</p>
+<p><strong>制御文字</strong> (\, \n といった特殊な役割を持つ文字のこと。) をそのまま出力。</p>
 <pre><code class="language-py">print(&quot;a\\b\nA\\B&quot;)
 # a\b
 # A\B

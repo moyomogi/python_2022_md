@@ -142,15 +142,22 @@
                     <main>
                         <ul>
 <li>オフィスアワー<br />
-随時。授業に関するあるいは関しない質問は、お気軽に discord の #新入生向け勉強会 や DM まで。</li>
+随時。授業に関するあるいは関しない質問は、お気軽に discord の #新入生向け勉強会 や、よもぎの DM まで。</li>
 <li>授業目標<br />
 プログラミングの全貌を駆け足で見ていきます。<br />
 一度目を通すことで、将来プログラムを実装したくなった際に、<strong>適切な検索ワードで検索</strong>できるようになることが一つ目の目標です。すなわち、適した機能を選択できる・望んだコード実装できるレベルは目指していません。プログラミング能力は、プログラミングの経験年数や、合作回数と相関関係があります。すなわち、実際にコーディングしないとプログラミング能力は向上せず、かつ、合作を通じて他人のコードを読むと視野が広がります。<br />
 もう一つの目標は、ABC (AtCoder Beginner Contest) の A,B 問題を安定して解けるようになることです。</li>
 <li>要件<br />
 もし WSL を入れるなら、一定程度の PC メモリ (8 GB あれば十分のはず)。</li>
-<li>期間<br />
-予定は未定ですが、2022 年 4 月 29 日辺りから開講する予定です。1 週間に 2 日勉強会を行い、全 5 回を 2 週間と端数 1 日で終わらせます。</li>
+<li>開催日時
+<ul>
+<li>第 1 回: 2022/5/2 (月)</li>
+<li>第 2 回: 2022/5/5 (木)</li>
+<li>第 3 回: 2022/5/9 (月)</li>
+<li>第 4 回: 2022/5/12 (木)</li>
+<li>第 5 回: 2022/5/16 (月)</li>
+</ul>
+</li>
 <li>課題<br />
 課題提出は必須です。提出場所は AtCoder です。
 提出状況は AtCoder Problems で Private バチャを建てて管理します。
@@ -166,7 +173,7 @@
 改善案などあれば、お気軽に新 2 回生よもぎの discord/slack まで。</li>
 <li>このプロジェクトを構成する md は <a href="https://github.com/moyomogi/python_2022_md">moyomogi/python_2022_md</a> に置いているので、Markdown を書く参考に読んでみてもいいかもね。</li>
 <li>License<br />
-ライセンスは CC0 です。すなわち、このプロジェクト内のコードや文章などは、引用元を記載せずに転載して構いません。</li>
+ライセンスは <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja">CC0</a> です。すなわち、このプロジェクト内のコードや文章などは、引用元を記載せずに転載して構いません。</li>
 <li>参考文献
 <ul>
 <li><a href="https://qiita.com/drken/items/fd4e5e3630d0f5859067">AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～</a>, drken</li>
@@ -282,7 +289,8 @@ WSL を入れ終わった方は、エクスプローラーを開き、パンく�
 </ol>
 <pre><code class="language-sh"># WSL 20.04 LTS にて以下を実行。
 $ cd ~  # フォルダ ~ に移動
-# ls に対する出力と、エクスプローラーで開いた \\wsl$\Ubuntu-20.04\home\YOUR_NAME に見えているフォルダ内とを見比べて、
+# ls に対する出力と、エクスプローラーで開いた
+# \\wsl$\Ubuntu-20.04\home\YOUR_NAME に見えているフォルダ内とを見比べて、
 # 正常に cd 出来ているかを確認してみましょう。。
 $ ls
 </code></pre>
@@ -328,7 +336,7 @@ $ ls
 <tr><td>*</td><td>乗算</td><td>print(2 * 3)</td></tr>
 <tr><td>**</td><td>累乗</td><td>print(6 ** 10)</td></tr>
 <tr><td>/</td><td>除算</td><td>print(2 / 3)</td></tr>
-<tr><td>//</td><td>除算の商、切り捨て</td><td>print(31 // 7)</td></tr>
+<tr><td>//</td><td>除算の商 (つまり切り捨て)</td><td>print(31 // 7)</td></tr>
 <tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
 </tbody></table>
 <p>main.py に以下を記載。</p>
@@ -429,7 +437,7 @@ print(a + b + c, s)
 <tr><td>*</td><td>乗算</td><td>print(2 * 3)</td></tr>
 <tr><td>**</td><td>累乗</td><td>print(6 ** 10)</td></tr>
 <tr><td>/</td><td>除算</td><td>print(2 / 3)</td></tr>
-<tr><td>//</td><td>除算の商、切り捨て</td><td>print(31 // 7)</td></tr>
+<tr><td>//</td><td>除算の商 (つまり切り捨て)</td><td>print(31 // 7)</td></tr>
 <tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
 </tbody></table>
 <h1 id="1-pylance-linter-formatter-は入っていますか"><a class="header" href="#1-pylance-linter-formatter-は入っていますか">1. Pylance (Linter), Formatter は入っていますか？</a></h1>
@@ -485,8 +493,8 @@ print(&quot;1 year =&quot;, seconds, &quot;seconds&quot;)
 </code></pre>
 <h1 id="5-組み込み関数-max-min-abs"><a class="header" href="#5-組み込み関数-max-min-abs">5. 組み込み関数 <code>max</code>, <code>min</code>, <code>abs</code></a></h1>
 <p>Python では、これまで登場した <code>print</code> 以外にも、
-<code>max</code>, <code>min</code>, <code>abs</code> という組み込み関数が存在します。
-組み込み関数とは、関数を自分で定義 (関数は第 4 回で取り扱います。) せずとも、デフォルトで使える関数です。</p>
+<code>max</code>, <code>min</code>, <code>abs</code> という<strong>組み込み関数</strong>が存在します。
+<strong>組み込み関数</strong>とは、関数を自分で定義 (関数は第 4 回で取り扱います。) せずとも、デフォルトで使える関数です。</p>
 <table><thead><tr><th>組み込み関数の関数名</th><th>返り値</th></tr></thead><tbody>
 <tr><td>max</td><td>引数 (ひきすう) を複数取り、最大値を返す</td></tr>
 <tr><td>min</td><td>引数を複数取り、最小値を返す</td></tr>
@@ -501,12 +509,12 @@ print(float(10))  # 10.0
 <h1 id="6-文字列操作"><a class="header" href="#6-文字列操作">6. 文字列操作</a></h1>
 <p>以下の表のようになります。($n := len(s)$ とした。)</p>
 <table><thead><tr><th>使い方</th><th>対応する集合</th><th>s = &quot;abcde&quot; のとき</th></tr></thead><tbody>
-<tr><td>s</td><td>${a[i] , \vert , i \in [0, n) }$</td><td>s は &quot;abcde&quot;</td></tr>
-<tr><td>s[index]</td><td>${a[index] }$</td><td>s[0] は &quot;a&quot;</td></tr>
-<tr><td>s[start:]</td><td>${a[i] , \vert , i \in [start, n) }$</td><td>s[1:] は &quot;bcde&quot;</td></tr>
-<tr><td>s[:stop]</td><td>${a[i] , \vert , i \in [0, stop) }$</td><td>s[:4] は &quot;abcd&quot;</td></tr>
-<tr><td>s[start:stop]</td><td>${a[i] , \vert , i \in [start, stop) }$</td><td>s[1:4] は &quot;bcd&quot;</td></tr>
-<tr><td>s[start:stop:step]</td><td>${a[i] , \vert , i \in [start, stop) }$ の step 個飛び</td><td>s[::2] (つまり s[0:5:2]) は &quot;ace&quot;</td></tr>
+<tr><td>s</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [0, n) \rbrace$</td><td>s は &quot;abcde&quot;</td></tr>
+<tr><td>s[index]</td><td>$\lbrace a[index] \rbrace$</td><td>s[0] は &quot;a&quot;</td></tr>
+<tr><td>s[start:]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [start, n) \rbrace$</td><td>s[1:] は &quot;bcde&quot;</td></tr>
+<tr><td>s[:stop]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [0, stop) \rbrace$</td><td>s[:4] は &quot;abcd&quot;</td></tr>
+<tr><td>s[start:stop]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [start, stop) \rbrace$</td><td>s[1:4] は &quot;bcd&quot;</td></tr>
+<tr><td>s[start:stop:step]</td><td>$\lbrace a[i] \hspace{2pt} \vert \hspace{2pt} i \in [start, stop) \rbrace$ の step 個飛び</td><td>s[::2] (つまり s[0:5:2]) は &quot;ace&quot;</td></tr>
 </tbody></table>
 <p>デフォルトは <code>[0:n]</code>、つまり半開区間 $[0, n)$ です。</p>
 <pre><code class="language-py">s = &quot;DeepLearning&quot;
@@ -518,7 +526,8 @@ print(s[:5])  # DeepL (上の行と等価)
 print(s[-3:12])  # ing
 print(s[-3:])  # ing (上の行と等価)
 
-print(s[::5])  # Den (あまり使いませんが、3 番目の引数では step を指定できます。default は 1 です。)
+# あまり使いませんが、3 番目の引数では step を指定できます。default は 1 です。
+print(s[::5])  # Den
 print(s[::-1])  # gninraeLpeeD (負の数も指定可能)
 
 print(&quot;Spam &quot; * 4)  # Spam Spam Spam Spam
@@ -549,13 +558,13 @@ else:
     print(x, &quot;は 500 より小&quot;)  # 346 は 500 より小
 </code></pre>
 <h1 id="8-発展-三項演算子"><a class="header" href="#8-発展-三項演算子">8. (発展) 三項演算子</a></h1>
-<p>三項演算子は <code>(True の時の値) if (条件) else (False の時の値)</code> と書きます。</p>
+<p><strong>三項演算子</strong>は <code>(True の時の値) if (条件) else (False の時の値)</code> と書きます。</p>
 <pre><code class="language-py">x = 765
 print(x, &quot;は偶数&quot; if x % 2 == 0 else &quot;は奇数&quot;)  # 765 は奇数
 </code></pre>
 <h1 id="9-発展-print-テク"><a class="header" href="#9-発展-print-テク">9. (発展) print テク</a></h1>
 <h2 id="9-1-f-文字列-f-strings"><a class="header" href="#9-1-f-文字列-f-strings">9-1. F 文字列 (F-Strings)</a></h2>
-<p>好みの問題ですが、コンマを使う代わりに F 文字列を用いて <code>print</code> することもできます。
+<p>好みの問題ですが、コンマを使う代わりに <strong>F 文字列</strong>を用いて <code>print</code> することもできます。
 <code>f&quot;{変数}&quot;</code> と書くと、変数の値が代入された状態の文字列になってくれます。</p>
 <pre><code class="language-py">print(&quot;2 * 3:&quot;, 2 * 3)  # 2 * 3: 6
 print(f&quot;2 * 3: {2 * 3}&quot;)  # 2 * 3: 6
@@ -586,7 +595,7 @@ print(&quot;改行は\nです&quot;)
 # です
 </code></pre>
 <h2 id="9-3-raw-文字列-raw-strings"><a class="header" href="#9-3-raw-文字列-raw-strings">9-3. Raw 文字列 (Raw Strings)</a></h2>
-<p>制御文字 (\, \n といった特殊な役割を持つ文字のこと。) をそのまま出力。</p>
+<p><strong>制御文字</strong> (\, \n といった特殊な役割を持つ文字のこと。) をそのまま出力。</p>
 <pre><code class="language-py">print(&quot;a\\b\nA\\B&quot;)
 # a\b
 # A\B
@@ -625,11 +634,11 @@ else:
 <li><code>bool</code> 型<br />
 if の中に入れるやつで、<code>True</code> (=1) と <code>False</code> (=0) の二値しか取りません。</li>
 <li><code>int</code> 型<br />
-整数。ちなみに、C++ と異なり何桁でも無限に取れます (多倍長整数と言います)。</li>
+整数。ちなみに、C++ と異なり何桁でも無限に取れます (<strong>多倍長整数</strong>と言います)。</li>
 <li><code>float</code> 型<br />
 小数。</li>
 <li><code>str</code> 型<br />
-文字列。<code>str</code> は string の略で、文字列の意。</li>
+<strong>文字列</strong>。<code>str</code> は string の略で、<strong>文字列</strong>の意。</li>
 </ul>
 <pre><code class="language-py">x = True
 print(x)  # True
@@ -680,7 +689,7 @@ planets.index(&quot;Jupiter&quot;)  # 4 (index を返す)
 <tr><td>li.sort()</td><td>破壊的</td><td>型 list のメソッド</td></tr>
 <tr><td>sorted(li)</td><td>破壊的でない</td><td>組み込み関数</td></tr>
 </tbody></table>
-<p>ちなみに、どのプログラミング言語でも、デフォルトのソートは昇順ソートです。</p>
+<p>ちなみに、どのプログラミング言語でも、デフォルトのソートは昇順ソート (のはず) です。</p>
 <ul>
 <li>昇順ソート: [3, 1, 4, 1, 5] -&gt; [1, 1, 3, 4, 5] のように小さい順に並べる意。</li>
 <li>降順ソート: [3, 1, 4, 1, 5] -&gt; [5, 4, 3, 1, 1] のように大きい順に並べる意。</li>
@@ -726,11 +735,11 @@ for i in range(5):
     # 4
 </code></pre>
 <ol start="2">
-<li><code>for x in range(nums)</code> 型</li>
+<li><code>for x in nums</code> 型</li>
 </ol>
 <pre><code class="language-py">nums = [3, 1, 4, 1, 5]
-for x in nums:
-    print(x)
+for num in nums:
+    print(num)
     # 3
     # 1
     # 4
@@ -751,8 +760,8 @@ for i in range(len(nums)):
 
 # 組み込み関数 enumerate を使ってもよい
 nums = [3, 1, 4, 1, 5]
-for i, x in enumerate(nums):
-    print(f&quot;nums[{i}] = {x}&quot;)
+for i, num in enumerate(nums):
+    print(f&quot;nums[{i}] = {num}&quot;)
     # nums[0] = 3
     # nums[1] = 1
     # nums[2] = 4
@@ -1008,7 +1017,8 @@ for x in range(1, n + 1):
 print(ans)
 </code></pre>
 <ol start="2">
-<li>関数を define (定義) して解いた場合。見やすくなりましたね。</li>
+<li>関数を define (定義) して解いた場合。<br />
+見やすくなりましたね。</li>
 </ol>
 <pre><code class="language-py">def calc_sum(x):
     res = 0
