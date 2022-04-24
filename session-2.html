@@ -152,9 +152,11 @@
 <tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
 </tbody></table>
 <h1 id="1-pylance-linter-formatter-は入っていますか"><a class="header" href="#1-pylance-linter-formatter-は入っていますか">1. Pylance (Linter), Formatter は入っていますか？</a></h1>
-<p>VSCode を入れてくれた人なら、拡張機能 <code>Python</code> の中に Pylance (Linter) が入っています。Formatter は black がおすすめです。<br />
-(Linter が入っているかを確認しよう。)<br />
-(Formatter が入っているかを確認しよう。)</p>
+<p>VSCode を入れてくれた人なら、拡張機能 <code>Python</code> の中に Pylance (Linter) が入っています。Formatter は black がおすすめです。</p>
+<ul>
+<li>Linter が入っているかを確認しよう。</li>
+<li>Formatter が入っているかを確認しよう。</li>
+</ul>
 <h1 id="2-発展-演算子の評価順序"><a class="header" href="#2-発展-演算子の評価順序">2. (発展) 演算子の評価順序</a></h1>
 <p>ちなみに、Python では演算子の評価順序は以下の通りです。</p>
 <table><thead><tr><th>Tier</th><th>演算子</th></tr></thead><tbody>
@@ -216,7 +218,16 @@ print(abs(-32))  # 32
 print(float(10))  # 10.0
 </code></pre>
 <h1 id="6-文字列操作"><a class="header" href="#6-文字列操作">6. 文字列操作</a></h1>
-<p>デフォルトは <code>[0:n]</code>、つまり半開区間 $[0, n)$ です。(ただし $n := len(s)$ とした。)</p>
+<p>以下の表のようになります。($n := len(s)$ とした。)</p>
+<table><thead><tr><th>使い方</th><th>対応する集合</th><th>s = &quot;abcde&quot; のとき</th></tr></thead><tbody>
+<tr><td>s</td><td>${a[i] , \vert , i \in [0, n) }$</td><td>s は &quot;abcde&quot;</td></tr>
+<tr><td>s[index]</td><td>${a[index] }$</td><td>s[0] は &quot;a&quot;</td></tr>
+<tr><td>s[start:]</td><td>${a[i] , \vert , i \in [start, n) }$</td><td>s[1:] は &quot;bcde&quot;</td></tr>
+<tr><td>s[:stop]</td><td>${a[i] , \vert , i \in [0, stop) }$</td><td>s[:4] は &quot;abcd&quot;</td></tr>
+<tr><td>s[start:stop]</td><td>${a[i] , \vert , i \in [start, stop) }$</td><td>s[1:4] は &quot;bcd&quot;</td></tr>
+<tr><td>s[start:stop:step]</td><td>${a[i] , \vert , i \in [start, stop) }$ の step 個飛び</td><td>s[::2] (つまり s[0:5:2]) は &quot;ace&quot;</td></tr>
+</tbody></table>
+<p>デフォルトは <code>[0:n]</code>、つまり半開区間 $[0, n)$ です。</p>
 <pre><code class="language-py">s = &quot;DeepLearning&quot;
 print(len(s))  # 12 (文字数)
 print(s[0])  # D (index は 0-indexed で指定します)
@@ -263,22 +274,24 @@ print(x, &quot;は偶数&quot; if x % 2 == 0 else &quot;は奇数&quot;)  # 765 
 </code></pre>
 <h1 id="9-発展-print-テク"><a class="header" href="#9-発展-print-テク">9. (発展) print テク</a></h1>
 <h2 id="9-1-f-文字列-f-strings"><a class="header" href="#9-1-f-文字列-f-strings">9-1. F 文字列 (F-Strings)</a></h2>
-<p>好みの問題ですが、コンマを使う代わりに F 文字列を用いて <code>print</code> することもできます。</p>
+<p>好みの問題ですが、コンマを使う代わりに F 文字列を用いて <code>print</code> することもできます。
+<code>f&quot;{変数}&quot;</code> と書くと、変数の値が代入された状態の文字列になってくれます。</p>
 <pre><code class="language-py">print(&quot;2 * 3:&quot;, 2 * 3)  # 2 * 3: 6
 print(f&quot;2 * 3: {2 * 3}&quot;)  # 2 * 3: 6
 
-# Python 3.6 以前では、str.format メソッドしかありませんでした
+# (余談) Python 3.6 以前では、str.format メソッドしかありませんでした。
+# F 文字列の方が、短く書けていいですね。
 print(&quot;2 * 3: {}&quot;.format(2 * 3))  # 2 * 3: 6
 </code></pre>
-<h3 id="9-1-1-書式指定"><a class="header" href="#9-1-1-書式指定">9-1-1. 書式指定</a></h3>
+<h3 id="9-1-1-出力の書式指定"><a class="header" href="#9-1-1-出力の書式指定">9-1-1. 出力の書式指定</a></h3>
 <ul>
-<li>詳しくは、<a href="https://gammasoft.jp/blog/python-string-format/">Pythonの文字列フォーマット（formatメソッドの使い方）</a> を参照。</li>
+<li>詳しくは、<a href="https://gammasoft.jp/blog/python-string-format/">Python の文字列フォーマット（format メソッドの使い方）</a> を参照。</li>
 </ul>
 <pre><code class="language-py">print(&quot;pi = {:.4}&quot;.format(3.141592653589793238462643383279))  # 3.142
 </code></pre>
 <h2 id="9-2-エスケープ"><a class="header" href="#9-2-エスケープ">9-2. エスケープ</a></h2>
 <p>シングルクオーテーションを出力する際は、ダブルクォーテーションで囲み、
-ダブルクオーテーションを出力する際は、シングルクォーテーションで囲みます。</p>
+ダブルクオーテーションを出力する際は、シングルクォーテーションで囲むと、スマートに書けます。</p>
 <pre><code class="language-py">print(&quot;シングルクオーテーションは ' です&quot;)  # シングルクオーテーションは ' です
 print('ダブルクオーテーションは &quot; です')  # ダブルクオーテーションは &quot; です
 
@@ -292,7 +305,7 @@ print(&quot;改行は\nです&quot;)
 # です
 </code></pre>
 <h2 id="9-3-raw-文字列-raw-strings"><a class="header" href="#9-3-raw-文字列-raw-strings">9-3. Raw 文字列 (Raw Strings)</a></h2>
-<p>制御文字 (\, \n) をそのまま出力。</p>
+<p>制御文字 (\, \n といった特殊な役割を持つ文字のこと。) をそのまま出力。</p>
 <pre><code class="language-py">print(&quot;a\\b\nA\\B&quot;)
 # a\b
 # A\B

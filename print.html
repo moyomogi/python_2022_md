@@ -164,6 +164,7 @@
 </li>
 <li>★ 改善案を募集しています！<br />
 改善案などあれば、お気軽に新 2 回生よもぎの discord/slack まで。</li>
+<li>このプロジェクトを構成する md は <a href="https://github.com/moyomogi/python_2022_md">moyomogi/python_2022_md</a> に置いているので、Markdown を書く参考に読んでみてもいいかもね。</li>
 <li>License<br />
 ライセンスは CC0 です。すなわち、このプロジェクト内のコードや文章などは、引用元を記載せずに転載して構いません。</li>
 <li>参考文献
@@ -178,7 +179,10 @@
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="第-1-回-python-勉強会-2022--vscode-インストールwsl-構築"><a class="header" href="#第-1-回-python-勉強会-2022--vscode-インストールwsl-構築">第 1 回 Python 勉強会 2022 | VSCode インストール、WSL 構築</a></h1>
 <h1 id="1-予習事項"><a class="header" href="#1-予習事項">1. 予習事項</a></h1>
-<p>「3. VSCode インストール」をやっておいてください。</p>
+<ul>
+<li>「2. スクショの取り方」を実際に試してみておいてください。</li>
+<li>「3. VSCode インストール」をやっておいていただけるとスムーズに進行できます。</li>
+</ul>
 <h1 id="2-スクショの取り方"><a class="header" href="#2-スクショの取り方">2. スクショの取り方</a></h1>
 <p>この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。</p>
 <ul>
@@ -200,7 +204,7 @@ Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしい�
 <li>Ubuntu には、非公式リポジトリ <a href="https://launchpad.net/ubuntu/+ppas">PPA</a> があり、自作 CLI ツールを PPA に登録すると、<code>add-apt-repository</code> コマンドで、そのリポジトリをマシンに登録できるので、他のユーザーが <code>apt</code> コマンドでそのプログラムを使えるようになります。</li>
 <li>対して Windows では、自作 CLI ツールを公開する仕組みがないため、技術が発展していません。</li>
 </ul>
-<p>従って、Ubuntu 上の便利な CLI ツールを使うために、WSL が必要です。</p>
+<p>従って、<strong>Ubuntu 上の便利な CLI ツールを使うため</strong>に、WSL が必要です。</p>
 <h2 id="4-2-wsl-を入れよう"><a class="header" href="#4-2-wsl-を入れよう">4-2. WSL を入れよう</a></h2>
 <p>本勉強会では Python・C++ を WSL にインストールします。<br />
 <a href="https://qiita.com/AokabiC/items/e9312856f588dd9303ed">Visual Studio Code で競プロ環境構築(導入編)</a> をブラウザ上の別タブで開いてください。<br />
@@ -398,11 +402,11 @@ print(a + b + c, s)
 良ければコピペしてください！</li>
 </ul>
 <h2 id="11-3-超発展-マルチカーソルを使ってみよう"><a class="header" href="#11-3-超発展-マルチカーソルを使ってみよう">11-3. (超発展) マルチカーソルを使ってみよう</a></h2>
-<p>Home/End キー (行頭/行末に移動) 程度で満足してはなりません。マルチカーソルを使うと、同時に複数個所の編集が可能です。
+<p>Home/End キー (行頭/行末に移動) 程度で満足してはなりません。マルチカーソルを使うと、同時に複数個所の編集が可能です。<br />
 詳しくは、<a href="https://qiita.com/TomK/items/3b1f5be07d708d7bd6c5">VSCode のマルチカーソル練習帳</a> が実際の編集映像付きで分かりやすいので読んでみてください。</p>
 <h1 id="12-補遺"><a class="header" href="#12-補遺">12. 補遺</a></h1>
 <ul>
-<li>大学のプログラミングの授業では C 言語が使われるはずなので、C および C++ を実行できる環境も構築しています。</li>
+<li>大学のプログラミングの授業では C 言語が使われるはずなので、C とその後継である C++ を実行できる環境も構築しています。</li>
 <li>他人のコードを読むことがプログラミング学習に最適な手段です。すなわち、プログラミングを効率よく学ぶには、AtCoder などにて他人のコードを日常的に見ることが必要です。(再掲)</li>
 <li>なお、課題は <a href="https://qiita.com/drken/items/fd4e5e3630d0f5859067">AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～</a> を用います。(再掲)</li>
 </ul>
@@ -429,9 +433,11 @@ print(a + b + c, s)
 <tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
 </tbody></table>
 <h1 id="1-pylance-linter-formatter-は入っていますか"><a class="header" href="#1-pylance-linter-formatter-は入っていますか">1. Pylance (Linter), Formatter は入っていますか？</a></h1>
-<p>VSCode を入れてくれた人なら、拡張機能 <code>Python</code> の中に Pylance (Linter) が入っています。Formatter は black がおすすめです。<br />
-(Linter が入っているかを確認しよう。)<br />
-(Formatter が入っているかを確認しよう。)</p>
+<p>VSCode を入れてくれた人なら、拡張機能 <code>Python</code> の中に Pylance (Linter) が入っています。Formatter は black がおすすめです。</p>
+<ul>
+<li>Linter が入っているかを確認しよう。</li>
+<li>Formatter が入っているかを確認しよう。</li>
+</ul>
 <h1 id="2-発展-演算子の評価順序"><a class="header" href="#2-発展-演算子の評価順序">2. (発展) 演算子の評価順序</a></h1>
 <p>ちなみに、Python では演算子の評価順序は以下の通りです。</p>
 <table><thead><tr><th>Tier</th><th>演算子</th></tr></thead><tbody>
@@ -493,7 +499,16 @@ print(abs(-32))  # 32
 print(float(10))  # 10.0
 </code></pre>
 <h1 id="6-文字列操作"><a class="header" href="#6-文字列操作">6. 文字列操作</a></h1>
-<p>デフォルトは <code>[0:n]</code>、つまり半開区間 $[0, n)$ です。(ただし $n := len(s)$ とした。)</p>
+<p>以下の表のようになります。($n := len(s)$ とした。)</p>
+<table><thead><tr><th>使い方</th><th>対応する集合</th><th>s = &quot;abcde&quot; のとき</th></tr></thead><tbody>
+<tr><td>s</td><td>${a[i] , \vert , i \in [0, n) }$</td><td>s は &quot;abcde&quot;</td></tr>
+<tr><td>s[index]</td><td>${a[index] }$</td><td>s[0] は &quot;a&quot;</td></tr>
+<tr><td>s[start:]</td><td>${a[i] , \vert , i \in [start, n) }$</td><td>s[1:] は &quot;bcde&quot;</td></tr>
+<tr><td>s[:stop]</td><td>${a[i] , \vert , i \in [0, stop) }$</td><td>s[:4] は &quot;abcd&quot;</td></tr>
+<tr><td>s[start:stop]</td><td>${a[i] , \vert , i \in [start, stop) }$</td><td>s[1:4] は &quot;bcd&quot;</td></tr>
+<tr><td>s[start:stop:step]</td><td>${a[i] , \vert , i \in [start, stop) }$ の step 個飛び</td><td>s[::2] (つまり s[0:5:2]) は &quot;ace&quot;</td></tr>
+</tbody></table>
+<p>デフォルトは <code>[0:n]</code>、つまり半開区間 $[0, n)$ です。</p>
 <pre><code class="language-py">s = &quot;DeepLearning&quot;
 print(len(s))  # 12 (文字数)
 print(s[0])  # D (index は 0-indexed で指定します)
@@ -540,22 +555,24 @@ print(x, &quot;は偶数&quot; if x % 2 == 0 else &quot;は奇数&quot;)  # 765 
 </code></pre>
 <h1 id="9-発展-print-テク"><a class="header" href="#9-発展-print-テク">9. (発展) print テク</a></h1>
 <h2 id="9-1-f-文字列-f-strings"><a class="header" href="#9-1-f-文字列-f-strings">9-1. F 文字列 (F-Strings)</a></h2>
-<p>好みの問題ですが、コンマを使う代わりに F 文字列を用いて <code>print</code> することもできます。</p>
+<p>好みの問題ですが、コンマを使う代わりに F 文字列を用いて <code>print</code> することもできます。
+<code>f&quot;{変数}&quot;</code> と書くと、変数の値が代入された状態の文字列になってくれます。</p>
 <pre><code class="language-py">print(&quot;2 * 3:&quot;, 2 * 3)  # 2 * 3: 6
 print(f&quot;2 * 3: {2 * 3}&quot;)  # 2 * 3: 6
 
-# Python 3.6 以前では、str.format メソッドしかありませんでした
+# (余談) Python 3.6 以前では、str.format メソッドしかありませんでした。
+# F 文字列の方が、短く書けていいですね。
 print(&quot;2 * 3: {}&quot;.format(2 * 3))  # 2 * 3: 6
 </code></pre>
-<h3 id="9-1-1-書式指定"><a class="header" href="#9-1-1-書式指定">9-1-1. 書式指定</a></h3>
+<h3 id="9-1-1-出力の書式指定"><a class="header" href="#9-1-1-出力の書式指定">9-1-1. 出力の書式指定</a></h3>
 <ul>
-<li>詳しくは、<a href="https://gammasoft.jp/blog/python-string-format/">Pythonの文字列フォーマット（formatメソッドの使い方）</a> を参照。</li>
+<li>詳しくは、<a href="https://gammasoft.jp/blog/python-string-format/">Python の文字列フォーマット（format メソッドの使い方）</a> を参照。</li>
 </ul>
 <pre><code class="language-py">print(&quot;pi = {:.4}&quot;.format(3.141592653589793238462643383279))  # 3.142
 </code></pre>
 <h2 id="9-2-エスケープ"><a class="header" href="#9-2-エスケープ">9-2. エスケープ</a></h2>
 <p>シングルクオーテーションを出力する際は、ダブルクォーテーションで囲み、
-ダブルクオーテーションを出力する際は、シングルクォーテーションで囲みます。</p>
+ダブルクオーテーションを出力する際は、シングルクォーテーションで囲むと、スマートに書けます。</p>
 <pre><code class="language-py">print(&quot;シングルクオーテーションは ' です&quot;)  # シングルクオーテーションは ' です
 print('ダブルクオーテーションは &quot; です')  # ダブルクオーテーションは &quot; です
 
@@ -569,7 +586,7 @@ print(&quot;改行は\nです&quot;)
 # です
 </code></pre>
 <h2 id="9-3-raw-文字列-raw-strings"><a class="header" href="#9-3-raw-文字列-raw-strings">9-3. Raw 文字列 (Raw Strings)</a></h2>
-<p>制御文字 (\, \n) をそのまま出力。</p>
+<p>制御文字 (\, \n といった特殊な役割を持つ文字のこと。) をそのまま出力。</p>
 <pre><code class="language-py">print(&quot;a\\b\nA\\B&quot;)
 # a\b
 # A\B
@@ -602,7 +619,7 @@ else:
 <p>{{&lt; post 440 &gt;}}</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="第-3-回-python-勉強会-2022--型配列-listループ-for-while"><a class="header" href="#第-3-回-python-勉強会-2022--型配列-listループ-for-while">第 3 回 Python 勉強会 2022 | 型、配列 (list)、ループ (for, while)</a></h1>
 <h1 id="0-予習事項"><a class="header" href="#0-予習事項">0. 予習事項</a></h1>
-<p>「1. 型とは？」を読んでおいてください。(TODO: 予習をするのは面倒では？)</p>
+<p>「1. 型とは？」を読んでおいてください。</p>
 <h1 id="1-型とは"><a class="header" href="#1-型とは">1. 型とは？</a></h1>
 <ul>
 <li><code>bool</code> 型<br />
@@ -677,21 +694,28 @@ nums2 = sorted(nums)  # nums は不変
 print(nums2)  # [1, 1, 3, 4, 5]
 </code></pre>
 <h1 id="3-組み込み関数-range"><a class="header" href="#3-組み込み関数-range">3. 組み込み関数 <code>range</code></a></h1>
-<p>繰り返し実行機能である <code>for</code> 文を学習する前に、まずは組み込み関数 <code>range</code> を紹介します。</p>
-<table><thead><tr><th>使い方</th><th>対応する配列</th><th>対応する半開区間</th><th>具体例</th><th></th></tr></thead><tbody>
-<tr><td>range(stop)</td><td>[0, 1, ..., stop - 1]</td><td>$[0, stop)$</td><td>range(5) は、配列 [0, 1, 2, 3, 4] に対応。1 つ目の要素が 1 ではなく 0 (<code>0-indexed</code> という。) であることに注意。</td><td></td></tr>
-<tr><td>range(start, stop)</td><td>[start, start + 1, ..., stop - 1]</td><td>$[start, stop)$</td><td>range(2, 5) は、配列 [2, 3, 4] に対応。</td><td></td></tr>
-<tr><td>range(start, stop, step)</td><td>[start, start + step, ...]</td><td>$[start, stop)$ の step 個飛び</td><td>range(0, 5, 2) は、配列 [0, 2, 4] に対応。</td><td></td></tr>
+<p>繰り返し実行機能である <code>for</code> 文を学習する前に、まずは組み込み関数 <code>range</code> を紹介します。
+1 つ目の要素が 1 ではなく 0 (<code>0-indexed</code> という。) であることに注意。</p>
+<table><thead><tr><th>使い方</th><th>対応する配列</th><th>対応する半開区間</th><th>具体例</th></tr></thead><tbody>
+<tr><td>range(stop)</td><td>[0, 1, ..., stop - 1]</td><td>$[0, stop)$</td><td>range(5) は、配列 [0, 1, 2, 3, 4] に対応。</td></tr>
+<tr><td>range(start, stop)</td><td>[start, start + 1, ..., stop - 1]</td><td>$[start, stop)$</td><td>range(2, 5) は、配列 [2, 3, 4] に対応。</td></tr>
+<tr><td>range(start, stop, step)</td><td>[start, start + step, ...]</td><td>$[start, stop)$ の step 個飛び</td><td>range(0, 5, 2) は、配列 [0, 2, 4] に対応。</td></tr>
 </tbody></table>
 <pre><code class="language-py"># list でラップしないと生の range が出力されます
 print(range(5))  # range(0, 5)
 
 # 以下では list でラップします
 print(list(range(5)))  # [0, 1, 2, 3, 4]
-print(list(range(2, 5)))  # [2, 3, 4]
+print(list(range(1, 5)))  # [1, 2, 3, 4]
+print(list(range(0, 4)))  # [0, 1, 2, 3]
+print(list(range(1, 4)))  # [1, 2, 3]
 print(list(range(0, 5, 2)))  # [0, 2, 4]
 </code></pre>
 <h1 id="4-一定回数を繰り返す-for-while"><a class="header" href="#4-一定回数を繰り返す-for-while">4. 一定回数を繰り返す (<code>for</code>, <code>while</code>)</a></h1>
+<ol>
+<li><code>for i in range(n)</code> 型</li>
+</ol>
+<p>i は index の頭文字です。</p>
 <pre><code class="language-py"># 先述の通り range(5) は [0, 1, 2, 3, 4] の意です
 for i in range(5):
     print(i)
@@ -701,34 +725,59 @@ for i in range(5):
     # 3
     # 4
 </code></pre>
+<ol start="2">
+<li><code>for x in range(nums)</code> 型</li>
+</ol>
 <pre><code class="language-py">nums = [3, 1, 4, 1, 5]
-for x in range(len(nums)):
+for x in nums:
     print(x)
-# 3
-# 1
-# 4
-# 1
-# 5
+    # 3
+    # 1
+    # 4
+    # 1
+    # 5
 </code></pre>
-<pre><code class="language-py"># TODO: 「for x in a:」を使ったコードを書く
+<ol start="3">
+<li>(発展) 組み込み関数 <code>enumerate</code></li>
+</ol>
+<pre><code class="language-py">nums = [3, 1, 4, 1, 5]
+for i in range(len(nums)):
+    print(f&quot;nums[{i}] = {nums[i]}&quot;)
+    # nums[0] = 3
+    # nums[1] = 1
+    # nums[2] = 4
+    # nums[3] = 1
+    # nums[4] = 5
+
+# 組み込み関数 enumerate を使ってもよい
+nums = [3, 1, 4, 1, 5]
+for i, x in enumerate(nums):
+    print(f&quot;nums[{i}] = {x}&quot;)
+    # nums[0] = 3
+    # nums[1] = 1
+    # nums[2] = 4
+    # nums[3] = 1
+    # nums[4] = 5
 </code></pre>
 <h2 id="4-1-for-で配列-list-を構築する構文"><a class="header" href="#4-1-for-で配列-list-を構築する構文">4-1. for で配列 (list) を構築する構文</a></h2>
 <pre><code class="language-py">nums = [3, 1, 4, 1, 5]
 # 配列 nums 内のそれぞれの要素を 2 乗する
-nums2 = [num ** 2 for num in nums]
+nums2 = [num**2 for num in nums]
 print(nums2)  # [9, 1, 16, 1, 25]
 </code></pre>
 <pre><code class="language-py">planets = [&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Malacandra&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;]
+# 各 planet の 0 文字目を集めた配列 planets2 を作る
 planets2 = [planet[0] for planet in planets]
 print(planets2)  # ['M', 'V', 'E', 'M', 'J', 'S', 'U', 'N']
 </code></pre>
 <pre><code class="language-py">planets = [&quot;Mercury&quot;, &quot;Venus&quot;, &quot;Earth&quot;, &quot;Malacandra&quot;, &quot;Jupiter&quot;, &quot;Saturn&quot;, &quot;Uranus&quot;, &quot;Neptune&quot;]
-planets2 = [
-  planet.upper() + '!'
-  for planet in planets
-  if len(planet) &lt; 6
+# 各 planet の末尾に感嘆符 (!) を付けた配列 planets3 を作る
+planets3 = [
+    planet.upper() + '!'
+    for planet in planets
+    if len(planet) &lt; 6
 ]
-print(planets2)  # ['VENUS!', 'EARTH!', 'MARS!']
+print(planets3)  # ['VENUS!', 'EARTH!', 'MARS!']
 </code></pre>
 <pre><code class="language-py"># 平方数
 square_number = [n ** 2 for n in range(10)]
@@ -739,7 +788,7 @@ print(square_number)  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 tot = 0
 for i in range(len(a)):
     tot += a[i]
-    print(&quot;tot:&quot;, tot)
+    print(&quot;tot =&quot;, tot)
     # tot: 1
     # tot: 3
     # tot: 6
@@ -810,7 +859,7 @@ print(ans)
 </code></pre>
 <h1 id="次回-第-4-回-へのリンク"><a class="header" href="#次回-第-4-回-へのリンク">次回 (第 4 回) へのリンク</a></h1>
 <p>{{&lt; post 441 &gt;}}</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリ"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリ">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ、Web Scraping</a></h1>
 <h1 id="1-自分で関数を作ってみよう-def"><a class="header" href="#1-自分で関数を作ってみよう-def">1. 自分で関数を作ってみよう (def)</a></h1>
 <p>下記は、長方形の面積を求めるプログラムです。</p>
 <pre><code class="language-py">def calc_rect_area(width, height):
@@ -830,15 +879,17 @@ print(calc_rect_area(20))  # 1400
 # print(calc_rect_area(50, 70)) として解釈される
 print(calc_rect_area())  # 3500
 </code></pre>
-<h2 id="1-2-発展-lambda-ラムダ-関数"><a class="header" href="#1-2-発展-lambda-ラムダ-関数">1-2. (発展) lambda (ラムダ) 関数</a></h2>
+<h2 id="1-2-参考-lambda-ラムダ-関数"><a class="header" href="#1-2-参考-lambda-ラムダ-関数">1-2. (参考) lambda (ラムダ) 関数</a></h2>
+<p>lambda 関数を使うと def を使って定義するよりも短く書けますが、
+読みにくくなってしまうので、def を使うことをお薦めします。</p>
 <pre><code class="language-py">def calc_rect_area(width, height):
     return width * height
 
-print(calc_rect_area(10, 20))  # 200
+print(calc_rect_area(20, 30))  # 600
 
 # calc_rect_area と等価な関数
 calc_rect_area2 = lambda w, h: w * h
-print(calc_rect_area2(10, 20))  # 200
+print(calc_rect_area2(20, 30))  # 600
 </code></pre>
 <h1 id="2-発展-再帰関数"><a class="header" href="#2-発展-再帰関数">2. (発展) 再帰関数</a></h1>
 <pre><code class="language-py"># エラトステネスの篩を用いて最大公約数を求める
@@ -855,7 +906,8 @@ def gcd(x, y):
 print(gcd(12, 18))  # 6
 
 
-# ちなみに、最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」で求まります
+# 本題 (再帰関数) から逸れますが、
+# 最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」を利用すると求まります。
 def lcm(x, y):
     if x == 0 and y == 0:
         return 0
@@ -884,6 +936,9 @@ print(calc_circle_area(10))  # 314.1592653589793
 <h2 id="4-1-beautifulsoup-で-web-scraping"><a class="header" href="#4-1-beautifulsoup-で-web-scraping">4-1. <code>BeautifulSoup</code> で Web Scraping</a></h2>
 <p>Static Hosting なサイトに対しては、<code>BeautifulSoup</code> のみで Web Scraping できます。
 (なお、JavaScript Hosting なサイトに対しては、<code>selenium</code> + <code>BeautifulSoup</code> で Web Scraping できます。)</p>
+<p>まずは VSCode 付属のターミナルを開き、<code>BeautifulSoup</code> の入っている <code>beautifulsoup4</code> と <code>requests</code> をインストール。</p>
+<pre><code class="language-sh">pip3 install beautifulsoup4 requests
+</code></pre>
 <pre><code class="language-py"># https://oxylabs.io/blog/python-web-scraping
 import requests
 import sys
@@ -1023,7 +1078,7 @@ for _ in range(n):
 print(len(st))
 </code></pre>
 <ol start="2">
-<li>両端キュー <code>deque</code>
+<li>両端キュー <code>deque</code><br />
 機能としては list に似ていますが、先頭に要素を追加する <code>appendleft</code> や先頭の要素を削除する <code>popleft</code> があります。</li>
 </ol>
 <ul>
@@ -1049,16 +1104,16 @@ print(len(st))
 </li>
 </ul>
 <ol start="3">
-<li>優先度キュー <code>heapq</code>
+<li>優先度キュー <code>heapq</code><br />
 ほとんど使わないので説明略。</li>
 </ol>
 <ul>
 <li>参考資料 <a href="https://qiita.com/ell/items/fe52a9eb9499b7060ed6">【Python】優先度付きキューの使い方【heapq】【ABC141 D】</a></li>
 </ul>
 <h1 id="2-クラス-class"><a class="header" href="#2-クラス-class">2. クラス (Class)</a></h1>
-<p>クラスを自分で書く必要に迫られることはほとんどないと思います。
-しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。
-理解できなくても全く問題ないのでお気軽に～。</p>
+<p>クラスを自分で書く必要に迫られることはほとんどないと思います。<br />
+しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。<br />
+理解できなくても全く問題ないので気軽に聞いてください。</p>
 <h2 id="2-1-クラスを作ってみよう"><a class="header" href="#2-1-クラスを作ってみよう">2-1. クラスを作ってみよう</a></h2>
 <pre><code class="language-py">TODO: クラスに慣れるため、calc_rect_area の Class ver. を書く予定。
 </code></pre>
@@ -1113,8 +1168,10 @@ print(b)  # -1 + 1i
 </code></pre>
 <h1 id="3-発展-計算オーダーを考えよう"><a class="header" href="#3-発展-計算オーダーを考えよう">3. (発展) 計算オーダーを考えよう</a></h1>
 <ul>
-<li>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a>
-3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。</li>
+<li>
+<p>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a></p>
+<p>3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。</p>
+</li>
 </ul>
 <pre><code class="language-py">n, y = map(int, input().split())
 for i in range(n + 1):
@@ -1133,10 +1190,10 @@ print(&quot;-1 -1 -1&quot;)
 <h3 id="4-1-1-github-のアカウントを作る"><a class="header" href="#4-1-1-github-のアカウントを作る">4-1-1. GitHub のアカウントを作る</a></h3>
 <p><a href="https://github.com/join">Hoin GitHub - GitHub</a> から登録してください。</p>
 <h3 id="4-1-2-github-desktop-をインストール"><a class="header" href="#4-1-2-github-desktop-をインストール">4-1-2. GitHub Desktop をインストール</a></h3>
-<p>(GitHub Desktop に関する説明、誰か書いてほしい)</p>
+<p>(GitHub Desktop に関する説明、誰か書いてほしい。<br />
+僕はコマンドでやってるので、何も分かりません。)</p>
 <ul>
-<li>(参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。</li>
-</ul>
+<li>(参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
 <ol>
 <li>github に ssh 接続する。</li>
 </ol>
@@ -1146,6 +1203,8 @@ print(&quot;-1 -1 -1&quot;)
 <ol start="2">
 <li>以下のコマンドを実行。</li>
 </ol>
+</li>
+</ul>
 <pre><code class="language-sh"># 下 4 行は初回のみ実行
 $ git init
 # moyomogi, python_2022_lib は自分のものに読み替えてください
@@ -1164,24 +1223,19 @@ $ git push origin master
 <h2 id="4-2-ライブラリを公開"><a class="header" href="#4-2-ライブラリを公開">4-2. ライブラリを公開</a></h2>
 <ol>
 <li>勉強会用のフォルダと同じ階層に、別のフォルダ (フォルダ名は例えば <code>python_2022_lib</code> として、<code>YOUR_NAME/python_2022_lib</code> のように) を作ってください。</li>
-<li><a href="https://github.com/moyomogi/python_2022_lib">moyomogi/python_2022_lib</a> の Download Zip からコードをダウンロード。</li>
+<li><a href="https://github.com/moyomogi/python_2022_lib">moyomogi/python_2022_lib</a> の Download Zip からコードをダウンロードして、中身を 1. で作ったフォルダ内に貼り付け。</li>
+<li>ライブラリ用のレポジトリを新規作成。</li>
 <li>GitHub Desktop を用いてファイルをアップロード。</li>
-<li>GitHub Pages を有効にする。
-<ol>
-<li><code>https://github.com/YOUR_NAME/python_2022_lib</code> を開き、Settings タブを開く。</li>
-<li>Pages ページを開き、「gh-pages」ブランチを選択。
-<img src="https://raw.githubusercontent.com/moyomogi/python_2022_md/master/docs/lib_pages.jpg" width="480"></li>
-</ol>
-</li>
+<li>GitHub のアカウントで <a href="https://app.netlify.com">Netlify</a> にログインし、ライブラリのレポジトリを選択して、デプロイ。詳しい操作は <a href="https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll">Setting up your own digital garden with Jekyll</a> を参照。</li>
 </ol>
 <h1 id="6-web-制作にご興味が"><a class="header" href="#6-web-制作にご興味が">6. ？？？「Web 制作にご興味が？」</a></h1>
 <img src="https://i.imgur.com/OCMiU8x.png" width="480">
-<p>今回、GitHub Pages でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
+<p>今回、Netlify でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
 ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、是非お気軽にご参加ください。
 <a href="https://rvw2022s.herokuapp.com">RVW 2022 Spring</a> 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。</p>
 <h1 id="7-合作をしよう"><a class="header" href="#7-合作をしよう">7. 合作をしよう</a></h1>
-<p>公立大の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期に hackathon を行っています。
-合作に参加すると、他人のコードを読めて、知識が深まります。
+<p>公立大の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期に hackathon を行っています。<br />
+合作に参加すると、他人のコードを読めて、知識が深まります。<br />
 プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。</p>
 <ul>
 <li>参考: Hackathon2022Spring

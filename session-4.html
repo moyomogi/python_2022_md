@@ -139,7 +139,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリ"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリ">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ</a></h1>
+                        <h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ、Web Scraping</a></h1>
 <h1 id="1-自分で関数を作ってみよう-def"><a class="header" href="#1-自分で関数を作ってみよう-def">1. 自分で関数を作ってみよう (def)</a></h1>
 <p>下記は、長方形の面積を求めるプログラムです。</p>
 <pre><code class="language-py">def calc_rect_area(width, height):
@@ -159,15 +159,17 @@ print(calc_rect_area(20))  # 1400
 # print(calc_rect_area(50, 70)) として解釈される
 print(calc_rect_area())  # 3500
 </code></pre>
-<h2 id="1-2-発展-lambda-ラムダ-関数"><a class="header" href="#1-2-発展-lambda-ラムダ-関数">1-2. (発展) lambda (ラムダ) 関数</a></h2>
+<h2 id="1-2-参考-lambda-ラムダ-関数"><a class="header" href="#1-2-参考-lambda-ラムダ-関数">1-2. (参考) lambda (ラムダ) 関数</a></h2>
+<p>lambda 関数を使うと def を使って定義するよりも短く書けますが、
+読みにくくなってしまうので、def を使うことをお薦めします。</p>
 <pre><code class="language-py">def calc_rect_area(width, height):
     return width * height
 
-print(calc_rect_area(10, 20))  # 200
+print(calc_rect_area(20, 30))  # 600
 
 # calc_rect_area と等価な関数
 calc_rect_area2 = lambda w, h: w * h
-print(calc_rect_area2(10, 20))  # 200
+print(calc_rect_area2(20, 30))  # 600
 </code></pre>
 <h1 id="2-発展-再帰関数"><a class="header" href="#2-発展-再帰関数">2. (発展) 再帰関数</a></h1>
 <pre><code class="language-py"># エラトステネスの篩を用いて最大公約数を求める
@@ -184,7 +186,8 @@ def gcd(x, y):
 print(gcd(12, 18))  # 6
 
 
-# ちなみに、最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」で求まります
+# 本題 (再帰関数) から逸れますが、
+# 最小公倍数は、「lcm(x, y) == x * y // gcd(x, y)」を利用すると求まります。
 def lcm(x, y):
     if x == 0 and y == 0:
         return 0
@@ -213,6 +216,9 @@ print(calc_circle_area(10))  # 314.1592653589793
 <h2 id="4-1-beautifulsoup-で-web-scraping"><a class="header" href="#4-1-beautifulsoup-で-web-scraping">4-1. <code>BeautifulSoup</code> で Web Scraping</a></h2>
 <p>Static Hosting なサイトに対しては、<code>BeautifulSoup</code> のみで Web Scraping できます。
 (なお、JavaScript Hosting なサイトに対しては、<code>selenium</code> + <code>BeautifulSoup</code> で Web Scraping できます。)</p>
+<p>まずは VSCode 付属のターミナルを開き、<code>BeautifulSoup</code> の入っている <code>beautifulsoup4</code> と <code>requests</code> をインストール。</p>
+<pre><code class="language-sh">pip3 install beautifulsoup4 requests
+</code></pre>
 <pre><code class="language-py"># https://oxylabs.io/blog/python-web-scraping
 import requests
 import sys
