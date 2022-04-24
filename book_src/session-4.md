@@ -100,6 +100,7 @@ Static Hosting なサイトに対しては、`BeautifulSoup` のみで Web Scrap
 (なお、JavaScript Hosting なサイトに対しては、`selenium` + `BeautifulSoup` で Web Scraping できます。)
 
 まずは VSCode 付属のターミナルを開き、`BeautifulSoup` の入っている `beautifulsoup4` と `requests` をインストール。
+
 ```sh
 pip3 install beautifulsoup4 requests
 ```
@@ -159,7 +160,9 @@ print("};")
 # 課題の解答
 
 - (5) def [ABC083B - Some Sums](https://atcoder.jp/contests/abs/tasks/abc083_b)
+
 1. 関数を使わないで書いた場合。
+
 ```py
 n, a, b = map(int, input().split())
 ans = 0
@@ -173,7 +176,10 @@ for x in range(1, n + 1):
         ans += x
 print(ans)
 ```
-2. 関数を define (定義) して解いた場合。見やすくなりましたね。
+
+2. 関数を define (定義) して解いた場合。  
+   見やすくなりましたね。
+
 ```py
 def calc_sum(x):
     res = 0
@@ -194,6 +200,7 @@ print(ans)
 - (6) sort [ABC088B - Card Game for Two](https://atcoder.jp/contests/abs/tasks/abc088_b)
 
 1. 昇順ソートを用いた解法
+
 ```py
 n = int(input())
 a = list(map(int, input().split()))
@@ -208,6 +215,7 @@ print(ans)
 ```
 
 2. 降順ソートを用いた解法
+
 ```py
 n = int(input())
 a = list(map(int, input().split()))

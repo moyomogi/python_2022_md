@@ -9,11 +9,11 @@
 - `bool` 型  
   if の中に入れるやつで、`True` (=1) と `False` (=0) の二値しか取りません。
 - `int` 型  
-  整数。ちなみに、C++ と異なり何桁でも無限に取れます (多倍長整数と言います)。
+  整数。ちなみに、C++ と異なり何桁でも無限に取れます (**多倍長整数**と言います)。
 - `float` 型  
   小数。
 - `str` 型  
-  文字列。`str` は string の略で、文字列の意。
+  **文字列**。`str` は string の略で、**文字列**の意。
 
 ```py
 x = True
@@ -75,7 +75,7 @@ planets.index("Jupiter")  # 4 (index を返す)
 | li.sort()  | 破壊的       | 型 list のメソッド |
 | sorted(li) | 破壊的でない | 組み込み関数       |
 
-ちなみに、どのプログラミング言語でも、デフォルトのソートは昇順ソートです。
+ちなみに、どのプログラミング言語でも、デフォルトのソートは昇順ソート (のはず) です。
 
 - 昇順ソート: [3, 1, 4, 1, 5] -> [1, 1, 3, 4, 5] のように小さい順に並べる意。
 - 降順ソート: [3, 1, 4, 1, 5] -> [5, 4, 3, 1, 1] のように大きい順に並べる意。
@@ -132,12 +132,12 @@ for i in range(5):
     # 4
 ```
 
-2. `for x in range(nums)` 型
+2. `for x in nums` 型
 
 ```py
 nums = [3, 1, 4, 1, 5]
-for x in nums:
-    print(x)
+for num in nums:
+    print(num)
     # 3
     # 1
     # 4
@@ -158,8 +158,8 @@ for i in range(len(nums)):
 
 # 組み込み関数 enumerate を使ってもよい
 nums = [3, 1, 4, 1, 5]
-for i, x in enumerate(nums):
-    print(f"nums[{i}] = {x}")
+for i, num in enumerate(nums):
+    print(f"nums[{i}] = {num}")
     # nums[0] = 3
     # nums[1] = 1
     # nums[2] = 4

@@ -1,4 +1,5 @@
 [![GitHub Pages](https://img.shields.io/static/v1?label=GitHub+Pages&message=+&color=brightgreen&logo=github)](https://moyomogi.github.io/python_2022_md/)
+[![Actions Status](https://github.com/moyomogi/python_2022_md/actions/workflows/deploy.yml/badge.svg)](https://github.com/moyomogi/python_2022_md/actions)
 [![license](https://img.shields.io/badge/license-CC0--1.0-blue)](https://github.com/moyomogi/python_2022_md/blob/master/LICENSE)
 
 # 📚 python_2022_md
