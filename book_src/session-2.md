@@ -14,12 +14,14 @@
 | //     | 除算の商 (つまり切り捨て) | print(31 // 7)   |
 | %      | 除算の余り                | print(31 % 7)    |
 
-# 1. Pylance (Linter), Formatter は入っていますか？
+# 1. Linter (flake8), Formatter (black) は入っていますか？
 
-VSCode を入れてくれた人なら、拡張機能 `Python` の中に Pylance (Linter) が入っています。Formatter は black がおすすめです。
+VSCode を入れてくれた人なら、拡張機能 `Python` の中に flake8 という Linter が入っています。Formatter は black がおすすめです。
 
-- Linter が入っているかを確認しよう。
-- Formatter が入っているかを確認しよう。
+- Linter (flake8) が入っているかを確認しよう。  
+  良くないコードを書くと「問題」が表示されますか？
+- Formatter (black) が入っているかを確認しよう。  
+  `alt + shift + f` でソースコードがフォーマットされますか？
 
 # 2. (発展) 演算子の評価順序
 
@@ -37,7 +39,16 @@ VSCode を入れてくれた人なら、拡張機能 `Python` の中に Pylance 
 | 8    | or                   |
 
 ```py
-# TODO: Tier に関するコードを書く
+# ブール代数の De Morgan (ド・モルガン) の法則より、
+# 下記 2 式は自明に等価。
+print(283 < 346 and 765 <= 961)  # True
+print(not (283 >= 346 or 765 > 961))  # True
+
+# (2 * 3) + (5 * 7) の順で評価される。
+print(2 / 3 + 5 * 7)  # 35.666666666666664
+
+# 2 * (10 ** 3) の順で評価される。
+print(2 * 10 ** 3)  # 2000
 ```
 
 # 3. 文字列 (str)
