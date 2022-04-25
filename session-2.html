@@ -151,11 +151,13 @@
 <tr><td>//</td><td>除算の商 (つまり切り捨て)</td><td>print(31 // 7)</td></tr>
 <tr><td>%</td><td>除算の余り</td><td>print(31 % 7)</td></tr>
 </tbody></table>
-<h1 id="1-pylance-linter-formatter-は入っていますか"><a class="header" href="#1-pylance-linter-formatter-は入っていますか">1. Pylance (Linter), Formatter は入っていますか？</a></h1>
-<p>VSCode を入れてくれた人なら、拡張機能 <code>Python</code> の中に Pylance (Linter) が入っています。Formatter は black がおすすめです。</p>
+<h1 id="1-linter-flake8-formatter-black-は入っていますか"><a class="header" href="#1-linter-flake8-formatter-black-は入っていますか">1. Linter (flake8), Formatter (black) は入っていますか？</a></h1>
+<p>VSCode を入れてくれた人なら、拡張機能 <code>Python</code> の中に flake8 という Linter が入っています。Formatter は black がおすすめです。</p>
 <ul>
-<li>Linter が入っているかを確認しよう。</li>
-<li>Formatter が入っているかを確認しよう。</li>
+<li>Linter (flake8) が入っているかを確認しよう。<br />
+良くないコードを書くと「問題」が表示されますか？</li>
+<li>Formatter (black) が入っているかを確認しよう。<br />
+<code>alt + shift + f</code> でソースコードがフォーマットされますか？</li>
 </ul>
 <h1 id="2-発展-演算子の評価順序"><a class="header" href="#2-発展-演算子の評価順序">2. (発展) 演算子の評価順序</a></h1>
 <p>ちなみに、Python では演算子の評価順序は以下の通りです。</p>
@@ -169,7 +171,16 @@
 <tr><td>7</td><td>and</td></tr>
 <tr><td>8</td><td>or</td></tr>
 </tbody></table>
-<pre><code class="language-py"># TODO: Tier に関するコードを書く
+<pre><code class="language-py"># ブール代数の De Morgan (ド・モルガン) の法則より、
+# 下記 2 式は自明に等価。
+print(283 &lt; 346 and 765 &lt;= 961)  # True
+print(not (283 &gt;= 346 or 765 &gt; 961))  # True
+
+# (2 * 3) + (5 * 7) の順で評価される。
+print(2 / 3 + 5 * 7)  # 35.666666666666664
+
+# 2 * (10 ** 3) の順で評価される。
+print(2 * 10 ** 3)  # 2000
 </code></pre>
 <h1 id="3-文字列-str"><a class="header" href="#3-文字列-str">3. 文字列 (str)</a></h1>
 <p>&quot;xxx&quot; のように、&quot; (ダブルクオーテーション) に囲まれた型を<strong>文字列</strong> (<code>str</code>) といいます。<br />

@@ -204,8 +204,8 @@ planets.index(&quot;Jupiter&quot;)  # 4 (index を返す)
 </tbody></table>
 <p>ちなみに、どのプログラミング言語でも、デフォルトのソートは昇順ソート (のはず) です。</p>
 <ul>
-<li>昇順ソート: [3, 1, 4, 1, 5] -&gt; [1, 1, 3, 4, 5] のように小さい順に並べる意。</li>
-<li>降順ソート: [3, 1, 4, 1, 5] -&gt; [5, 4, 3, 1, 1] のように大きい順に並べる意。</li>
+<li>昇順ソート: [3, 1, 4, 1, 5] → [1, 1, 3, 4, 5] のように小さい順に並べる意。</li>
+<li>降順ソート: [3, 1, 4, 1, 5] → [5, 4, 3, 1, 1] のように大きい順に並べる意。</li>
 </ul>
 <pre><code class="language-py">nums = [3, 1, 4, 1, 5]
 nums.sort()  # nums にソート結果を代入
@@ -233,7 +233,7 @@ print(list(range(0, 4)))  # [0, 1, 2, 3]
 print(list(range(1, 4)))  # [1, 2, 3]
 print(list(range(0, 5, 2)))  # [0, 2, 4]
 </code></pre>
-<h1 id="4-一定回数を繰り返す-for-while"><a class="header" href="#4-一定回数を繰り返す-for-while">4. 一定回数を繰り返す (<code>for</code>, <code>while</code>)</a></h1>
+<h1 id="4-一定回数を繰り返す-for-while"><a class="header" href="#4-一定回数を繰り返す-for-while">4. 一定回数を繰り返す (for, while)</a></h1>
 <ol>
 <li><code>for i in range(n)</code> 型</li>
 </ol>
@@ -322,8 +322,56 @@ print(tot)  # 10
 <pre><code class="language-py">a = [1, 2, 3, 4]
 print(sum(a))  # 10
 </code></pre>
-<h1 id="6-while-文の説明をここに"><a class="header" href="#6-while-文の説明をここに">6. (while 文の説明をここに)</a></h1>
-<p>(工事中)</p>
+<h1 id="6-while-文"><a class="header" href="#6-while-文">6. while 文</a></h1>
+<p>while 文とは、以下のような記法のループ文のことです。</p>
+<pre><code class="language-py">while (条件):
+    # (条件) が真なら
+</code></pre>
+<p>まずは while 文に慣れるため、<code>for i in range(n)</code> 型の for 文と同じ機能を while で実装してみます。<br />
+大学のプログラミングの授業を理解するだけなら、これで十分のはず。</p>
+<pre><code class="language-py"># for i in range(n) 型の for 文による実装
+for i in range(5):
+    print(i)
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
+
+# while 文による実装
+i = 0
+while i &lt; 5:
+    print(i)
+    # 0
+    # 1
+    # 2
+    # 3
+    # 4
+    i += 1
+</code></pre>
+<p>(発展) 素因数分解をする関数は以下の通りです。</p>
+<pre><code class="language-py">def factorize(n):
+    # 2022 -&gt; [(2, 1), (3, 1), (337, 1)]
+    res = []
+    a = 2
+    while a * a &lt;= n:
+        if n % a != 0:
+            a += 1
+            continue
+        ex = 0
+        while n % a == 0:
+            ex += 1
+            n //= a
+        res.append((a, ex))
+        a += 1
+    if n &gt; 1:
+        res.append((n, 1))
+    return res
+
+print(factorize(2022))  # [(2, 1), (3, 1), (337, 1)]
+print(factorize(169))  # [(13, 2)]
+print(factorize(17))  # [(17, 1)]
+</code></pre>
 <h1 id="課題"><a class="header" href="#課題">課題</a></h1>
 <p>コピペ AC 可。</p>
 <ul>
