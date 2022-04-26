@@ -164,7 +164,7 @@ Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしい�
 <h2 id="4-1-なぜ-wsl-が必要か"><a class="header" href="#4-1-なぜ-wsl-が必要か">4-1. なぜ WSL が必要か</a></h2>
 <ul>
 <li>Ubuntu には、非公式リポジトリ <a href="https://launchpad.net/ubuntu/+ppas">PPA</a> があり、自作 CLI ツールを PPA に登録すると、<code>add-apt-repository</code> コマンドで、そのリポジトリをマシンに登録できるので、他のユーザーが <code>apt</code> コマンドでそのプログラムを使えるようになります。</li>
-<li>対して Windows では、自作 CLI ツールを公開する仕組みがないため、技術が発展していません。</li>
+<li>対して Windows では、<code>apt</code> に当たるものとして <code>choco</code> (<a href="https://chocolatey.org">Chocolatey</a>) がありますが、GUI ツールばかりで、高性能な CLI ツールがあまりないです。(参考: <a href="https://community.chocolatey.org/packages">Chocolatey Community Repository</a>)</li>
 </ul>
 <p>従って、<strong>Ubuntu 上の便利な CLI ツールを使うため</strong>に、WSL が必要です。</p>
 <h2 id="4-2-wsl-を入れよう"><a class="header" href="#4-2-wsl-を入れよう">4-2. WSL を入れよう</a></h2>
