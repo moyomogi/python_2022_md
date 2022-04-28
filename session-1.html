@@ -161,7 +161,7 @@
 Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。</p>
 <h1 id="4-任意-wsl-を有効化しよう"><a class="header" href="#4-任意-wsl-を有効化しよう">4. (任意) WSL を有効化しよう</a></h1>
 <p>ちなみに、WSL は Windows Subsystem for Linux の略です。</p>
-<h2 id="4-1-なぜ-wsl-が必要か"><a class="header" href="#4-1-なぜ-wsl-が必要か">4-1. なぜ WSL が必要か</a></h2>
+<h2 id="4-1-余談-なぜ-wsl-が必要か"><a class="header" href="#4-1-余談-なぜ-wsl-が必要か">4-1. (余談) なぜ WSL が必要か</a></h2>
 <ul>
 <li>Ubuntu には、非公式リポジトリ <a href="https://launchpad.net/ubuntu/+ppas">PPA</a> があり、自作 CLI ツールを PPA に登録すると、<code>add-apt-repository</code> コマンドで、そのリポジトリをマシンに登録できるので、他のユーザーが <code>apt</code> コマンドでそのプログラムを使えるようになります。</li>
 <li>対して Windows では、<code>apt</code> に当たるものとして <code>choco</code> (<a href="https://chocolatey.org">Chocolatey</a>) がありますが、GUI ツールばかりで、高性能な CLI ツールがあまりないです。(参考: <a href="https://community.chocolatey.org/packages">Chocolatey Community Repository</a>)</li>
@@ -184,13 +184,13 @@ $ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem
 </code></pre>
 <ol start="2">
 <li>WSL を起動させるために、PC を再起動。</li>
-<li>Microsoft Store で Ubuntu 22.04 LTS (2022-04-21 リリース) を入れる (「ubuntu」で検索すると、下の方に出てきます)。
+<li>Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、下の方に出てきます)。
 <ul>
 <li>LTS (Long Time Support, 長期サポート) は「安定版」の意です。</li>
-<li>Ubuntu 22.04 LTS のバージョン違いとして Ubuntu, Ubuntu 20.04 LTS がありますが、ほぼ同じように扱えますので、すでに Ubuntu を入れていた方は新規にインストールする必要はありません。</li>
+<li>2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく、設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。</li>
 </ul>
 </li>
-<li>Ubuntu 22.04 LTS を起動し以下を実行。</li>
+<li>Ubuntu 20.04 LTS を起動し以下を実行。</li>
 </ol>
 <pre><code class="language-sh"># コマンドの先頭に sudo (スードゥー) を付けると、ルート権限でコマンドを実行できます。
 $ sudo sed -i -e 's%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g' /etc/apt/sources.list
@@ -281,7 +281,7 @@ $ ls
 <ol>
 <li>VSCode を立ち上げる。</li>
 <li><code>フォルダを開く</code> を押し、フォルダ <code>YOUR_FOLDER</code> を選択して開く。</li>
-<li>VSCode の下リボンの一番左にある、ルーン文字感の漂う ${}_&gt;{}^&lt;$ マークを押し、<code>Reopen Folder in WSL</code> を選択。</li>
+<li>VSCode の下リボンの一番左にある、ルーン文字感の漂う「 ${}_&gt;{}^&lt;$ 」マークを押し、<code>Reopen Folder in WSL</code> を選択。</li>
 </ol>
 <h1 id="8-四則演算"><a class="header" href="#8-四則演算">8. 四則演算</a></h1>
 <p>「整数・小数の四則計算 (+ - * ** / // %) (int float)」をしてみましょう。</p>
