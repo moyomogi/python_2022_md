@@ -7,7 +7,7 @@
 
 # 2. スクショの取り方
 
-この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。
+この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。なお、discord の画面共有なら、さらに正確に伝えられます。
 
 - Snipping Tool  
   `win + s` で検索窓を出して snipping tool と入力すれば見つかるはずです。
@@ -22,7 +22,7 @@ Windows 向けの説明しか行いません。すいませんが、Mac ユー�
 まず、[VSCode 公式のダウンロードページ](https://code.visualstudio.com/download) から DL して、インストールしてください。
 Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。
 
-# 4. (任意) WSL を有効化しよう
+# 4. WSL を有効化しよう
 
 ちなみに、WSL は Windows Subsystem for Linux の略です。
 
@@ -35,13 +35,11 @@ Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしい�
 
 ## 4-2. WSL を入れよう
 
-本勉強会では Python・C++ を WSL にインストールします。  
-[Visual Studio Code で競プロ環境構築(導入編)](https://qiita.com/AokabiC/items/e9312856f588dd9303ed) をブラウザ上の別タブで開いてください。  
-一応、実行すべき行為を置いておきます。
+本勉強会では Python・C++ を WSL にインストールします。
 
 1. デフォルトの Windows では、スタートアップ時に WSL が起動しません。  
    以下の A, B いずれかを行い、WSL を有効化します。  
-   A. (GUI で有効化) [Windows Subsystem for Linux (WSL1) をインストールしてみよう！](https://qiita.com/Aruneko/items/c79810b0b015bebf30bb) を読んでください。  
+   A. (GUI で有効化) [Windows Subsystem for Linux (WSL1) をインストールしてみよう！](https://qiita.com/Aruneko/items/c79810b0b015bebf30bb) をブラウザ上の別タブで開いてください。  
    B. (CUI で有効化) Windows PowerShell にて、WSL を有効化しましょう。  
    この設定により NoxPlayer などのエミュレーターが動かなくなることがありますが、元の設定に戻せば、また動かせます。
 
@@ -54,20 +52,49 @@ $ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem
 2. WSL を起動させるために、PC を再起動。
 3. Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、下の方に出てきます)。
    - LTS (Long Time Support, 長期サポート) は「安定版」の意です。
-   - 2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく、設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。
-4. Ubuntu 20.04 LTS を起動し以下を実行。
+   - 2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。
+4. Ubuntu 20.04 LTS を起動。  
+   以下のように、username と password を設定するように促されるので、それに従って入力。
+
+```sh
+Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+# YOUR_USERNAME は自由に決めたものに読み替えてください。
+# 先述しましたが、入力が終わったら Enter を押しましょう。
+# (ただし、a-z, 0-9 のみで構成するといいと思います。)
+Enter new UNIX username: YOUR_USERNAME
+# 下 2 行において、YOUR_USERNAME は自分で決めてください。
+# ここで設定したパスワードは、以降で使うので覚えておくように。
+New password: YOUR_PASSWORD
+# 上の行で入力した YOUR_PASSWORD と全く同じものを入力。
+Retype new password: YOUR_PASSWORD
+```
+
+5. Ubuntu 20.04 LTS にて以下を実行。
 
 ```sh
 # コマンドの先頭に sudo (スードゥー) を付けると、ルート権限でコマンドを実行できます。
+# なお、なにも表示されないです。
 $ sudo sed -i -e 's%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g' /etc/apt/sources.list
 ```
 
 ```sh
+# 「インストール可能なコマンドの一覧」を更新する。
+# 実際のコマンドのインストールは行わない。
+# sudo apt -y upgrade をしないと何も起こらない。
 $ sudo apt update
+# 「インストール可能なコマンドの一覧」を参照し、
+# - 既インストールで新バージョンが
+#   公開されてたらアップグレード。
+# - 未インストールならインストール。
+# 事前に sudo apt update をする必要がある。
 $ sudo apt -y upgrade
 ```
 
 ```sh
+# コマンド add-apt-repository の入っている
+# software-properties-common をインストール。
 $ sudo apt install -y software-properties-common
 $ sudo add-apt-repository universe
 
@@ -82,12 +109,12 @@ $ sudo apt install -y build-essential gdb python3 flake8 pkg-config
 ```sh
 $ sudo apt update
 $ sudo apt install -y python3-pip
-# Linter の black をインストール
+# Linter の autopep8 をインストール
 $ sudo pip install autopep8
 # Formatter の black をインストール
 $ sudo pip3 install black
 
-# (参考) インストール済みパッケージのアップデートを行うには、
+# (参考) インストール済みパッケージのアップグレードを行うには、
 # --upgrade あるいは -U を付けます。
 # $ sudo pip install --upgrade autopep8
 # $ sudo pip3 install --upgrade black
@@ -95,7 +122,7 @@ $ sudo pip3 install black
 
 # 5. (余談) プログラミング用フォルダは `~` 下に置くといいよ、という話
 
-(「(任意) WSL を有効化しよう」をやってくださった方向けです。)  
+(「WSL を有効化しよう」をやってくださった方向けです。)  
 WSL を入れ終わった方は、エクスプローラーを開き、パンくずリストが書かれた窓に `\\wsl$\Ubuntu-20.04\home` と打って Enter を押してください。
 `YOUR_NAME` (YOUR_NAME は自分の入力した名前) というフォルダがあるはずです。
 (以下、`\\wsl$\Ubuntu-20.04\home\YOUR_NAME` を `~` と略記します。)  
@@ -107,8 +134,8 @@ WSL を入れ終わった方は、エクスプローラーを開き、パンく�
 
 # 6. `cd`, `ls` コマンドを知っておこう
 
-Ubuntu を使うにあたって必須のコマンドが `cd`, `ls` コマンドです。機能は下票の通りです。  
-(下記表で、「ディレクトリ」は「フォルダ」と同義です。)
+Ubuntu を使うにあたって必須のコマンドが `cd`, `ls` コマンドです。機能は下表の通りです。  
+(下表で、「ディレクトリ」は「フォルダ」と同義です。)
 
 | コマンド名 | コマンド名の由来 | 機能                                         | 使い方                   |
 | ---------- | ---------------- | -------------------------------------------- | ------------------------ |

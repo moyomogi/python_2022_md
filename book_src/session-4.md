@@ -5,8 +5,9 @@
 下記は、長方形の面積を求めるプログラムです。
 
 ```py
-def calc_rect_area(width, height):
-    return width * height
+def calc_rect_area(height, width):
+    return height * width
+
 
 print(calc_rect_area(20, 30))  # 600
 ```
@@ -14,16 +15,15 @@ print(calc_rect_area(20, 30))  # 600
 ## 1-1. デフォルト引数 (ひきすう) を付けてみよう
 
 ```py
-def calc_rect_area(width=50, height=70):
-    return width * height
+def calc_rect_area2(height=50, width=70):
+    return height * width
 
-print(calc_rect_area(20, 30))  # 600
 
-# print(calc_rect_area(20, 70)) として解釈される
-print(calc_rect_area(20))  # 1400
+# print(calc_rect_area2(20, 70)) として解釈される
+print(calc_rect_area2(20))  # 1400
 
-# print(calc_rect_area(50, 70)) として解釈される
-print(calc_rect_area())  # 3500
+# print(calc_rect_area2(50, 70)) として解釈される
+print(calc_rect_area2())  # 3500
 ```
 
 ## 1-2. (参考) lambda (ラムダ) 関数
@@ -32,14 +32,14 @@ lambda 関数を使うと def を使って定義するよりも短く書けま�
 読みにくくなってしまうので、def を使うことをお薦めします。
 
 ```py
-def calc_rect_area(width, height):
-    return width * height
+def calc_rect_area(height, width):
+    return height * width
 
 print(calc_rect_area(20, 30))  # 600
 
 # calc_rect_area と等価な関数
-calc_rect_area2 = lambda w, h: w * h
-print(calc_rect_area2(20, 30))  # 600
+calc_rect_area3 = lambda h, w: h * w
+print(calc_rect_area3(20, 30))  # 600
 ```
 
 # 2. (発展) 再帰関数
