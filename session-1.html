@@ -146,7 +146,7 @@
 <li>「3. VSCode インストール」をやっておいていただけるとスムーズに進行できます。</li>
 </ul>
 <h1 id="2-スクショの取り方"><a class="header" href="#2-スクショの取り方">2. スクショの取り方</a></h1>
-<p>この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。</p>
+<p>この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。なお、discord の画面共有なら、さらに正確に伝えられます。</p>
 <ul>
 <li>Snipping Tool<br />
 <code>win + s</code> で検索窓を出して snipping tool と入力すれば見つかるはずです。
@@ -159,7 +159,7 @@
 <p>Windows 向けの説明しか行いません。すいませんが、Mac ユーザーの方々は各自で環境を構築してください。
 まず、<a href="https://code.visualstudio.com/download">VSCode 公式のダウンロードページ</a> から DL して、インストールしてください。
 Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。</p>
-<h1 id="4-任意-wsl-を有効化しよう"><a class="header" href="#4-任意-wsl-を有効化しよう">4. (任意) WSL を有効化しよう</a></h1>
+<h1 id="4-wsl-を有効化しよう"><a class="header" href="#4-wsl-を有効化しよう">4. WSL を有効化しよう</a></h1>
 <p>ちなみに、WSL は Windows Subsystem for Linux の略です。</p>
 <h2 id="4-1-余談-なぜ-wsl-が必要か"><a class="header" href="#4-1-余談-なぜ-wsl-が必要か">4-1. (余談) なぜ WSL が必要か</a></h2>
 <ul>
@@ -168,13 +168,11 @@ Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしい�
 </ul>
 <p>従って、<strong>Ubuntu 上の便利な CLI ツールを使うため</strong>に、WSL が必要です。</p>
 <h2 id="4-2-wsl-を入れよう"><a class="header" href="#4-2-wsl-を入れよう">4-2. WSL を入れよう</a></h2>
-<p>本勉強会では Python・C++ を WSL にインストールします。<br />
-<a href="https://qiita.com/AokabiC/items/e9312856f588dd9303ed">Visual Studio Code で競プロ環境構築(導入編)</a> をブラウザ上の別タブで開いてください。<br />
-一応、実行すべき行為を置いておきます。</p>
+<p>本勉強会では Python・C++ を WSL にインストールします。</p>
 <ol>
 <li>デフォルトの Windows では、スタートアップ時に WSL が起動しません。<br />
 以下の A, B いずれかを行い、WSL を有効化します。<br />
-A. (GUI で有効化) <a href="https://qiita.com/Aruneko/items/c79810b0b015bebf30bb">Windows Subsystem for Linux (WSL1) をインストールしてみよう！</a> を読んでください。<br />
+A. (GUI で有効化) <a href="https://qiita.com/Aruneko/items/c79810b0b015bebf30bb">Windows Subsystem for Linux (WSL1) をインストールしてみよう！</a> をブラウザ上の別タブで開いてください。<br />
 B. (CUI で有効化) Windows PowerShell にて、WSL を有効化しましょう。<br />
 この設定により NoxPlayer などのエミュレーターが動かなくなることがありますが、元の設定に戻せば、また動かせます。</li>
 </ol>
@@ -187,18 +185,46 @@ $ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem
 <li>Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、下の方に出てきます)。
 <ul>
 <li>LTS (Long Time Support, 長期サポート) は「安定版」の意です。</li>
-<li>2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく、設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。</li>
+<li>2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。</li>
 </ul>
 </li>
-<li>Ubuntu 20.04 LTS を起動し以下を実行。</li>
+<li>Ubuntu 20.04 LTS を起動。<br />
+以下のように、username と password を設定するように促されるので、それに従って入力。</li>
+</ol>
+<pre><code class="language-sh">Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+# YOUR_USERNAME は自由に決めたものに読み替えてください。
+# 先述しましたが、入力が終わったら Enter を押しましょう。
+# (ただし、a-z, 0-9 のみで構成するといいと思います。)
+Enter new UNIX username: YOUR_USERNAME
+# 下 2 行において、YOUR_USERNAME は自分で決めてください。
+# ここで設定したパスワードは、以降で使うので覚えておくように。
+New password: YOUR_PASSWORD
+# 上の行で入力した YOUR_PASSWORD と全く同じものを入力。
+Retype new password: YOUR_PASSWORD
+</code></pre>
+<ol start="5">
+<li>Ubuntu 20.04 LTS にて以下を実行。</li>
 </ol>
 <pre><code class="language-sh"># コマンドの先頭に sudo (スードゥー) を付けると、ルート権限でコマンドを実行できます。
+# なお、なにも表示されないです。
 $ sudo sed -i -e 's%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g' /etc/apt/sources.list
 </code></pre>
-<pre><code class="language-sh">$ sudo apt update
+<pre><code class="language-sh"># 「インストール可能なコマンドの一覧」を更新する。
+# 実際のコマンドのインストールは行わない。
+# sudo apt -y upgrade をしないと何も起こらない。
+$ sudo apt update
+# 「インストール可能なコマンドの一覧」を参照し、
+# - 既インストールで新バージョンが
+#   公開されてたらアップグレード。
+# - 未インストールならインストール。
+# 事前に sudo apt update をする必要がある。
 $ sudo apt -y upgrade
 </code></pre>
-<pre><code class="language-sh">$ sudo apt install -y software-properties-common
+<pre><code class="language-sh"># コマンド add-apt-repository の入っている
+# software-properties-common をインストール。
+$ sudo apt install -y software-properties-common
 $ sudo add-apt-repository universe
 
 # build-essential, gdb: C++ 向け
@@ -210,18 +236,18 @@ $ sudo apt install -y build-essential gdb python3 flake8 pkg-config
 </code></pre>
 <pre><code class="language-sh">$ sudo apt update
 $ sudo apt install -y python3-pip
-# Linter の black をインストール
+# Linter の autopep8 をインストール
 $ sudo pip install autopep8
 # Formatter の black をインストール
 $ sudo pip3 install black
 
-# (参考) インストール済みパッケージのアップデートを行うには、
+# (参考) インストール済みパッケージのアップグレードを行うには、
 # --upgrade あるいは -U を付けます。
 # $ sudo pip install --upgrade autopep8
 # $ sudo pip3 install --upgrade black
 </code></pre>
 <h1 id="5-余談-プログラミング用フォルダは--下に置くといいよという話"><a class="header" href="#5-余談-プログラミング用フォルダは--下に置くといいよという話">5. (余談) プログラミング用フォルダは <code>~</code> 下に置くといいよ、という話</a></h1>
-<p>(「(任意) WSL を有効化しよう」をやってくださった方向けです。)<br />
+<p>(「WSL を有効化しよう」をやってくださった方向けです。)<br />
 WSL を入れ終わった方は、エクスプローラーを開き、パンくずリストが書かれた窓に <code>\\wsl$\Ubuntu-20.04\home</code> と打って Enter を押してください。
 <code>YOUR_NAME</code> (YOUR_NAME は自分の入力した名前) というフォルダがあるはずです。
 (以下、<code>\\wsl$\Ubuntu-20.04\home\YOUR_NAME</code> を <code>~</code> と略記します。)<br />
@@ -232,8 +258,8 @@ WSL を入れ終わった方は、エクスプローラーを開き、パンく�
 <li>参考資料 <a href="https://www.orzs.tech/how-to-solve-the-problem-that-file-operations-such-as-git-are-heavy-with-wsl2/">WSL2 で Git などのファイル操作が重い問題を解決した方法</a></li>
 </ul>
 <h1 id="6-cd-ls-コマンドを知っておこう"><a class="header" href="#6-cd-ls-コマンドを知っておこう">6. <code>cd</code>, <code>ls</code> コマンドを知っておこう</a></h1>
-<p>Ubuntu を使うにあたって必須のコマンドが <code>cd</code>, <code>ls</code> コマンドです。機能は下票の通りです。<br />
-(下記表で、「ディレクトリ」は「フォルダ」と同義です。)</p>
+<p>Ubuntu を使うにあたって必須のコマンドが <code>cd</code>, <code>ls</code> コマンドです。機能は下表の通りです。<br />
+(下表で、「ディレクトリ」は「フォルダ」と同義です。)</p>
 <table><thead><tr><th>コマンド名</th><th>コマンド名の由来</th><th>機能</th><th>使い方</th></tr></thead><tbody>
 <tr><td>cd</td><td>change directory</td><td>カレントディレクトリの変更</td><td><code>cd PATH/TO/YOUR/FOLDER</code></td></tr>
 <tr><td>ls</td><td>list segments</td><td>カレントディレクトリ配下のファイル一覧を表示</td><td><code>ls</code></td></tr>

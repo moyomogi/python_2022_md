@@ -176,9 +176,11 @@ print(len(st))
 <tr><td>popleft()</td><td>先頭の要素を削除</td><td>$O(1)$</td></tr>
 </tbody></table>
 </li>
-<li>
-<p>参考資料 <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a></p>
-</li>
+</ul>
+<pre><code class="language-py">TODO: deque の説明コード
+</code></pre>
+<ul>
+<li>さらに詳しくは <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a> を参照。</li>
 </ul>
 <ol start="3">
 <li>優先度キュー <code>heapq</code><br />
@@ -192,7 +194,31 @@ print(len(st))
 しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。<br />
 理解できなくても全く問題ないので気軽に聞いてください。</p>
 <h2 id="2-1-クラスを作ってみよう"><a class="header" href="#2-1-クラスを作ってみよう">2-1. クラスを作ってみよう</a></h2>
-<pre><code class="language-py">TODO: クラスに慣れるため、calc_rect_area の Class ver. を書く予定。
+<pre><code class="language-py">class Calculator:
+    # class の中の関数をメソッドと呼びます。
+    def __init__(self, w=50, h=70):
+        self.w = w
+        self.h = h
+
+    # 面積は w * h です。
+    def calc_rect_area(self):
+        return self.w * self.h
+
+    # 周の長さは 2 * w + 2 * h です。
+    def calc_perimeter_len(self):
+        return 2 * self.w + 2 * self.h
+
+
+c1 = Calculator(20, 30)
+print(c1.calc_rect_area())  # 600
+
+# c2 = Calculator(20, 70) として解釈される
+c2 = Calculator(20)
+print(c2.calc_rect_area())  # 1400
+
+# c3 = Calculator(50, 70) として解釈される
+c3 = Calculator()
+print(c3.calc_rect_area())  # 3500
 </code></pre>
 <h2 id="2-2-発展-complex-クラスを作ってみよう"><a class="header" href="#2-2-発展-complex-クラスを作ってみよう">2-2. (発展) Complex クラスを作ってみよう</a></h2>
 <pre><code class="language-py">class Complex:
@@ -228,6 +254,7 @@ print(len(st))
     def debug_print(self):
         print(f&quot;self.re: {self.re}, self.im: {self.im}&quot;)
 
+
 a = Complex(0, 1)
 b = Complex(1, 0)
 a.debug_print()  # self.re: 0, self.im: 1
@@ -247,7 +274,13 @@ print(b)  # -1 + 1i
 <ul>
 <li>
 <p>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a></p>
-<p>3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。</p>
+<p>3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。<br />
+$10^8$ 回の演算で大体 1000ms (= 1s) かかります。<br />
+AtCoder の問題の 9 割は制限が 2000ms なので、O$(2 \prod 10^9)$。</p>
+<ul>
+<li>3 重 for 文による実装の計算量: $O(n^3) = O(2000^3)$</li>
+<li>2 重 for 文による実装の計算量: $O(n^2) = O(2000^2)$</li>
+</ul>
 </li>
 </ul>
 <pre><code class="language-py">n, y = map(int, input().split())
@@ -282,7 +315,10 @@ print(&quot;-1 -1 -1&quot;)
 </ol>
 </li>
 </ul>
-<pre><code class="language-sh"># 下 4 行は初回のみ実行
+<pre><code class="language-sh"># ★以下のコマンドは、かなり高度です。
+#   GitHub Desktop があれば、以下のコマンドを使う必要は
+#   全くないので、このコマンドはスルーしてもいいです。
+# 下 4 行は初回のみ実行
 $ git init
 # moyomogi, python_2022_lib は自分のものに読み替えてください
 git remote add origin git@github.com:moyomogi/python_2022_lib.git
@@ -305,32 +341,32 @@ $ git push origin master
 <li>GitHub Desktop を用いてファイルをアップロード。</li>
 <li>GitHub のアカウントで <a href="https://app.netlify.com">Netlify</a> にログインし、ライブラリのレポジトリを選択して、デプロイ。詳しい操作は <a href="https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll">Setting up your own digital garden with Jekyll</a> を参照。</li>
 </ol>
-<h1 id="6-web-制作にご興味が"><a class="header" href="#6-web-制作にご興味が">6. ？？？「Web 制作にご興味が？」</a></h1>
+<h1 id="5-余談-web-制作にご興味が"><a class="header" href="#5-余談-web-制作にご興味が">5. (余談) ？？？「Web 制作にご興味が？」</a></h1>
 <img src="https://i.imgur.com/OCMiU8x.png" width="480">
 <p>今回、Netlify でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
 ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、是非お気軽にご参加ください。
 <a href="https://rvw2022s.herokuapp.com">RVW 2022 Spring</a> 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。</p>
-<h1 id="7-合作をしよう"><a class="header" href="#7-合作をしよう">7. 合作をしよう</a></h1>
-<p>公立大の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期に hackathon を行っています。<br />
+<h1 id="6-余談-合作をしよう"><a class="header" href="#6-余談-合作をしよう">6. (余談) 合作をしよう</a></h1>
+<p>OMU の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期にハッカソンを行っています。<br />
 合作に参加すると、他人のコードを読めて、知識が深まります。<br />
 プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。</p>
 <ul>
-<li>参考: Hackathon2022Spring
-テーマ「ジャンプ」(テーマは各 hackathon ごとに異なる) に沿ったゲームを作り合う対抗戦。
+<li>参考: 2022 年の春に行ったハッカソン「Hackathon2022Spring」の内容は以下の通り。
+テーマ「ジャンプ」(テーマは各ハッカソンごとに異なる) に沿ったゲームを作り合う対抗戦。
 <ul>
 <li>Computer House Random の作ったゲーム <a href="https://github.com/Nisk36/Hackathon">Nisk36/Hackathon</a></li>
 <li>App Navi の作ったゲーム <a href="https://blog.opuappnavi.com/post/games-in-2021/#jumpin">JumPin</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="8-競プロをしよう"><a class="header" href="#8-競プロをしよう">8. 競プロをしよう</a></h1>
-<h2 id="8-1-バチャに参加しよう"><a class="header" href="#8-1-バチャに参加しよう">8-1. バチャに参加しよう</a></h2>
+<h1 id="7-余談-競プロをしよう"><a class="header" href="#7-余談-競プロをしよう">7. (余談) 競プロをしよう</a></h1>
+<h2 id="7-1-バチャに参加しよう"><a class="header" href="#7-1-バチャに参加しよう">7-1. バチャに参加しよう</a></h2>
 <p>毎週月・木の 21:00-22:00 にバチャをしています。<br />
 この勉強会を通じて、競プロに興味を持った方はぜひ参加して、アルゴリズム力を高めましょう。</p>
-<h2 id="8-2-競プロの大会に出場しよう"><a class="header" href="#8-2-競プロの大会に出場しよう">8-2. 競プロの大会に出場しよう</a></h2>
+<h2 id="7-2-競プロの大会に出場しよう"><a class="header" href="#7-2-競プロの大会に出場しよう">7-2. 競プロの大会に出場しよう</a></h2>
 <p>Computer House Random では <a href="https://icpc.iisf.or.jp/blog/2022/03/29/icpc-regional-2022/">ICPC</a> と <a href="https://products.sint.co.jp/pg_battle">PG BATTLE</a> に出場しています (任意参加)。<br />
 バチャに定期的に参加している人に声をかけるので、よろしくお願いします。</p>
-<h2 id="8-3-競プロだけに傾倒しないように"><a class="header" href="#8-3-競プロだけに傾倒しないように">8-3. 競プロだけに傾倒しないように</a></h2>
+<h2 id="7-3-競プロだけに傾倒しないように"><a class="header" href="#7-3-競プロだけに傾倒しないように">7-3. 競プロだけに傾倒しないように</a></h2>
 <p>競プロ<strong>だけ</strong>に現を抜かし、Web 制作やゲーム制作を通じて実際にコードを書くことを疎かにしてはなりません (大会に出場しようと言っておいてあれですが)。<br />
 競プロ (AtCoder など) は飽くまでも、実際に (つまり競プロ以外で) コードを書く際に、自分の中での固まった命名規則で変数を命名したり (「camelCase, PascalCase, snake_case が混ざったコードを書かない」など)、用いるべきデータ構造を見極めたり、構築すべき構造を大局的に捉えて完成形から逆算してコードを書いたりするための基礎練習に過ぎません。何かしらのプロダクトを作ることに時間を割くべきと、よもぎは思います。</p>
 <blockquote>
@@ -339,7 +375,7 @@ $ git push origin master
 </blockquote>
 <h1 id="補遺"><a class="header" href="#補遺">補遺</a></h1>
 <ul>
-<li>GItHub の基本操作の学習には <a href="https://lab.github.com/githubtraining/introduction-to-github">Introduction to GitHub</a> がお薦めです。</li>
+<li>GitHub の基本操作の学習には <a href="https://lab.github.com/githubtraining/introduction-to-github">Introduction to GitHub</a> がお薦めです。</li>
 </ul>
 <h1 id="任意課題"><a class="header" href="#任意課題">任意課題</a></h1>
 <p>難しいので (9), (10) は任意課題としたいと思います。<br />

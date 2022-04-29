@@ -142,34 +142,34 @@
                         <h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ、Web Scraping</a></h1>
 <h1 id="1-自分で関数を作ってみよう-def"><a class="header" href="#1-自分で関数を作ってみよう-def">1. 自分で関数を作ってみよう (def)</a></h1>
 <p>下記は、長方形の面積を求めるプログラムです。</p>
-<pre><code class="language-py">def calc_rect_area(width, height):
-    return width * height
+<pre><code class="language-py">def calc_rect_area(height, width):
+    return height * width
+
 
 print(calc_rect_area(20, 30))  # 600
 </code></pre>
 <h2 id="1-1-デフォルト引数-ひきすう-を付けてみよう"><a class="header" href="#1-1-デフォルト引数-ひきすう-を付けてみよう">1-1. デフォルト引数 (ひきすう) を付けてみよう</a></h2>
-<pre><code class="language-py">def calc_rect_area(width=50, height=70):
-    return width * height
+<pre><code class="language-py">def calc_rect_area2(height=50, width=70):
+    return height * width
 
-print(calc_rect_area(20, 30))  # 600
 
-# print(calc_rect_area(20, 70)) として解釈される
-print(calc_rect_area(20))  # 1400
+# print(calc_rect_area2(20, 70)) として解釈される
+print(calc_rect_area2(20))  # 1400
 
-# print(calc_rect_area(50, 70)) として解釈される
-print(calc_rect_area())  # 3500
+# print(calc_rect_area2(50, 70)) として解釈される
+print(calc_rect_area2())  # 3500
 </code></pre>
 <h2 id="1-2-参考-lambda-ラムダ-関数"><a class="header" href="#1-2-参考-lambda-ラムダ-関数">1-2. (参考) lambda (ラムダ) 関数</a></h2>
 <p>lambda 関数を使うと def を使って定義するよりも短く書けますが、
 読みにくくなってしまうので、def を使うことをお薦めします。</p>
-<pre><code class="language-py">def calc_rect_area(width, height):
-    return width * height
+<pre><code class="language-py">def calc_rect_area(height, width):
+    return height * width
 
 print(calc_rect_area(20, 30))  # 600
 
 # calc_rect_area と等価な関数
-calc_rect_area2 = lambda w, h: w * h
-print(calc_rect_area2(20, 30))  # 600
+calc_rect_area3 = lambda h, w: h * w
+print(calc_rect_area3(20, 30))  # 600
 </code></pre>
 <h1 id="2-発展-再帰関数"><a class="header" href="#2-発展-再帰関数">2. (発展) 再帰関数</a></h1>
 <pre><code class="language-py"># エラトステネスの篩を用いて最大公約数を求める

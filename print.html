@@ -148,8 +148,8 @@
 一度目を通すことで、将来プログラムを実装したくなった際に、<strong>適切な検索ワードで検索</strong>できるようになることが一つ目の目標です。すなわち、適した機能を選択できる・望んだコード実装できるレベルは目指していません。プログラミング能力は、プログラミングの経験年数や、合作回数と相関関係があります。すなわち、実際にコーディングしないとプログラミング能力は向上せず、かつ、合作を通じて他人のコードを読むと視野が広がります。<br />
 もう一つの目標は、ABC (AtCoder Beginner Contest) の A,B 問題を安定して解けるようになることです。</li>
 <li>要件<br />
-もし WSL を入れるなら、一定程度の PC メモリ (8 GB あれば十分のはず)。</li>
-<li>開催日時
+WSL を入れるので、一定程度の PC メモリが必要 (4 GB あれば十分のはず)。</li>
+<li>開催日時 (2022 年度)
 <ul>
 <li>第 1 回: 2022/5/2 (月)</li>
 <li>第 2 回: 2022/5/5 (木)</li>
@@ -191,7 +191,7 @@
 <li>「3. VSCode インストール」をやっておいていただけるとスムーズに進行できます。</li>
 </ul>
 <h1 id="2-スクショの取り方"><a class="header" href="#2-スクショの取り方">2. スクショの取り方</a></h1>
-<p>この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。</p>
+<p>この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。なお、discord の画面共有なら、さらに正確に伝えられます。</p>
 <ul>
 <li>Snipping Tool<br />
 <code>win + s</code> で検索窓を出して snipping tool と入力すれば見つかるはずです。
@@ -204,7 +204,7 @@
 <p>Windows 向けの説明しか行いません。すいませんが、Mac ユーザーの方々は各自で環境を構築してください。
 まず、<a href="https://code.visualstudio.com/download">VSCode 公式のダウンロードページ</a> から DL して、インストールしてください。
 Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。</p>
-<h1 id="4-任意-wsl-を有効化しよう"><a class="header" href="#4-任意-wsl-を有効化しよう">4. (任意) WSL を有効化しよう</a></h1>
+<h1 id="4-wsl-を有効化しよう"><a class="header" href="#4-wsl-を有効化しよう">4. WSL を有効化しよう</a></h1>
 <p>ちなみに、WSL は Windows Subsystem for Linux の略です。</p>
 <h2 id="4-1-余談-なぜ-wsl-が必要か"><a class="header" href="#4-1-余談-なぜ-wsl-が必要か">4-1. (余談) なぜ WSL が必要か</a></h2>
 <ul>
@@ -213,13 +213,11 @@ Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしい�
 </ul>
 <p>従って、<strong>Ubuntu 上の便利な CLI ツールを使うため</strong>に、WSL が必要です。</p>
 <h2 id="4-2-wsl-を入れよう"><a class="header" href="#4-2-wsl-を入れよう">4-2. WSL を入れよう</a></h2>
-<p>本勉強会では Python・C++ を WSL にインストールします。<br />
-<a href="https://qiita.com/AokabiC/items/e9312856f588dd9303ed">Visual Studio Code で競プロ環境構築(導入編)</a> をブラウザ上の別タブで開いてください。<br />
-一応、実行すべき行為を置いておきます。</p>
+<p>本勉強会では Python・C++ を WSL にインストールします。</p>
 <ol>
 <li>デフォルトの Windows では、スタートアップ時に WSL が起動しません。<br />
 以下の A, B いずれかを行い、WSL を有効化します。<br />
-A. (GUI で有効化) <a href="https://qiita.com/Aruneko/items/c79810b0b015bebf30bb">Windows Subsystem for Linux (WSL1) をインストールしてみよう！</a> を読んでください。<br />
+A. (GUI で有効化) <a href="https://qiita.com/Aruneko/items/c79810b0b015bebf30bb">Windows Subsystem for Linux (WSL1) をインストールしてみよう！</a> をブラウザ上の別タブで開いてください。<br />
 B. (CUI で有効化) Windows PowerShell にて、WSL を有効化しましょう。<br />
 この設定により NoxPlayer などのエミュレーターが動かなくなることがありますが、元の設定に戻せば、また動かせます。</li>
 </ol>
@@ -232,18 +230,46 @@ $ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem
 <li>Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、下の方に出てきます)。
 <ul>
 <li>LTS (Long Time Support, 長期サポート) は「安定版」の意です。</li>
-<li>2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく、設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。</li>
+<li>2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。</li>
 </ul>
 </li>
-<li>Ubuntu 20.04 LTS を起動し以下を実行。</li>
+<li>Ubuntu 20.04 LTS を起動。<br />
+以下のように、username と password を設定するように促されるので、それに従って入力。</li>
+</ol>
+<pre><code class="language-sh">Installing, this may take a few minutes...
+Please create a default UNIX user account. The username does not need to match your Windows username.
+For more information visit: https://aka.ms/wslusers
+# YOUR_USERNAME は自由に決めたものに読み替えてください。
+# 先述しましたが、入力が終わったら Enter を押しましょう。
+# (ただし、a-z, 0-9 のみで構成するといいと思います。)
+Enter new UNIX username: YOUR_USERNAME
+# 下 2 行において、YOUR_USERNAME は自分で決めてください。
+# ここで設定したパスワードは、以降で使うので覚えておくように。
+New password: YOUR_PASSWORD
+# 上の行で入力した YOUR_PASSWORD と全く同じものを入力。
+Retype new password: YOUR_PASSWORD
+</code></pre>
+<ol start="5">
+<li>Ubuntu 20.04 LTS にて以下を実行。</li>
 </ol>
 <pre><code class="language-sh"># コマンドの先頭に sudo (スードゥー) を付けると、ルート権限でコマンドを実行できます。
+# なお、なにも表示されないです。
 $ sudo sed -i -e 's%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g' /etc/apt/sources.list
 </code></pre>
-<pre><code class="language-sh">$ sudo apt update
+<pre><code class="language-sh"># 「インストール可能なコマンドの一覧」を更新する。
+# 実際のコマンドのインストールは行わない。
+# sudo apt -y upgrade をしないと何も起こらない。
+$ sudo apt update
+# 「インストール可能なコマンドの一覧」を参照し、
+# - 既インストールで新バージョンが
+#   公開されてたらアップグレード。
+# - 未インストールならインストール。
+# 事前に sudo apt update をする必要がある。
 $ sudo apt -y upgrade
 </code></pre>
-<pre><code class="language-sh">$ sudo apt install -y software-properties-common
+<pre><code class="language-sh"># コマンド add-apt-repository の入っている
+# software-properties-common をインストール。
+$ sudo apt install -y software-properties-common
 $ sudo add-apt-repository universe
 
 # build-essential, gdb: C++ 向け
@@ -255,18 +281,18 @@ $ sudo apt install -y build-essential gdb python3 flake8 pkg-config
 </code></pre>
 <pre><code class="language-sh">$ sudo apt update
 $ sudo apt install -y python3-pip
-# Linter の black をインストール
+# Linter の autopep8 をインストール
 $ sudo pip install autopep8
 # Formatter の black をインストール
 $ sudo pip3 install black
 
-# (参考) インストール済みパッケージのアップデートを行うには、
+# (参考) インストール済みパッケージのアップグレードを行うには、
 # --upgrade あるいは -U を付けます。
 # $ sudo pip install --upgrade autopep8
 # $ sudo pip3 install --upgrade black
 </code></pre>
 <h1 id="5-余談-プログラミング用フォルダは--下に置くといいよという話"><a class="header" href="#5-余談-プログラミング用フォルダは--下に置くといいよという話">5. (余談) プログラミング用フォルダは <code>~</code> 下に置くといいよ、という話</a></h1>
-<p>(「(任意) WSL を有効化しよう」をやってくださった方向けです。)<br />
+<p>(「WSL を有効化しよう」をやってくださった方向けです。)<br />
 WSL を入れ終わった方は、エクスプローラーを開き、パンくずリストが書かれた窓に <code>\\wsl$\Ubuntu-20.04\home</code> と打って Enter を押してください。
 <code>YOUR_NAME</code> (YOUR_NAME は自分の入力した名前) というフォルダがあるはずです。
 (以下、<code>\\wsl$\Ubuntu-20.04\home\YOUR_NAME</code> を <code>~</code> と略記します。)<br />
@@ -277,8 +303,8 @@ WSL を入れ終わった方は、エクスプローラーを開き、パンく�
 <li>参考資料 <a href="https://www.orzs.tech/how-to-solve-the-problem-that-file-operations-such-as-git-are-heavy-with-wsl2/">WSL2 で Git などのファイル操作が重い問題を解決した方法</a></li>
 </ul>
 <h1 id="6-cd-ls-コマンドを知っておこう"><a class="header" href="#6-cd-ls-コマンドを知っておこう">6. <code>cd</code>, <code>ls</code> コマンドを知っておこう</a></h1>
-<p>Ubuntu を使うにあたって必須のコマンドが <code>cd</code>, <code>ls</code> コマンドです。機能は下票の通りです。<br />
-(下記表で、「ディレクトリ」は「フォルダ」と同義です。)</p>
+<p>Ubuntu を使うにあたって必須のコマンドが <code>cd</code>, <code>ls</code> コマンドです。機能は下表の通りです。<br />
+(下表で、「ディレクトリ」は「フォルダ」と同義です。)</p>
 <table><thead><tr><th>コマンド名</th><th>コマンド名の由来</th><th>機能</th><th>使い方</th></tr></thead><tbody>
 <tr><td>cd</td><td>change directory</td><td>カレントディレクトリの変更</td><td><code>cd PATH/TO/YOUR/FOLDER</code></td></tr>
 <tr><td>ls</td><td>list segments</td><td>カレントディレクトリ配下のファイル一覧を表示</td><td><code>ls</code></td></tr>
@@ -930,34 +956,34 @@ print(ans)
 <div style="break-before: page; page-break-before: always;"></div><h1 id="第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping"><a class="header" href="#第-4-回-python-勉強会-2022--関数外部ライブラリweb-scraping">第 4 回 Python 勉強会 2022 | 関数、外部ライブラリ、Web Scraping</a></h1>
 <h1 id="1-自分で関数を作ってみよう-def"><a class="header" href="#1-自分で関数を作ってみよう-def">1. 自分で関数を作ってみよう (def)</a></h1>
 <p>下記は、長方形の面積を求めるプログラムです。</p>
-<pre><code class="language-py">def calc_rect_area(width, height):
-    return width * height
+<pre><code class="language-py">def calc_rect_area(height, width):
+    return height * width
+
 
 print(calc_rect_area(20, 30))  # 600
 </code></pre>
 <h2 id="1-1-デフォルト引数-ひきすう-を付けてみよう"><a class="header" href="#1-1-デフォルト引数-ひきすう-を付けてみよう">1-1. デフォルト引数 (ひきすう) を付けてみよう</a></h2>
-<pre><code class="language-py">def calc_rect_area(width=50, height=70):
-    return width * height
+<pre><code class="language-py">def calc_rect_area2(height=50, width=70):
+    return height * width
 
-print(calc_rect_area(20, 30))  # 600
 
-# print(calc_rect_area(20, 70)) として解釈される
-print(calc_rect_area(20))  # 1400
+# print(calc_rect_area2(20, 70)) として解釈される
+print(calc_rect_area2(20))  # 1400
 
-# print(calc_rect_area(50, 70)) として解釈される
-print(calc_rect_area())  # 3500
+# print(calc_rect_area2(50, 70)) として解釈される
+print(calc_rect_area2())  # 3500
 </code></pre>
 <h2 id="1-2-参考-lambda-ラムダ-関数"><a class="header" href="#1-2-参考-lambda-ラムダ-関数">1-2. (参考) lambda (ラムダ) 関数</a></h2>
 <p>lambda 関数を使うと def を使って定義するよりも短く書けますが、
 読みにくくなってしまうので、def を使うことをお薦めします。</p>
-<pre><code class="language-py">def calc_rect_area(width, height):
-    return width * height
+<pre><code class="language-py">def calc_rect_area(height, width):
+    return height * width
 
 print(calc_rect_area(20, 30))  # 600
 
 # calc_rect_area と等価な関数
-calc_rect_area2 = lambda w, h: w * h
-print(calc_rect_area2(20, 30))  # 600
+calc_rect_area3 = lambda h, w: h * w
+print(calc_rect_area3(20, 30))  # 600
 </code></pre>
 <h1 id="2-発展-再帰関数"><a class="header" href="#2-発展-再帰関数">2. (発展) 再帰関数</a></h1>
 <pre><code class="language-py"># エラトステネスの篩を用いて最大公約数を求める
@@ -1168,9 +1194,11 @@ print(len(st))
 <tr><td>popleft()</td><td>先頭の要素を削除</td><td>$O(1)$</td></tr>
 </tbody></table>
 </li>
-<li>
-<p>参考資料 <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a></p>
-</li>
+</ul>
+<pre><code class="language-py">TODO: deque の説明コード
+</code></pre>
+<ul>
+<li>さらに詳しくは <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a> を参照。</li>
 </ul>
 <ol start="3">
 <li>優先度キュー <code>heapq</code><br />
@@ -1184,7 +1212,31 @@ print(len(st))
 しかし、他人の描いたクラスがどのように動作しているのかは理解できると嬉しいので、クラスも紹介しておきます。<br />
 理解できなくても全く問題ないので気軽に聞いてください。</p>
 <h2 id="2-1-クラスを作ってみよう"><a class="header" href="#2-1-クラスを作ってみよう">2-1. クラスを作ってみよう</a></h2>
-<pre><code class="language-py">TODO: クラスに慣れるため、calc_rect_area の Class ver. を書く予定。
+<pre><code class="language-py">class Calculator:
+    # class の中の関数をメソッドと呼びます。
+    def __init__(self, w=50, h=70):
+        self.w = w
+        self.h = h
+
+    # 面積は w * h です。
+    def calc_rect_area(self):
+        return self.w * self.h
+
+    # 周の長さは 2 * w + 2 * h です。
+    def calc_perimeter_len(self):
+        return 2 * self.w + 2 * self.h
+
+
+c1 = Calculator(20, 30)
+print(c1.calc_rect_area())  # 600
+
+# c2 = Calculator(20, 70) として解釈される
+c2 = Calculator(20)
+print(c2.calc_rect_area())  # 1400
+
+# c3 = Calculator(50, 70) として解釈される
+c3 = Calculator()
+print(c3.calc_rect_area())  # 3500
 </code></pre>
 <h2 id="2-2-発展-complex-クラスを作ってみよう"><a class="header" href="#2-2-発展-complex-クラスを作ってみよう">2-2. (発展) Complex クラスを作ってみよう</a></h2>
 <pre><code class="language-py">class Complex:
@@ -1220,6 +1272,7 @@ print(len(st))
     def debug_print(self):
         print(f&quot;self.re: {self.re}, self.im: {self.im}&quot;)
 
+
 a = Complex(0, 1)
 b = Complex(1, 0)
 a.debug_print()  # self.re: 0, self.im: 1
@@ -1239,7 +1292,13 @@ print(b)  # -1 + 1i
 <ul>
 <li>
 <p>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a></p>
-<p>3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。</p>
+<p>3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。<br />
+$10^8$ 回の演算で大体 1000ms (= 1s) かかります。<br />
+AtCoder の問題の 9 割は制限が 2000ms なので、O$(2 \prod 10^9)$。</p>
+<ul>
+<li>3 重 for 文による実装の計算量: $O(n^3) = O(2000^3)$</li>
+<li>2 重 for 文による実装の計算量: $O(n^2) = O(2000^2)$</li>
+</ul>
 </li>
 </ul>
 <pre><code class="language-py">n, y = map(int, input().split())
@@ -1274,7 +1333,10 @@ print(&quot;-1 -1 -1&quot;)
 </ol>
 </li>
 </ul>
-<pre><code class="language-sh"># 下 4 行は初回のみ実行
+<pre><code class="language-sh"># ★以下のコマンドは、かなり高度です。
+#   GitHub Desktop があれば、以下のコマンドを使う必要は
+#   全くないので、このコマンドはスルーしてもいいです。
+# 下 4 行は初回のみ実行
 $ git init
 # moyomogi, python_2022_lib は自分のものに読み替えてください
 git remote add origin git@github.com:moyomogi/python_2022_lib.git
@@ -1297,32 +1359,32 @@ $ git push origin master
 <li>GitHub Desktop を用いてファイルをアップロード。</li>
 <li>GitHub のアカウントで <a href="https://app.netlify.com">Netlify</a> にログインし、ライブラリのレポジトリを選択して、デプロイ。詳しい操作は <a href="https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll">Setting up your own digital garden with Jekyll</a> を参照。</li>
 </ol>
-<h1 id="6-web-制作にご興味が"><a class="header" href="#6-web-制作にご興味が">6. ？？？「Web 制作にご興味が？」</a></h1>
+<h1 id="5-余談-web-制作にご興味が"><a class="header" href="#5-余談-web-制作にご興味が">5. (余談) ？？？「Web 制作にご興味が？」</a></h1>
 <img src="https://i.imgur.com/OCMiU8x.png" width="480">
 <p>今回、Netlify でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
 ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、是非お気軽にご参加ください。
 <a href="https://rvw2022s.herokuapp.com">RVW 2022 Spring</a> 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。</p>
-<h1 id="7-合作をしよう"><a class="header" href="#7-合作をしよう">7. 合作をしよう</a></h1>
-<p>公立大の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期に hackathon を行っています。<br />
+<h1 id="6-余談-合作をしよう"><a class="header" href="#6-余談-合作をしよう">6. (余談) 合作をしよう</a></h1>
+<p>OMU の部活 <a href="https://opuappnavi.com/#/">App Navi</a> と不定期にハッカソンを行っています。<br />
 合作に参加すると、他人のコードを読めて、知識が深まります。<br />
 プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。</p>
 <ul>
-<li>参考: Hackathon2022Spring
-テーマ「ジャンプ」(テーマは各 hackathon ごとに異なる) に沿ったゲームを作り合う対抗戦。
+<li>参考: 2022 年の春に行ったハッカソン「Hackathon2022Spring」の内容は以下の通り。
+テーマ「ジャンプ」(テーマは各ハッカソンごとに異なる) に沿ったゲームを作り合う対抗戦。
 <ul>
 <li>Computer House Random の作ったゲーム <a href="https://github.com/Nisk36/Hackathon">Nisk36/Hackathon</a></li>
 <li>App Navi の作ったゲーム <a href="https://blog.opuappnavi.com/post/games-in-2021/#jumpin">JumPin</a></li>
 </ul>
 </li>
 </ul>
-<h1 id="8-競プロをしよう"><a class="header" href="#8-競プロをしよう">8. 競プロをしよう</a></h1>
-<h2 id="8-1-バチャに参加しよう"><a class="header" href="#8-1-バチャに参加しよう">8-1. バチャに参加しよう</a></h2>
+<h1 id="7-余談-競プロをしよう"><a class="header" href="#7-余談-競プロをしよう">7. (余談) 競プロをしよう</a></h1>
+<h2 id="7-1-バチャに参加しよう"><a class="header" href="#7-1-バチャに参加しよう">7-1. バチャに参加しよう</a></h2>
 <p>毎週月・木の 21:00-22:00 にバチャをしています。<br />
 この勉強会を通じて、競プロに興味を持った方はぜひ参加して、アルゴリズム力を高めましょう。</p>
-<h2 id="8-2-競プロの大会に出場しよう"><a class="header" href="#8-2-競プロの大会に出場しよう">8-2. 競プロの大会に出場しよう</a></h2>
+<h2 id="7-2-競プロの大会に出場しよう"><a class="header" href="#7-2-競プロの大会に出場しよう">7-2. 競プロの大会に出場しよう</a></h2>
 <p>Computer House Random では <a href="https://icpc.iisf.or.jp/blog/2022/03/29/icpc-regional-2022/">ICPC</a> と <a href="https://products.sint.co.jp/pg_battle">PG BATTLE</a> に出場しています (任意参加)。<br />
 バチャに定期的に参加している人に声をかけるので、よろしくお願いします。</p>
-<h2 id="8-3-競プロだけに傾倒しないように"><a class="header" href="#8-3-競プロだけに傾倒しないように">8-3. 競プロだけに傾倒しないように</a></h2>
+<h2 id="7-3-競プロだけに傾倒しないように"><a class="header" href="#7-3-競プロだけに傾倒しないように">7-3. 競プロだけに傾倒しないように</a></h2>
 <p>競プロ<strong>だけ</strong>に現を抜かし、Web 制作やゲーム制作を通じて実際にコードを書くことを疎かにしてはなりません (大会に出場しようと言っておいてあれですが)。<br />
 競プロ (AtCoder など) は飽くまでも、実際に (つまり競プロ以外で) コードを書く際に、自分の中での固まった命名規則で変数を命名したり (「camelCase, PascalCase, snake_case が混ざったコードを書かない」など)、用いるべきデータ構造を見極めたり、構築すべき構造を大局的に捉えて完成形から逆算してコードを書いたりするための基礎練習に過ぎません。何かしらのプロダクトを作ることに時間を割くべきと、よもぎは思います。</p>
 <blockquote>
@@ -1331,7 +1393,7 @@ $ git push origin master
 </blockquote>
 <h1 id="補遺"><a class="header" href="#補遺">補遺</a></h1>
 <ul>
-<li>GItHub の基本操作の学習には <a href="https://lab.github.com/githubtraining/introduction-to-github">Introduction to GitHub</a> がお薦めです。</li>
+<li>GitHub の基本操作の学習には <a href="https://lab.github.com/githubtraining/introduction-to-github">Introduction to GitHub</a> がお薦めです。</li>
 </ul>
 <h1 id="任意課題"><a class="header" href="#任意課題">任意課題</a></h1>
 <p>難しいので (9), (10) は任意課題としたいと思います。<br />
