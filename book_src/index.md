@@ -27,6 +27,7 @@
   ライセンスは [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja) です。すなわち、このプロジェクト内のコードや文章などは、引用元を記載せずに転載して構いません。
 - 参考文献
   - [Visual Studio Code で競プロ環境構築 (導入編)](https://qiita.com/AokabiC/items/e9312856f588dd9303ed)
+  - [Code Runner を使いこなす](https://qiita.com/take_me/items/6a1d2d417889837219d1)
   - [AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～](https://qiita.com/drken/items/fd4e5e3630d0f5859067), drken
   - [AtCoder に登録したら解くべき精選過去問 10 問 を Python で解いてみた](https://delta114514.hatenablog.jp/entry/2018/03/15/014555), delta114514
   - [Learn Python Tutorials | Kaggle](https://www.kaggle.com/learn/python), kaggle courses
