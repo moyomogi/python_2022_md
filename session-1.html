@@ -159,16 +159,24 @@
 <p>Windows 向けの説明しか行いません。すいませんが、Mac ユーザーの方々は各自で環境を構築してください。
 まず、<a href="https://code.visualstudio.com/download">VSCode 公式のダウンロードページ</a> から DL して、インストールしてください。
 Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。</p>
-<h1 id="4-wsl-を有効化しよう"><a class="header" href="#4-wsl-を有効化しよう">4. WSL を有効化しよう</a></h1>
+<h1 id="4a-任意-wsl-を有効化しよう"><a class="header" href="#4a-任意-wsl-を有効化しよう">4A. (任意) WSL を有効化しよう</a></h1>
 <p>ちなみに、WSL は Windows Subsystem for Linux の略です。</p>
-<h2 id="4-1-余談-なぜ-wsl-が必要か"><a class="header" href="#4-1-余談-なぜ-wsl-が必要か">4-1. (余談) なぜ WSL が必要か</a></h2>
+<h2 id="4a-1-余談-なぜ-wsl-が必要か"><a class="header" href="#4a-1-余談-なぜ-wsl-が必要か">4A-1. (余談) なぜ WSL が必要か</a></h2>
 <ul>
 <li>Ubuntu には、非公式リポジトリ <a href="https://launchpad.net/ubuntu/+ppas">PPA</a> があり、自作 CLI ツールを PPA に登録すると、<code>add-apt-repository</code> コマンドで、そのリポジトリをマシンに登録できるので、他のユーザーが <code>apt</code> コマンドでそのプログラムを使えるようになります。</li>
 <li>対して Windows では、<code>apt</code> に当たるものとして <code>choco</code> (<a href="https://chocolatey.org">Chocolatey</a>) がありますが、GUI ツールばかりで、高性能な CLI ツールがあまりないです。(参考: <a href="https://community.chocolatey.org/packages">Chocolatey Community Repository</a>)</li>
 </ul>
 <p>従って、<strong>Ubuntu 上の便利な CLI ツールを使うため</strong>に、WSL が必要です。</p>
-<h2 id="4-2-wsl-を入れよう"><a class="header" href="#4-2-wsl-を入れよう">4-2. WSL を入れよう</a></h2>
+<h2 id="4a-2-wsl-を入れよう"><a class="header" href="#4a-2-wsl-を入れよう">4A-2. WSL を入れよう</a></h2>
 <p>本勉強会では Python・C++ を WSL にインストールします。</p>
+<ul>
+<li>Windows 11 の人は、これだけ実行すればいいらしいです。</li>
+</ul>
+<pre><code class="language-ps1">wsl --install
+</code></pre>
+<ul>
+<li>Windows 10 以前の人は、以下 1. ～ 6. を実行。</li>
+</ul>
 <ol>
 <li>デフォルトの Windows では、スタートアップ時に WSL が起動しません。<br />
 以下の A, B いずれかを行い、WSL を有効化します。<br />
@@ -181,15 +189,23 @@ B. (CUI で有効化) Windows PowerShell にて、WSL を有効化しましょ�
 $ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 </code></pre>
 <ol start="2">
-<li>WSL を起動させるために、PC を再起動。</li>
-<li>Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、下の方に出てきます)。
+<li>
+<p>WSL を起動させるために、PC を再起動。</p>
+</li>
+<li>
+<p><a href="https://docs.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package">以前のバージョンの WSL の手動インストール手順</a> にて、<code>手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする</code> にある <code>x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ</code> をダウンロードし、実行。</p>
+</li>
+<li>
+<p>Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、下の方に出てきます)。</p>
 <ul>
 <li>LTS (Long Time Support, 長期サポート) は「安定版」の意です。</li>
 <li>2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。</li>
 </ul>
 </li>
-<li>Ubuntu 20.04 LTS を起動。<br />
-以下のように、username と password を設定するように促されるので、それに従って入力。</li>
+<li>
+<p>Ubuntu 20.04 LTS を起動。<br />
+以下のように、username と password を設定するように促されるので、それに従って入力。</p>
+</li>
 </ol>
 <pre><code class="language-sh">Installing, this may take a few minutes...
 Please create a default UNIX user account. The username does not need to match your Windows username.
@@ -204,7 +220,7 @@ New password: YOUR_PASSWORD
 # 上の行で入力した YOUR_PASSWORD と全く同じものを入力。
 Retype new password: YOUR_PASSWORD
 </code></pre>
-<ol start="5">
+<ol start="6">
 <li>Ubuntu 20.04 LTS にて以下を実行。</li>
 </ol>
 <pre><code class="language-sh"># コマンドの先頭に sudo (superuser do; スードゥー) を付けると、ルート権限でコマンドを実行できます。
@@ -231,7 +247,7 @@ $ sudo add-apt-repository universe
 # python3, flake8: Python 向け
 # pkg-config:
 #   これがないとバグるツールが結構あるので
-#   まとめてインストールしえおきましょう。
+#   まとめてインストールしておきましょう。
 $ sudo apt install -y build-essential gdb python3 flake8 pkg-config
 </code></pre>
 <pre><code class="language-sh">$ sudo apt update
@@ -246,7 +262,7 @@ $ sudo pip3 install black
 # $ sudo pip install --upgrade autopep8
 # $ sudo pip3 install --upgrade black
 </code></pre>
-<h1 id="5-余談-プログラミング用フォルダは--下に置くといいよという話"><a class="header" href="#5-余談-プログラミング用フォルダは--下に置くといいよという話">5. (余談) プログラミング用フォルダは <code>~</code> 下に置くといいよ、という話</a></h1>
+<h1 id="4a-3-余談-プログラミング用フォルダは--下に置くといいよという話"><a class="header" href="#4a-3-余談-プログラミング用フォルダは--下に置くといいよという話">4A-3. (余談) プログラミング用フォルダは <code>~</code> 下に置くといいよ、という話</a></h1>
 <p>(「WSL を有効化しよう」をやってくださった方向けです。)<br />
 WSL を入れ終わった方は、エクスプローラーを開き、パンくずリストが書かれた窓に <code>\\wsl$\Ubuntu-20.04\home</code> と打って Enter を押してください。
 <code>YOUR_NAME</code> (YOUR_NAME は自分の入力した名前) というフォルダがあるはずです。
@@ -257,7 +273,7 @@ WSL を入れ終わった方は、エクスプローラーを開き、パンく�
 <ul>
 <li>参考資料 <a href="https://www.orzs.tech/how-to-solve-the-problem-that-file-operations-such-as-git-are-heavy-with-wsl2/">WSL2 で Git などのファイル操作が重い問題を解決した方法</a></li>
 </ul>
-<h1 id="6-cd-ls-コマンドを知っておこう"><a class="header" href="#6-cd-ls-コマンドを知っておこう">6. <code>cd</code>, <code>ls</code> コマンドを知っておこう</a></h1>
+<h1 id="4a-4-cd-ls-コマンドを知っておこう"><a class="header" href="#4a-4-cd-ls-コマンドを知っておこう">4A-4. <code>cd</code>, <code>ls</code> コマンドを知っておこう</a></h1>
 <p>Ubuntu を使うにあたって必須のコマンドが <code>cd</code>, <code>ls</code> コマンドです。機能は下表の通りです。<br />
 (下表で、「ディレクトリ」は「フォルダ」と同義です。)</p>
 <table><thead><tr><th>コマンド名</th><th>コマンド名の由来</th><th>機能</th><th>使い方</th></tr></thead><tbody>
@@ -297,19 +313,24 @@ $ ls
 <pre><code class="language-sh">$ cd YOUR_FOLDER  # 子フォルダ YOUR_FOLDER に移動
 $ ls
 </code></pre>
-<h1 id="7-勉強会用フォルダにて各種準備をしよう"><a class="header" href="#7-勉強会用フォルダにて各種準備をしよう">7. 勉強会用フォルダにて各種準備をしよう</a></h1>
-<h2 id="7-1-py-ファイルを準備しよう"><a class="header" href="#7-1-py-ファイルを準備しよう">7-1. py ファイルを準備しよう</a></h2>
+<h1 id="4b-wsl-なしで-vscode-上に-python-環境を構築"><a class="header" href="#4b-wsl-なしで-vscode-上に-python-環境を構築">4B. WSL なしで VSCode 上に Python 環境を構築</a></h1>
+<ol>
+<li><a href="https://www.python.org/downloads/">Download Python</a> にて Python 3.10.4 をダウンロードし、インストール。</li>
+<li>VSCode の左のタブにて、Python をインストール。</li>
+</ol>
+<h1 id="5-勉強会用フォルダにて各種準備をしよう"><a class="header" href="#5-勉強会用フォルダにて各種準備をしよう">5. 勉強会用フォルダにて各種準備をしよう</a></h1>
+<h2 id="5-1-py-ファイルを準備しよう"><a class="header" href="#5-1-py-ファイルを準備しよう">5-1. py ファイルを準備しよう</a></h2>
 <ol>
 <li><code>D:\YOUR_FOLDER</code> や <code>~/YOUR_FOLDER</code> のいずれかの場所に、勉強会用フォルダを作成してください。(以下、このフォルダを <code>YOUR_FOLDER</code> として統一して言及する。)</li>
 <li>エクスプローラー上で <code>YOUR_FOLDER/main.py</code> (ファイル名 (つまり <code>main</code> の部分) は自由でいいです) を作成。</li>
 </ol>
-<h2 id="7-2-vscode-で-remote-wsl-で-your_folder-を開こう"><a class="header" href="#7-2-vscode-で-remote-wsl-で-your_folder-を開こう">7-2. VSCode で <code>Remote-WSL</code> で <code>YOUR_FOLDER</code> を開こう</a></h2>
+<h2 id="5-2-vscode-で-remote-wsl-で-your_folder-を開こう"><a class="header" href="#5-2-vscode-で-remote-wsl-で-your_folder-を開こう">5-2. VSCode で <code>Remote-WSL</code> で <code>YOUR_FOLDER</code> を開こう</a></h2>
 <ol>
 <li>VSCode を立ち上げる。</li>
 <li><code>フォルダを開く</code> を押し、フォルダ <code>YOUR_FOLDER</code> を選択して開く。</li>
 <li>VSCode の下リボンの一番左にある、ルーン文字感の漂う「 ${}_&gt;{}^&lt;$ 」マークを押し、<code>Reopen Folder in WSL</code> を選択。</li>
 </ol>
-<h1 id="8-四則演算"><a class="header" href="#8-四則演算">8. 四則演算</a></h1>
+<h1 id="6-四則演算"><a class="header" href="#6-四則演算">6. 四則演算</a></h1>
 <p>「整数・小数の四則計算 (+ - * ** / // %) (int float)」をしてみましょう。</p>
 <table><thead><tr><th>演算子</th><th>機能</th><th>実際の使い方</th></tr></thead><tbody>
 <tr><td>+</td><td>加算</td><td>print(1 + 2)</td></tr>
@@ -333,43 +354,45 @@ print(31 % 7)  # 3
 <pre><code class="language-sh"># VSCode 付属のターミナルにて以下を実行。
 $ python3 main.py
 </code></pre>
-<h1 id="9-vscode-に拡張機能を入れよう"><a class="header" href="#9-vscode-に拡張機能を入れよう">9. VSCode に拡張機能を入れよう</a></h1>
+<h1 id="7-vscode-に拡張機能を入れよう"><a class="header" href="#7-vscode-に拡張機能を入れよう">7. VSCode に拡張機能を入れよう</a></h1>
 <ul>
 <li>LOCAL に入れるべき
 <ul>
-<li><code>Japanese Language Pack for Visual Studio Code</code></li>
+<li><code>Japanese Language Pack for Visual Studio Code</code><br />
+日本語化。</li>
 <li><code>Remote - Containers</code></li>
+<li><code>Code Runner</code><br />
+Python や C++ のファイルの実行を手軽に行えます。</li>
 </ul>
 </li>
-<li>WSL:Ubuntu-20.04 に入れるべき
+<li>WSL:Ubuntu-20.04 に入れるべき (WSL 入れなかった人は LOCAL に入れて下さい)
 <ul>
-<li><code>Python</code><br />
-<code>Pylance</code> (Linter) が入っています。</li>
-<li><code>Python Indent</code><br />
-.py ファイルを綺麗にインデントできます。</li>
+<li><code>Python</code></li>
+<li><code>C/C++</code><br />
+C++ 言語使うなら。</li>
 <li><code>Highlight Trailing White Spaces</code></li>
 </ul>
 </li>
 </ul>
-<h1 id="10-atcoder-入門"><a class="header" href="#10-atcoder-入門">10. AtCoder 入門</a></h1>
-<h2 id="10-1-atcoder-に登録してみよう"><a class="header" href="#10-1-atcoder-に登録してみよう">10-1. AtCoder に登録してみよう</a></h2>
+<h1 id="8-atcoder-入門"><a class="header" href="#8-atcoder-入門">8. AtCoder 入門</a></h1>
+<h2 id="8-1-atcoder-に登録してみよう"><a class="header" href="#8-1-atcoder-に登録してみよう">8-1. AtCoder に登録してみよう</a></h2>
 <p>AtCoder は毎週土曜 21:00-22:40 に競技プログラミングのコンテストを行っているサイトです。
 (競技プログラミングとは何かについて知りたい方は、<a href="https://ch-random.net/post/246/">競プロのすすめ</a> を参照してください。)</p>
 <ol>
 <li><a href="https://atcoder.jp/register">AtCoder の Register ページ</a> から新規登録してください。</li>
 <li>また、AtCoder 上の問題一覧を見れるサイト、<a href="https://kenkoooo.com/atcoder/#/table/">AtCoder Problems</a> (ちなみに fanmade のサイトです) をブックマークしておきましょう。</li>
 </ol>
-<h2 id="10-2-atcoder-easy-test-を導入してみよう"><a class="header" href="#10-2-atcoder-easy-test-を導入してみよう">10-2. AtCoder Easy Test を導入してみよう</a></h2>
+<h2 id="8-2-atcoder-easy-test-を導入してみよう"><a class="header" href="#8-2-atcoder-easy-test-を導入してみよう">8-2. AtCoder Easy Test を導入してみよう</a></h2>
 <p><a href="https://qiita.com/magurofly/items/4b60dc02283e70230f71">AtCoder Easy Test を支える技術</a> を参考に。</p>
-<h2 id="10-3-課題-0-を-ac-してみよう"><a class="header" href="#10-3-課題-0-を-ac-してみよう">10-3. 課題 0 を AC してみよう</a></h2>
+<h2 id="8-3-課題-0-を-ac-してみよう"><a class="header" href="#8-3-課題-0-を-ac-してみよう">8-3. 課題 0 を AC してみよう</a></h2>
 <p>コピペ AC してみましょう。</p>
 <pre><code class="language-py">a = int(input())
 b, c = map(int, input().split())
 s = input()
 print(a + b + c, s)
 </code></pre>
-<h1 id="11-発展-各種-vscode-の機能の紹介"><a class="header" href="#11-発展-各種-vscode-の機能の紹介">11. (発展) 各種 VSCode の機能の紹介</a></h1>
-<h2 id="11-1-設定を弄ってみよう"><a class="header" href="#11-1-設定を弄ってみよう">11-1. 設定を弄ってみよう</a></h2>
+<h1 id="9-発展-各種-vscode-の機能の紹介"><a class="header" href="#9-発展-各種-vscode-の機能の紹介">9. (発展) 各種 VSCode の機能の紹介</a></h1>
+<h2 id="9-1-設定を弄ってみよう"><a class="header" href="#9-1-設定を弄ってみよう">9-1. 設定を弄ってみよう</a></h2>
 <p>設定ファイル <code>settings.json</code> に到達する手順は以下の通りです。</p>
 <ol>
 <li><code>左リボンの一番下にある歯車アイコン</code> &gt; <code>設定</code> を押すと設定が開きます。<br />
@@ -380,7 +403,7 @@ print(a + b + c, s)
 <li><a href="https://github.com/moyomogi/python_2022_md/tree/master/jsons">よもぎの settings.json</a><br />
 良ければコピペしてください！　元々何か書かれていた場合は、元の状態に戻したくなるかもしれないので、元データを他の場所に一時退避しておいてください。</li>
 </ul>
-<h2 id="11-2-スニペットを使ってみよう"><a class="header" href="#11-2-スニペットを使ってみよう">11-2. スニペットを使ってみよう</a></h2>
+<h2 id="9-2-スニペットを使ってみよう"><a class="header" href="#9-2-スニペットを使ってみよう">9-2. スニペットを使ってみよう</a></h2>
 <p>python スニペットファイル <code>python.json</code> に到達する手順は以下の通りです。</p>
 <ol>
 <li><code>左リボンの一番下にある歯車アイコン</code> &gt; <code>ユーザースニペット</code> を押すと VSCode 内部にウィンドウが開きます。</li>
@@ -390,10 +413,10 @@ print(a + b + c, s)
 <li><a href="https://github.com/moyomogi/python_2022_md/tree/master/jsons">よもぎの python.json</a><br />
 良ければコピペしてください！</li>
 </ul>
-<h2 id="11-3-超発展-マルチカーソルを使ってみよう"><a class="header" href="#11-3-超発展-マルチカーソルを使ってみよう">11-3. (超発展) マルチカーソルを使ってみよう</a></h2>
+<h2 id="9-3-超発展-マルチカーソルを使ってみよう"><a class="header" href="#9-3-超発展-マルチカーソルを使ってみよう">9-3. (超発展) マルチカーソルを使ってみよう</a></h2>
 <p>Home/End キー (行頭/行末に移動) 程度で満足してはなりません。マルチカーソルを使うと、同時に複数個所の編集が可能です。<br />
 詳しくは、<a href="https://qiita.com/TomK/items/3b1f5be07d708d7bd6c5">VSCode のマルチカーソル練習帳</a> が実際の編集映像付きで分かりやすいので読んでみてください。</p>
-<h1 id="12-補遺"><a class="header" href="#12-補遺">12. 補遺</a></h1>
+<h1 id="10-補遺"><a class="header" href="#10-補遺">10. 補遺</a></h1>
 <ul>
 <li>VSCode のフォントは <a href="https://github.com/edihbrandon/RictyDiminished">RictyDiminished</a> がお薦めです。<code>Code</code> ボタンから <code>Download ZIP</code> すると、ttf 形式のフォントが手に入るので、インストール。</li>
 <li>大学のプログラミングの授業では C 言語が使われるはずなので、C とその後継である C++ を実行できる環境も構築しています。</li>
