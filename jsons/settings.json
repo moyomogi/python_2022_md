@@ -115,13 +115,14 @@
   "workbench.editor.centeredLayoutAutoResize": false,
   // python
   // ★重要★ 自分のものに変えてください。
+  // (wsl を入れてない人用)
   "python.defaultInterpreterPath": "D:\\sys\\Python\\Python310\\python.exe",
   "code-runner.runInTerminal": true,
   // ★重要★
   "code-runner.executorMap": {
-    // コマンドプロンプト用 (wsl を入れた人用)
+    // コマンドプロンプト用 (wsl を入れてない人用)
     "python": "py -3 $fullFileName < $workspaceRoot\\input.txt"
-    // wsl を入れた人用
+    // (wsl を入れた人用)
     // "python": "python3 $dir$fileName < input.txt",
   }
 }
