@@ -112,5 +112,15 @@
     "--line-length",
     "119"
   ],
-  "workbench.editor.centeredLayoutAutoResize": false
+  "workbench.editor.centeredLayoutAutoResize": false,
+  // python
+  "python.defaultInterpreterPath": "D:\\sys\\Python\\Python310\\python.exe",
+  "code-runner.runInTerminal": true,
+  // ★重要★
+  "code-runner.executorMap": {
+    // コマンドプロンプト用 (wsl を入れた人用)
+    "python": "py -3 $fullFileName < $workspaceRoot\\input.txt"
+    // wsl を入れた人用
+    // "python": "python3 $dir$fileName < input.txt",
+  }
 }

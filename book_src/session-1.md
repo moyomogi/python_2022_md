@@ -204,7 +204,7 @@ $ ls
 1. `D:\YOUR_FOLDER` や `~/YOUR_FOLDER` のいずれかの場所に、勉強会用フォルダを作成してください。(以下、このフォルダを `YOUR_FOLDER` として統一して言及する。)
 2. エクスプローラー上で `YOUR_FOLDER/main.py` (ファイル名 (つまり `main` の部分) は自由でいいです) を作成。
 
-## 5-2. VSCode で `Remote-WSL` で `YOUR_FOLDER` を開こう
+## 5-2. (WSL を入れた人用) VSCode で `Remote-WSL` で `YOUR_FOLDER` を開こう
 
 1. VSCode を立ち上げる。
 2. `フォルダを開く` を押し、フォルダ `YOUR_FOLDER` を選択して開く。
