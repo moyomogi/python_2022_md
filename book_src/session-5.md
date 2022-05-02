@@ -166,7 +166,7 @@ GitHub の練習として、ライブラリを GitHub Pages に公開してみ�
 
 ### 4-1-1. GitHub のアカウントを作る
 
-[Hoin GitHub - GitHub](https://github.com/join) から登録してください。
+[Join GitHub - GitHub](https://github.com/join) から登録してください。
 
 ### 4-1-2. GitHub Desktop をインストール
 

@@ -74,7 +74,7 @@ Retype new password: YOUR_PASSWORD
 5. Ubuntu 20.04 LTS にて以下を実行。
 
 ```sh
-# コマンドの先頭に sudo (スードゥー) を付けると、ルート権限でコマンドを実行できます。
+# コマンドの先頭に sudo (superuser do; スードゥー) を付けると、ルート権限でコマンドを実行できます。
 # なお、なにも表示されないです。
 $ sudo sed -i -e 's%http://.*.ubuntu.com%http://ftp.jaist.ac.jp/pub/Linux%g' /etc/apt/sources.list
 ```

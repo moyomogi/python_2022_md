@@ -6,7 +6,7 @@
   もう一つの目標は、ABC (AtCoder Beginner Contest) の A,B 問題を安定して解けるようになることです。
 - 要件  
   WSL を入れるので、一定程度の PC メモリが必要 (4 GB あれば十分のはず)。
-- 開催日時 (2022 年度)  
+- 開催日時 (2022 年度)
   - 第 1 回: 2022/5/2 (月)
   - 第 2 回: 2022/5/5 (木)
   - 第 3 回: 2022/5/9 (月)
@@ -26,6 +26,7 @@
 - License  
   ライセンスは [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.ja) です。すなわち、このプロジェクト内のコードや文章などは、引用元を記載せずに転載して構いません。
 - 参考文献
+  - [Visual Studio Code で競プロ環境構築 (導入編)](https://qiita.com/AokabiC/items/e9312856f588dd9303ed)
   - [AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～](https://qiita.com/drken/items/fd4e5e3630d0f5859067), drken
   - [AtCoder に登録したら解くべき精選過去問 10 問 を Python で解いてみた](https://delta114514.hatenablog.jp/entry/2018/03/15/014555), delta114514
   - [Learn Python Tutorials | Kaggle](https://www.kaggle.com/learn/python), kaggle courses
