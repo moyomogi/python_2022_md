@@ -114,6 +114,7 @@
   ],
   "workbench.editor.centeredLayoutAutoResize": false,
   // python
+  // ★重要★ 自分のものに変えてください。
   "python.defaultInterpreterPath": "D:\\sys\\Python\\Python310\\python.exe",
   "code-runner.runInTerminal": true,
   // ★重要★

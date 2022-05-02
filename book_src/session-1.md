@@ -19,7 +19,7 @@
 # 3. VSCode インストール
 
 Windows 向けの説明しか行いません。すいませんが、Mac ユーザーの方々は各自で環境を構築してください。
-まず、[VSCode 公式のダウンロードページ](https://code.visualstudio.com/download) から DL して、インストールしてください。
+まず、[VSCode 公式のダウンロードページ](https://code.visualstudio.com/download) からダウンロードして、インストールしてください。
 Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。
 
 # 4A. (任意) WSL を有効化しよう
