@@ -419,18 +419,40 @@ t0 = 0
 x0 = 0
 y0 = 0
 for i in range(n):
-    t, x, y = map(int, input().split())
-    # 座標 (x0, y0) と 座標 (x, y) のマンハッタン距離
-    manhattan = abs(x - x0) + abs(y - y0)
+    t1, x1, y1 = map(int, input().split())
+    t = t1 - t0
+    # 座標 (x0, y0) と 座標 (x1, y1) のマンハッタン距離
+    manhattan = abs(x1 - x0) + abs(y1 - y0)
     # 余った時間
-    rest_time = t - t0 - manhattan
+    rest_time = t - manhattan
     # 余った時間が負 or 奇数なら No
     if rest_time &lt; 0 or rest_time % 2 == 1:
         print(&quot;No&quot;)
         exit()
-    t0 = t
-    x0 = x
-    y0 = y
+    t0 = t1
+    x0 = x1
+    y0 = y1
+print(&quot;Yes&quot;)
+</code></pre>
+<p>下記は「マンハッタン距離といえば 90° 回転」というテクニックを用いた別解です。</p>
+<pre><code class="language-py">n = int(input())
+t0 = 0
+x0 = 0
+y0 = 0
+for _ in range(n):
+    t1, xx1, yy1 = map(int, input().split())
+    t = t1 - t0
+    # マンハッタン距離は 90° 回転すると
+    # 楽になるときが多い。
+    x1, y1 = xx1 + yy1, -xx1 + yy1
+
+    # (x0, y1) と (x1, y1) との距離が t 以下なら、歩ける範囲内
+    rest_time = t - max(abs(x1 - x0), abs(y1 - y0))
+    # rest_time が奇数なら、時間潰し不能
+    if rest_time &lt; 0 or rest_time % 2 == 1:
+        print(&quot;No&quot;)
+        exit()
+    t0, x0, y0 = t1, x1, y1
 print(&quot;Yes&quot;)
 </code></pre>
 <h1 id="おわり"><a class="header" href="#おわり">おわり</a></h1>
