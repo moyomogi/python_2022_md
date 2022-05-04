@@ -5,7 +5,9 @@
 - 「2. スクショの取り方」を実際に試してみておいてください。
 - 「3. VSCode インストール」をやっておいていただけるとスムーズに進行できます。
 
-# 2. スクショの取り方
+# 2. パソコン基礎操作
+
+## 2-1. スクショの取り方
 
 この勉強会に限らないことですが、何か困って質問したい際に、スクショを貼ることで、自分がどういった状況かを質問相手に簡単かつ正確に伝えることができます。なお、discord の画面共有なら、さらに正確に伝えられます。
 
@@ -16,13 +18,24 @@
   スクショ区域を指定して、スクショした画像をクリップボードに送ります。  
   クリップボードに送られた画像は、discord や各種お絵かきソフト (クリスタ、GIMP、イラレ) 上で `ctrl + v` を入力することで貼り付けできます。
 
+## 2-2. キーボードショートカット
+
+| ショートカット | 機能               |
+| -------------- | ------------------ |
+| ctrl + c       | コピー             |
+| ctrl + x       | 切り取り           |
+| ctrl + v       | 貼り付け           |
+| ctrl + z       | 直前動作の取り消し |
+| ctrl + a       | 全選択             |
+| ctrl + s       | セーブ             |
+
 # 3. VSCode インストール
 
 Windows 向けの説明しか行いません。すいませんが、Mac ユーザーの方々は各自で環境を構築してください。
 まず、[VSCode 公式のダウンロードページ](https://code.visualstudio.com/download) からダウンロードして、インストールしてください。
 Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしいので、よければ VSCode をインストールしてください。
 
-# 4A. (任意) WSL を有効化しよう
+# 4A. (任意) WSL を入れよう
 
 ちなみに、WSL は Windows Subsystem for Linux の略です。
 
@@ -33,11 +46,12 @@ Vim 派の人もいるかもですが、VSCode に Vim を載せれるらしい�
 
 従って、**Ubuntu 上の便利な CLI ツールを使うため**に、WSL が必要です。
 
-## 4A-2. WSL を入れよう
+## 4A-2. WSL を有効化しよう
 
 本勉強会では Python・C++ を WSL にインストールします。
 
-- Windows 11 の人は、これだけ実行すればいいらしいです。
+- Windows 11 の人は、これだけ実行すればいいらしいです。  
+  もしダメなら、
 
 ```ps1
 wsl --install
@@ -60,9 +74,9 @@ $ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem
 2. WSL を起動させるために、PC を再起動。
 3. [以前のバージョンの WSL の手動インストール手順](https://docs.microsoft.com/ja-jp/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package) にて、`手順 4 - Linux カーネル更新プログラム パッケージをダウンロードする` にある `x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ` をダウンロードし、実行。
 
-4. Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、下の方に出てきます)。
+4. Microsoft Store で Ubuntu 20.04 LTS を入れる (「ubuntu」で検索すると、出てきます)。
    - LTS (Long Time Support, 長期サポート) は「安定版」の意です。
-   - 2022-04-21 リリースの Ubuntu 22.04 もありますが、デフォルトユーザーが root になるらしく設定が面倒なので、古いバージョンである Ubuntu 20.04 をインストールします。
+   - 2022-04-21 リリースの Ubuntu 22.04 もありますが、設定が面倒なので、ここでは古いバージョンである Ubuntu 20.04 をインストールします。
 5. Ubuntu 20.04 LTS を起動。  
    以下のように、username と password を設定するように促されるので、それに従って入力。
 
@@ -74,7 +88,7 @@ For more information visit: https://aka.ms/wslusers
 # 先述しましたが、入力が終わったら Enter を押しましょう。
 # (ただし、a-z, 0-9 のみで構成するといいと思います。)
 Enter new UNIX username: YOUR_USERNAME
-# 下 2 行において、YOUR_USERNAME は自分で決めてください。
+# 以降の行において、YOUR_USERNAME は自分で決めてください。
 # ここで設定したパスワードは、以降で使うので覚えておくように。
 New password: YOUR_PASSWORD
 # 上の行で入力した YOUR_PASSWORD と全く同じものを入力。
@@ -251,7 +265,8 @@ $ python3 main.py
   - `Remote - Containers`
   - `Code Runner`  
     Python や C++ のファイルの実行を手軽に行えます。
-- WSL:Ubuntu-20.04 に入れるべき (WSL 入れなかった人は LOCAL に入れて下さい)
+- WSL:Ubuntu-20.04 に入れるべき  
+  (WSL 入れなかった人は LOCAL に入れて下さい)
   - `Python`
   - `C/C++`  
     C++ 言語使うなら。
@@ -315,7 +330,6 @@ Home/End キー (行頭/行末に移動) 程度で満足してはなりません
 - VSCode のフォントは [RictyDiminished](https://github.com/edihbrandon/RictyDiminished) がお薦めです。`Code` ボタンから `Download ZIP` すると、ttf 形式のフォントが手に入るので、インストール。
 - 大学のプログラミングの授業では C 言語が使われるはずなので、C とその後継である C++ を実行できる環境も構築しています。
 - 他人のコードを読むことがプログラミング学習に最適な手段です。すなわち、プログラミングを効率よく学ぶには、AtCoder などにて他人のコードを日常的に見ることが必要です。(再掲)
-- なお、課題は [AtCoder に登録したら次にやること ～ これだけ解けば十分闘える！過去問精選 10 問 ～](https://qiita.com/drken/items/fd4e5e3630d0f5859067) を用います。(再掲)
 
 # 課題
 

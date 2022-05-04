@@ -142,8 +142,9 @@ print(b)  # -1 + 1i
   3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。  
   $10^8$ 回の演算で大体 1000ms (= 1s) かかります。  
   AtCoder の問題の 9 割は制限が 2000ms なので、O$(2 \prod 10^9)$。
-  - 3 重 for 文による実装の計算量: $O(n^3) = O(2000^3)$  
-  - 2 重 for 文による実装の計算量: $O(n^2) = O(2000^2)$  
+
+  - 3 重 for 文による実装の計算量: $O(n^3) = O(2000^3)$
+  - 2 重 for 文による実装の計算量: $O(n^2) = O(2000^2)$
 
 ```py
 n, y = map(int, input().split())
@@ -291,18 +292,43 @@ t0 = 0
 x0 = 0
 y0 = 0
 for i in range(n):
-    t, x, y = map(int, input().split())
-    # 座標 (x0, y0) と 座標 (x, y) のマンハッタン距離
-    manhattan = abs(x - x0) + abs(y - y0)
+    t1, x1, y1 = map(int, input().split())
+    t = t1 - t0
+    # 座標 (x0, y0) と 座標 (x1, y1) のマンハッタン距離
+    manhattan = abs(x1 - x0) + abs(y1 - y0)
     # 余った時間
-    rest_time = t - t0 - manhattan
+    rest_time = t - manhattan
     # 余った時間が負 or 奇数なら No
     if rest_time < 0 or rest_time % 2 == 1:
         print("No")
         exit()
-    t0 = t
-    x0 = x
-    y0 = y
+    t0 = t1
+    x0 = x1
+    y0 = y1
+print("Yes")
+```
+
+下記は「マンハッタン距離といえば 90° 回転」というテクニックを用いた別解です。
+
+```py
+n = int(input())
+t0 = 0
+x0 = 0
+y0 = 0
+for _ in range(n):
+    t1, xx1, yy1 = map(int, input().split())
+    t = t1 - t0
+    # マンハッタン距離は 90° 回転すると
+    # 楽になるときが多い。
+    x1, y1 = xx1 + yy1, -xx1 + yy1
+
+    # (x0, y1) と (x1, y1) との距離が t 以下なら、歩ける範囲内
+    rest_time = t - max(abs(x1 - x0), abs(y1 - y0))
+    # rest_time が奇数なら、時間潰し不能
+    if rest_time < 0 or rest_time % 2 == 1:
+        print("No")
+        exit()
+    t0, x0, y0 = t1, x1, y1
 print("Yes")
 ```
 
