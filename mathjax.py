@@ -17,14 +17,13 @@ for file in glob.glob("book_src/*.md"):
         test_lines = []
         for line in cur_lines:
             if re.match(r".+\$([^\$]+)\$.+", line):
-                line = re.sub(r"\$([^\$]+)\$", r"\\(\1\\)", line)
+                line = re.sub(r"\$([^\$]+)\$", r"\\\\( \1 \\\\)", line)
                 test_lines.append(line)
             # Append to new_lines.
             new_lines.append(line)
-    if is_local:
-        print("- file:", file, file=sys.stderr)
-        print("  test_lines:", test_lines, file=sys.stderr)
-    else:
+    print("- file:", file, file=sys.stderr)
+    print("  test_lines:", test_lines, file=sys.stderr)
+    if not is_local:
         # Write file.
         with open(file, "w") as f:
             # Write new_lines to file
