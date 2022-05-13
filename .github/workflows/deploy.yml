@@ -12,6 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      # Setup
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
       - name: Setup Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -22,8 +28,10 @@ jobs:
         with:
           mdbook-version: "latest"
 
-      - name: Run `mdbook build`
-        run: mdbook build
+      # Run
+      - run: python3 mathjax.py
+
+      - run: mdbook build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

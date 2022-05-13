@@ -70,6 +70,15 @@
     "files.trimTrailingWhitespace": false,
     "editor.tabSize": 2
   },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    // json with comments
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[python]": {
     "editor.tabSize": 4,
     "editor.formatOnSaveMode": "file",

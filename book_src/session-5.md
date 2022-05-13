@@ -141,7 +141,7 @@ print(b)  # -1 + 1i
 
   3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。  
   $10^8$ 回の演算で大体 1000ms (= 1s) かかります。  
-  AtCoder の問題の 9 割は制限が 2000ms なので、O$(2 \prod 10^9)$。
+  AtCoder の問題の 9 割は制限が 2000ms なので、$O(2 \cdot 10^9)$。
 
   - 3 重 for 文による実装の計算量: $O(n^3) = O(2000^3)$
   - 2 重 for 文による実装の計算量: $O(n^2) = O(2000^2)$
@@ -171,34 +171,47 @@ GitHub の練習として、ライブラリを GitHub Pages に公開してみ�
 
 ### 4-1-2. GitHub Desktop をインストール
 
-(GitHub Desktop に関する説明、誰か書いてほしい。  
-僕はコマンドでやってるので、何も分かりません。)
+[GitHub Desktop](https://desktop.github.com) にて exe をダウンロードしてインストール。  
+実演してもらえばいいかなと思っているので、使用方法の説明略。
 
 - (参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
   1. github に ssh 接続する。
   - 参考資料 [GitHub に ssh 接続するまでの手順](https://zenn.dev/schnell/articles/0e1c2e9db5c08d)
-  2. 以下のコマンドを実行。
+
+```sh
+ssh-keygen -t ed25519 -N "" -C "" -f ~/.ssh/ed25519
+echo -e "Host github github.com\\n  HostName github.com\\n  IdentityFile ~/.ssh/ed25519\\n  User git" > ~/.ssh/config
+eval "$(ssh-agent -s)"
+chmod 600 ~/.ssh/ed25519
+ssh-add ~/.ssh/ed25519
+
+# 以下のコマンドに対して出力された結果を
+# https://github.com/settings/keys に貼る。
+cat ~/.ssh/ed25519.pub
+git init
+git config --global core.editor "code --wait"
+git config --global merge.tool 'code --wait "$MERGED"'
+git config --global push.default simple
+```
+
+2. 以下のコマンドを実行。
 
 ```sh
 # ★以下のコマンドは、かなり高度です。
 #   GitHub Desktop があれば、以下のコマンドを使う必要は
 #   全くないので、このコマンドはスルーしてもいいです。
-# 下 4 行は初回のみ実行
-$ git init
 # moyomogi, python_2022_lib は自分のものに読み替えてください
 git remote add origin git@github.com:moyomogi/python_2022_lib.git
 # moyomogi は自分のものに読み替えてください
-$ git config --local user.name "moyomogi"
+git config --local user.name "moyomogi"
 # mozuyomogi@gmail.com は自分のものに読み替えてください
-$ git config --local user.email "mozuyomogi@gmail.com"
+git config --local user.email "mozuyomogi@gmail.com"
 
 # ファイルをアップロード
-$ git add .
-$ git commit -m "First commit"
-$ git push origin master
+git add --all
+git commit -m "First commit"
+git push origin master
 ```
-
-### 4-1-3. GitHub の各種設定
 
 ## 4-2. ライブラリを公開
 
@@ -222,7 +235,7 @@ OMU の部活 [App Navi](https://opuappnavi.com/#/) と不定期にハッカソ�
 合作に参加すると、他人のコードを読めて、知識が深まります。  
 プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。
 
-- 参考: 2022 年の春に行ったハッカソン「Hackathon2022Spring」の内容は以下の通り。
+- 参考: 2022 年の春に行ったハッカソン「Hackathon 2022 Spring」の内容は以下の通り。
   テーマ「ジャンプ」(テーマは各ハッカソンごとに異なる) に沿ったゲームを作り合う対抗戦。
   - Computer House Random の作ったゲーム [Nisk36/Hackathon](https://github.com/Nisk36/Hackathon)
   - App Navi の作ったゲーム [JumPin](https://blog.opuappnavi.com/post/games-in-2021/#jumpin)
