@@ -177,7 +177,27 @@ print(len(st))
 </tbody></table>
 </li>
 </ul>
-<pre><code class="language-py">TODO: deque の説明コード
+<pre><code class="language-py">from collections import deque
+
+d = deque([1, 2])
+d.append(3)
+d.appendleft(4)
+print(d)  # deque([4, 1, 2, 3])
+
+# for 文で回せます
+for x in d:
+    print(x)
+    # 4
+    # 1
+    # 2
+    # 3
+</code></pre>
+<pre><code class="language-py">from collections import deque
+
+d = deque([1, 2, 3, 4])
+print(d.pop())  # 4
+print(d.popleft())  # 1
+print(d)  # deque([2, 3])
 </code></pre>
 <ul>
 <li>さらに詳しくは <a href="https://note.nkmk.me/python-collections-deque/">Python の deque でキュー、スタック、デック（両端キュー）を扱う</a> を参照。</li>
@@ -299,18 +319,16 @@ print(&quot;-1 -1 -1&quot;)
 <h2 id="4-1-準備"><a class="header" href="#4-1-準備">4-1. 準備</a></h2>
 <h3 id="4-1-1-github-のアカウントを作る"><a class="header" href="#4-1-1-github-のアカウントを作る">4-1-1. GitHub のアカウントを作る</a></h3>
 <p><a href="https://github.com/join">Join GitHub - GitHub</a> から登録してください。</p>
-<h3 id="4-1-2-github-desktop-をインストール"><a class="header" href="#4-1-2-github-desktop-をインストール">4-1-2. GitHub Desktop をインストール</a></h3>
+<h3 id="4-1-2a-github-desktop-をインストール"><a class="header" href="#4-1-2a-github-desktop-をインストール">4-1-2A. GitHub Desktop をインストール</a></h3>
 <p><a href="https://desktop.github.com">GitHub Desktop</a> にて exe をダウンロードしてインストール。<br />
 実演してもらえばいいかなと思っているので、使用方法の説明略。</p>
-<ul>
-<li>(参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
+<h3 id="4-1-2b-参考-コマンドで-push-する"><a class="header" href="#4-1-2b-参考-コマンドで-push-する">4-1-2B. (参考) コマンドで push する</a></h3>
+<p>GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。</p>
 <ol>
 <li>github に ssh 接続する。</li>
 </ol>
 <ul>
 <li>参考資料 <a href="https://zenn.dev/schnell/articles/0e1c2e9db5c08d">GitHub に ssh 接続するまでの手順</a></li>
-</ul>
-</li>
 </ul>
 <pre><code class="language-sh">ssh-keygen -t ed25519 -N &quot;&quot; -C &quot;&quot; -f ~/.ssh/ed25519
 echo -e &quot;Host github github.com\\n  HostName github.com\\n  IdentityFile ~/.ssh/ed25519\\n  User git&quot; &gt; ~/.ssh/config
@@ -342,6 +360,7 @@ git config --local user.email &quot;mozuyomogi@gmail.com&quot;
 # ファイルをアップロード
 git add --all
 git commit -m &quot;First commit&quot;
+# 無事コマンドで push できました！
 git push origin master
 </code></pre>
 <h2 id="4-2-ライブラリを公開"><a class="header" href="#4-2-ライブラリを公開">4-2. ライブラリを公開</a></h2>
