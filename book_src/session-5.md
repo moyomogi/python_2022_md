@@ -36,7 +36,29 @@ print(len(st))
   | popleft()     | 先頭の要素を削除 | $O(1)$ |
 
 ```py
-TODO: deque の説明コード
+from collections import deque
+
+d = deque([1, 2])
+d.append(3)
+d.appendleft(4)
+print(d)  # deque([4, 1, 2, 3])
+
+# for 文で回せます
+for x in d:
+    print(x)
+    # 4
+    # 1
+    # 2
+    # 3
+```
+
+```py
+from collections import deque
+
+d = deque([1, 2, 3, 4])
+print(d.pop())  # 4
+print(d.popleft())  # 1
+print(d)  # deque([2, 3])
 ```
 
 - さらに詳しくは [Python の deque でキュー、スタック、デック（両端キュー）を扱う](https://note.nkmk.me/python-collections-deque/) を参照。
@@ -169,14 +191,18 @@ GitHub の練習として、ライブラリを GitHub Pages に公開してみ�
 
 [Join GitHub - GitHub](https://github.com/join) から登録してください。
 
-### 4-1-2. GitHub Desktop をインストール
+### 4-1-2A. GitHub Desktop をインストール
 
 [GitHub Desktop](https://desktop.github.com) にて exe をダウンロードしてインストール。  
 実演してもらえばいいかなと思っているので、使用方法の説明略。
 
-- (参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
-  1. github に ssh 接続する。
-  - 参考資料 [GitHub に ssh 接続するまでの手順](https://zenn.dev/schnell/articles/0e1c2e9db5c08d)
+### 4-1-2B. (参考) コマンドで push する
+
+GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
+
+1. github に ssh 接続する。
+
+- 参考資料 [GitHub に ssh 接続するまでの手順](https://zenn.dev/schnell/articles/0e1c2e9db5c08d)
 
 ```sh
 ssh-keygen -t ed25519 -N "" -C "" -f ~/.ssh/ed25519
@@ -210,6 +236,7 @@ git config --local user.email "mozuyomogi@gmail.com"
 # ファイルをアップロード
 git add --all
 git commit -m "First commit"
+# 無事コマンドで push できました！
 git push origin master
 ```
 

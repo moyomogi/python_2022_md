@@ -34,3 +34,4 @@
   - [Learn Python Tutorials | Kaggle](https://www.kaggle.com/learn/python), kaggle courses
   - [朝飯前に学べる！便利な Python のヒント 100 選【前編】](https://qiita.com/baby-degu/items/05cf809d4d992923020d), Fatos Morina 著, baby-degu 訳
   - [朝飯前に学べる！便利な Python のヒント 100 選【後編】](https://qiita.com/baby-degu/items/532bea7be058c35f61a8), Fatos Morina 著, baby-degu 訳
+  - [【AtCoder】Python でキューを使う](https://amateur-engineer-blog.com/python-queue/)

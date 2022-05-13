@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 # Usage:
 #   python3 mathjax.py book_src/session-1.md
-import os
+# Reference:
+#   MathJax Support | mdBook Documentation
+#   https://rust-lang.github.io/mdBook/format/mathjax.html
 import glob
+import os
 import re
 import sys
 
