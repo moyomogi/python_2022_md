@@ -223,9 +223,10 @@ git config --global push.default simple
 2. 以下のコマンドを実行。
 
 ```sh
-# ★以下のコマンドは、かなり高度です。
-#   GitHub Desktop があれば、以下のコマンドを使う必要は
-#   全くないので、このコマンドはスルーしてもいいです。
+# 以下のコマンドは、かなり高度です。
+# GitHub Desktop があれば、以下のコマンドを使う必要は
+# 全くないので、このコマンドはスルーしてもいいです。
+
 # moyomogi, python_2022_lib は自分のものに読み替えてください
 git remote add origin git@github.com:moyomogi/python_2022_lib.git
 # moyomogi は自分のものに読み替えてください
@@ -253,8 +254,9 @@ git push origin master
 <img src="https://i.imgur.com/OCMiU8x.png" width="480">
 
 今回、Netlify でのウェブサイト公開がとても簡単に出来ることが分かりましたね。
-ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、是非お気軽にご参加ください。
-[RVW 2022 Spring](https://rvw2022s.herokuapp.com) 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。
+ところで、友好祭に向けて Web サイト制作の会も行う予定ですので、お気軽にご参加ください。
+[RVW 2022 Spring](https://rvw2022s.herokuapp.com) 程度のクオリティの Web サイトを自力で作れるようになることを目標にします。  
+追記: 友好祭が対面開催なら作る意味薄い気がするので、作らないかも。  
 
 # 6. (余談) 合作をしよう
 
