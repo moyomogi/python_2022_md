@@ -77,7 +77,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">index</a></li><li class="chapter-item expanded affix "><li class="part-title">Python勉強会2022</li><li class="chapter-item expanded "><a href="session-1.html"><strong aria-hidden="true">1.</strong> session-1</a></li><li class="chapter-item expanded "><a href="session-2.html"><strong aria-hidden="true">2.</strong> session-2</a></li><li class="chapter-item expanded "><a href="session-3.html"><strong aria-hidden="true">3.</strong> session-3</a></li><li class="chapter-item expanded "><a href="session-4.html"><strong aria-hidden="true">4.</strong> session-4</a></li><li class="chapter-item expanded "><a href="session-5.html" class="active"><strong aria-hidden="true">5.</strong> session-5</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">index</a></li><li class="chapter-item expanded "><a href="session-1.html"><strong aria-hidden="true">1.</strong> session-1</a></li><li class="chapter-item expanded "><a href="session-2.html"><strong aria-hidden="true">2.</strong> session-2</a></li><li class="chapter-item expanded "><a href="session-3.html"><strong aria-hidden="true">3.</strong> session-3</a></li><li class="chapter-item expanded "><a href="session-4.html"><strong aria-hidden="true">4.</strong> session-4</a></li><li class="chapter-item expanded "><a href="session-5.html" class="active"><strong aria-hidden="true">5.</strong> session-5</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -162,18 +162,18 @@ print(len(st))
 <li>
 <p>list の主要なメソッド</p>
 <table><thead><tr><th>メソッド名</th><th>機能</th><th>計算量</th></tr></thead><tbody>
-<tr><td>append(x)</td><td>末尾に要素を追加</td><td>$O(1)$</td></tr>
-<tr><td>insert(i, x)</td><td>途中に要素を追加</td><td>$O(n)$</td></tr>
-<tr><td>pop()</td><td>末尾の要素を削除</td><td>$O(1)$</td></tr>
+<tr><td>append(x)</td><td>末尾に要素を追加</td><td>(O(1))</td></tr>
+<tr><td>insert(i, x)</td><td>途中に要素を追加</td><td>(O(n))</td></tr>
+<tr><td>pop()</td><td>末尾の要素を削除</td><td>(O(1))</td></tr>
 </tbody></table>
 </li>
 <li>
 <p>deque の主要なメソッド</p>
 <table><thead><tr><th>メソッド名</th><th>機能</th><th>計算量</th></tr></thead><tbody>
-<tr><td>append(x)</td><td>末尾に要素を追加</td><td>$O(1)$</td></tr>
-<tr><td>appendleft(x)</td><td>先頭に要素を追加</td><td>$O(1)$</td></tr>
-<tr><td>pop()</td><td>末尾の要素を削除</td><td>$O(1)$</td></tr>
-<tr><td>popleft()</td><td>先頭の要素を削除</td><td>$O(1)$</td></tr>
+<tr><td>append(x)</td><td>末尾に要素を追加</td><td>(O(1))</td></tr>
+<tr><td>appendleft(x)</td><td>先頭に要素を追加</td><td>(O(1))</td></tr>
+<tr><td>pop()</td><td>末尾の要素を削除</td><td>(O(1))</td></tr>
+<tr><td>popleft()</td><td>先頭の要素を削除</td><td>(O(1))</td></tr>
 </tbody></table>
 </li>
 </ul>
@@ -275,8 +275,8 @@ print(b)  # -1 + 1i
 <li>
 <p>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a></p>
 <p>3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。<br />
-$10^8$ 回の演算で大体 1000ms (= 1s) かかります。<br />
-AtCoder の問題の 9 割は制限が 2000ms なので、O$(2 \prod 10^9)$。</p>
+(10^8) 回の演算で大体 1000ms (= 1s) かかります。<br />
+AtCoder の問題の 9 割は制限が 2000ms なので、(O(2 \cdot 10^9))。</p>
 <ul>
 <li>3 重 for 文による実装の計算量: $O(n^3) = O(2000^3)$</li>
 <li>2 重 for 文による実装の計算量: $O(n^2) = O(2000^2)$</li>
@@ -300,8 +300,8 @@ print(&quot;-1 -1 -1&quot;)
 <h3 id="4-1-1-github-のアカウントを作る"><a class="header" href="#4-1-1-github-のアカウントを作る">4-1-1. GitHub のアカウントを作る</a></h3>
 <p><a href="https://github.com/join">Join GitHub - GitHub</a> から登録してください。</p>
 <h3 id="4-1-2-github-desktop-をインストール"><a class="header" href="#4-1-2-github-desktop-をインストール">4-1-2. GitHub Desktop をインストール</a></h3>
-<p>(GitHub Desktop に関する説明、誰か書いてほしい。<br />
-僕はコマンドでやってるので、何も分かりません。)</p>
+<p><a href="https://desktop.github.com">GitHub Desktop</a> にて exe をダウンロードしてインストール。<br />
+実演してもらえばいいかなと思っているので、使用方法の説明略。</p>
 <ul>
 <li>(参考) なお、GitHub Desktop を使わずとも、コマンドで GitHub にファイルをアップロードすることができます。
 <ol>
@@ -310,29 +310,40 @@ print(&quot;-1 -1 -1&quot;)
 <ul>
 <li>参考資料 <a href="https://zenn.dev/schnell/articles/0e1c2e9db5c08d">GitHub に ssh 接続するまでの手順</a></li>
 </ul>
+</li>
+</ul>
+<pre><code class="language-sh">ssh-keygen -t ed25519 -N &quot;&quot; -C &quot;&quot; -f ~/.ssh/ed25519
+echo -e &quot;Host github github.com\\n  HostName github.com\\n  IdentityFile ~/.ssh/ed25519\\n  User git&quot; &gt; ~/.ssh/config
+eval &quot;$(ssh-agent -s)&quot;
+chmod 600 ~/.ssh/ed25519
+ssh-add ~/.ssh/ed25519
+
+# 以下のコマンドに対して出力された結果を
+# https://github.com/settings/keys に貼る。
+cat ~/.ssh/ed25519.pub
+git init
+git config --global core.editor &quot;code --wait&quot;
+git config --global merge.tool 'code --wait &quot;$MERGED&quot;'
+git config --global push.default simple
+</code></pre>
 <ol start="2">
 <li>以下のコマンドを実行。</li>
 </ol>
-</li>
-</ul>
 <pre><code class="language-sh"># ★以下のコマンドは、かなり高度です。
 #   GitHub Desktop があれば、以下のコマンドを使う必要は
 #   全くないので、このコマンドはスルーしてもいいです。
-# 下 4 行は初回のみ実行
-$ git init
 # moyomogi, python_2022_lib は自分のものに読み替えてください
 git remote add origin git@github.com:moyomogi/python_2022_lib.git
 # moyomogi は自分のものに読み替えてください
-$ git config --local user.name &quot;moyomogi&quot;
+git config --local user.name &quot;moyomogi&quot;
 # mozuyomogi@gmail.com は自分のものに読み替えてください
-$ git config --local user.email &quot;mozuyomogi@gmail.com&quot;
+git config --local user.email &quot;mozuyomogi@gmail.com&quot;
 
 # ファイルをアップロード
-$ git add .
-$ git commit -m &quot;First commit&quot;
-$ git push origin master
+git add --all
+git commit -m &quot;First commit&quot;
+git push origin master
 </code></pre>
-<h3 id="4-1-3-github-の各種設定"><a class="header" href="#4-1-3-github-の各種設定">4-1-3. GitHub の各種設定</a></h3>
 <h2 id="4-2-ライブラリを公開"><a class="header" href="#4-2-ライブラリを公開">4-2. ライブラリを公開</a></h2>
 <ol>
 <li>勉強会用のフォルダと同じ階層に、別のフォルダ (フォルダ名は例えば <code>python_2022_lib</code> として、<code>YOUR_NAME/python_2022_lib</code> のように) を作ってください。</li>
@@ -351,7 +362,7 @@ $ git push origin master
 合作に参加すると、他人のコードを読めて、知識が深まります。<br />
 プログラミング以外にも、「BGM・SE を探す」「タイトル画面のデザインをする」といった仕事があるので、合作に参加したことがない人も気負わず参加しましょう。</p>
 <ul>
-<li>参考: 2022 年の春に行ったハッカソン「Hackathon2022Spring」の内容は以下の通り。
+<li>参考: 2022 年の春に行ったハッカソン「Hackathon 2022 Spring」の内容は以下の通り。
 テーマ「ジャンプ」(テーマは各ハッカソンごとに異なる) に沿ったゲームを作り合う対抗戦。
 <ul>
 <li>Computer House Random の作ったゲーム <a href="https://github.com/Nisk36/Hackathon">Nisk36/Hackathon</a></li>
