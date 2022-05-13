@@ -219,9 +219,9 @@ print(nums2)  # [1, 1, 3, 4, 5]
 <p>繰り返し実行機能である <code>for</code> 文を学習する前に、まずは組み込み関数 <code>range</code> を紹介します。
 1 つ目の要素が 1 ではなく 0 (<code>0-indexed</code> という。) であることに注意。</p>
 <table><thead><tr><th>使い方</th><th>対応する配列</th><th>対応する半開区間</th><th>具体例</th></tr></thead><tbody>
-<tr><td>range(stop)</td><td>[0, 1, ..., stop - 1]</td><td>([0, stop))</td><td>range(5) は、配列 [0, 1, 2, 3, 4] に対応。</td></tr>
-<tr><td>range(start, stop)</td><td>[start, start + 1, ..., stop - 1]</td><td>([start, stop))</td><td>range(2, 5) は、配列 [2, 3, 4] に対応。</td></tr>
-<tr><td>range(start, stop, step)</td><td>[start, start + step, ...]</td><td>([start, stop)) の step 個飛び</td><td>range(0, 5, 2) は、配列 [0, 2, 4] に対応。</td></tr>
+<tr><td>range(stop)</td><td>[0, 1, ..., stop - 1]</td><td>\( [0, stop) \)</td><td>range(5) は、配列 [0, 1, 2, 3, 4] に対応。</td></tr>
+<tr><td>range(start, stop)</td><td>[start, start + 1, ..., stop - 1]</td><td>\( [start, stop) \)</td><td>range(2, 5) は、配列 [2, 3, 4] に対応。</td></tr>
+<tr><td>range(start, stop, step)</td><td>[start, start + step, ...]</td><td>\( [start, stop) \) の step 個飛び</td><td>range(0, 5, 2) は、配列 [0, 2, 4] に対応。</td></tr>
 </tbody></table>
 <pre><code class="language-py"># list でラップしないと生の range が出力されます
 print(range(5))  # range(0, 5)

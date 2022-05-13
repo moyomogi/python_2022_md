@@ -162,18 +162,18 @@ print(len(st))
 <li>
 <p>list の主要なメソッド</p>
 <table><thead><tr><th>メソッド名</th><th>機能</th><th>計算量</th></tr></thead><tbody>
-<tr><td>append(x)</td><td>末尾に要素を追加</td><td>(O(1))</td></tr>
-<tr><td>insert(i, x)</td><td>途中に要素を追加</td><td>(O(n))</td></tr>
-<tr><td>pop()</td><td>末尾の要素を削除</td><td>(O(1))</td></tr>
+<tr><td>append(x)</td><td>末尾に要素を追加</td><td>\( O(1) \)</td></tr>
+<tr><td>insert(i, x)</td><td>途中に要素を追加</td><td>\( O(n) \)</td></tr>
+<tr><td>pop()</td><td>末尾の要素を削除</td><td>\( O(1) \)</td></tr>
 </tbody></table>
 </li>
 <li>
 <p>deque の主要なメソッド</p>
 <table><thead><tr><th>メソッド名</th><th>機能</th><th>計算量</th></tr></thead><tbody>
-<tr><td>append(x)</td><td>末尾に要素を追加</td><td>(O(1))</td></tr>
-<tr><td>appendleft(x)</td><td>先頭に要素を追加</td><td>(O(1))</td></tr>
-<tr><td>pop()</td><td>末尾の要素を削除</td><td>(O(1))</td></tr>
-<tr><td>popleft()</td><td>先頭の要素を削除</td><td>(O(1))</td></tr>
+<tr><td>append(x)</td><td>末尾に要素を追加</td><td>\( O(1) \)</td></tr>
+<tr><td>appendleft(x)</td><td>先頭に要素を追加</td><td>\( O(1) \)</td></tr>
+<tr><td>pop()</td><td>末尾の要素を削除</td><td>\( O(1) \)</td></tr>
+<tr><td>popleft()</td><td>先頭の要素を削除</td><td>\( O(1) \)</td></tr>
 </tbody></table>
 </li>
 </ul>
@@ -275,8 +275,8 @@ print(b)  # -1 + 1i
 <li>
 <p>(8) 計算オーダーを考える <a href="https://atcoder.jp/contests/abs/tasks/abc085_c">C085C - Otoshidama</a></p>
 <p>3 重 for 文は不要で、2 重 for 文を回すと k が一意に定まる。<br />
-(10^8) 回の演算で大体 1000ms (= 1s) かかります。<br />
-AtCoder の問題の 9 割は制限が 2000ms なので、(O(2 \cdot 10^9))。</p>
+\( 10^8 \) 回の演算で大体 1000ms (= 1s) かかります。<br />
+AtCoder の問題の 9 割は制限が 2000ms なので、\( O(2 \cdot 10^9) \)。</p>
 <ul>
 <li>3 重 for 文による実装の計算量: $O(n^3) = O(2000^3)$</li>
 <li>2 重 for 文による実装の計算量: $O(n^2) = O(2000^2)$</li>
